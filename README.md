@@ -109,7 +109,30 @@ Listings:
 - Name
 - Description
 ### Models
-[Add table of models]
+User
+
+| Property      | Type          | Value
+| ------------- | ------------- |-------------
+| name  | String  |First and last name of user.
+| displayName  |String  |User's username.
+| starRating | double | Average user rating.
+| availableListings | int | How many job postings the user has currently open.
+| completedJobs | int | How many jobs the user has completed.
+| location | String | The location of the user in City, State format.
+
+Listing
+
+| Property      | Type          | Value
+| ------------- | ------------- |-------------
+| price  | double  | The desired cost/pay of a job listing.
+| skillLevel  |double  | The estimated difficulty of the current job listing.
+| postedBy | String | Shows the user that posted the current job listing.
+| location | String | Location of the current job listing.
+| postDate | Date | Date that the current job was posted.
+| jobTitle | String | Job title.
+| jobDescription | String | Detailed description of the current job listing.
+
+
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
