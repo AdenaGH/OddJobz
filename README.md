@@ -77,7 +77,6 @@
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="https://github.com/AdenaGH/Pics/blob/main/Wireframe%20.jpg" width=600>
 ![Wireframe  2](https://user-images.githubusercontent.com/86276796/125313361-2760e280-e303-11eb-896b-de0f4d71042a.jpg)
 
 ### [BONUS] Digital Wireframes & Mockups
