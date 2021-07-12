@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EC536C2E269C9F3000DEF526 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC536C2D269C9F3000DEF526 /* AppDelegate.m */; };
+		EC536C31269C9F3000DEF526 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC536C30269C9F3000DEF526 /* SceneDelegate.m */; };
+		EC536C34269C9F3000DEF526 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC536C33269C9F3000DEF526 /* ViewController.m */; };
+		EC536C37269C9F3000DEF526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC536C35269C9F3000DEF526 /* Main.storyboard */; };
+		EC536C39269C9F3100DEF526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC536C38269C9F3100DEF526 /* Assets.xcassets */; };
+		EC536C3C269C9F3100DEF526 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC536C3A269C9F3100DEF526 /* LaunchScreen.storyboard */; };
+		EC536C3F269C9F3100DEF526 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC536C3E269C9F3100DEF526 /* main.m */; };
+		EC536C49269C9F3100DEF526 /* OddJobzTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC536C48269C9F3100DEF526 /* OddJobzTests.m */; };
+		EC536C54269C9F3100DEF526 /* OddJobzUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC536C53269C9F3100DEF526 /* OddJobzUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC536C45269C9F3100DEF526 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC536C21269C9F3000DEF526 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC536C28269C9F3000DEF526;
+			remoteInfo = OddJobz;
+		};
+		EC536C50269C9F3100DEF526 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC536C21269C9F3000DEF526 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC536C28269C9F3000DEF526;
+			remoteInfo = OddJobz;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EC536C29269C9F3000DEF526 /* OddJobz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OddJobz.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC536C2C269C9F3000DEF526 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EC536C2D269C9F3000DEF526 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EC536C2F269C9F3000DEF526 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		EC536C30269C9F3000DEF526 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		EC536C32269C9F3000DEF526 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EC536C33269C9F3000DEF526 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EC536C36269C9F3000DEF526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EC536C38269C9F3100DEF526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC536C3B269C9F3100DEF526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EC536C3D269C9F3100DEF526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC536C3E269C9F3100DEF526 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EC536C44269C9F3100DEF526 /* OddJobzTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OddJobzTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC536C48269C9F3100DEF526 /* OddJobzTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OddJobzTests.m; sourceTree = "<group>"; };
+		EC536C4A269C9F3100DEF526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC536C4F269C9F3100DEF526 /* OddJobzUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OddJobzUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC536C53269C9F3100DEF526 /* OddJobzUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OddJobzUITests.m; sourceTree = "<group>"; };
+		EC536C55269C9F3100DEF526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EC536C26269C9F3000DEF526 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC536C41269C9F3100DEF526 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC536C4C269C9F3100DEF526 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EC536C20269C9F3000DEF526 = {
+			isa = PBXGroup;
+			children = (
+				EC536C2B269C9F3000DEF526 /* OddJobz */,
+				EC536C47269C9F3100DEF526 /* OddJobzTests */,
+				EC536C52269C9F3100DEF526 /* OddJobzUITests */,
+				EC536C2A269C9F3000DEF526 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EC536C2A269C9F3000DEF526 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EC536C29269C9F3000DEF526 /* OddJobz.app */,
+				EC536C44269C9F3100DEF526 /* OddJobzTests.xctest */,
+				EC536C4F269C9F3100DEF526 /* OddJobzUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EC536C2B269C9F3000DEF526 /* OddJobz */ = {
+			isa = PBXGroup;
+			children = (
+				EC536C2C269C9F3000DEF526 /* AppDelegate.h */,
+				EC536C2D269C9F3000DEF526 /* AppDelegate.m */,
+				EC536C2F269C9F3000DEF526 /* SceneDelegate.h */,
+				EC536C30269C9F3000DEF526 /* SceneDelegate.m */,
+				EC536C32269C9F3000DEF526 /* ViewController.h */,
+				EC536C33269C9F3000DEF526 /* ViewController.m */,
+				EC536C35269C9F3000DEF526 /* Main.storyboard */,
+				EC536C38269C9F3100DEF526 /* Assets.xcassets */,
+				EC536C3A269C9F3100DEF526 /* LaunchScreen.storyboard */,
+				EC536C3D269C9F3100DEF526 /* Info.plist */,
+				EC536C3E269C9F3100DEF526 /* main.m */,
+			);
+			path = OddJobz;
+			sourceTree = "<group>";
+		};
+		EC536C47269C9F3100DEF526 /* OddJobzTests */ = {
+			isa = PBXGroup;
+			children = (
+				EC536C48269C9F3100DEF526 /* OddJobzTests.m */,
+				EC536C4A269C9F3100DEF526 /* Info.plist */,
+			);
+			path = OddJobzTests;
+			sourceTree = "<group>";
+		};
+		EC536C52269C9F3100DEF526 /* OddJobzUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EC536C53269C9F3100DEF526 /* OddJobzUITests.m */,
+				EC536C55269C9F3100DEF526 /* Info.plist */,
+			);
+			path = OddJobzUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EC536C28269C9F3000DEF526 /* OddJobz */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC536C58269C9F3100DEF526 /* Build configuration list for PBXNativeTarget "OddJobz" */;
+			buildPhases = (
+				EC536C25269C9F3000DEF526 /* Sources */,
+				EC536C26269C9F3000DEF526 /* Frameworks */,
+				EC536C27269C9F3000DEF526 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OddJobz;
+			productName = OddJobz;
+			productReference = EC536C29269C9F3000DEF526 /* OddJobz.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EC536C43269C9F3100DEF526 /* OddJobzTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC536C5B269C9F3100DEF526 /* Build configuration list for PBXNativeTarget "OddJobzTests" */;
+			buildPhases = (
+				EC536C40269C9F3100DEF526 /* Sources */,
+				EC536C41269C9F3100DEF526 /* Frameworks */,
+				EC536C42269C9F3100DEF526 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC536C46269C9F3100DEF526 /* PBXTargetDependency */,
+			);
+			name = OddJobzTests;
+			productName = OddJobzTests;
+			productReference = EC536C44269C9F3100DEF526 /* OddJobzTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EC536C4E269C9F3100DEF526 /* OddJobzUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC536C5E269C9F3100DEF526 /* Build configuration list for PBXNativeTarget "OddJobzUITests" */;
+			buildPhases = (
+				EC536C4B269C9F3100DEF526 /* Sources */,
+				EC536C4C269C9F3100DEF526 /* Frameworks */,
+				EC536C4D269C9F3100DEF526 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EC536C51269C9F3100DEF526 /* PBXTargetDependency */,
+			);
+			name = OddJobzUITests;
+			productName = OddJobzUITests;
+			productReference = EC536C4F269C9F3100DEF526 /* OddJobzUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC536C21269C9F3000DEF526 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					EC536C28269C9F3000DEF526 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					EC536C43269C9F3100DEF526 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = EC536C28269C9F3000DEF526;
+					};
+					EC536C4E269C9F3100DEF526 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = EC536C28269C9F3000DEF526;
+					};
+				};
+			};
+			buildConfigurationList = EC536C24269C9F3000DEF526 /* Build configuration list for PBXProject "OddJobz" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EC536C20269C9F3000DEF526;
+			productRefGroup = EC536C2A269C9F3000DEF526 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EC536C28269C9F3000DEF526 /* OddJobz */,
+				EC536C43269C9F3100DEF526 /* OddJobzTests */,
+				EC536C4E269C9F3100DEF526 /* OddJobzUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EC536C27269C9F3000DEF526 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC536C3C269C9F3100DEF526 /* LaunchScreen.storyboard in Resources */,
+				EC536C39269C9F3100DEF526 /* Assets.xcassets in Resources */,
+				EC536C37269C9F3000DEF526 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC536C42269C9F3100DEF526 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC536C4D269C9F3100DEF526 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EC536C25269C9F3000DEF526 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC536C34269C9F3000DEF526 /* ViewController.m in Sources */,
+				EC536C2E269C9F3000DEF526 /* AppDelegate.m in Sources */,
+				EC536C3F269C9F3100DEF526 /* main.m in Sources */,
+				EC536C31269C9F3000DEF526 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC536C40269C9F3100DEF526 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC536C49269C9F3100DEF526 /* OddJobzTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC536C4B269C9F3100DEF526 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC536C54269C9F3100DEF526 /* OddJobzUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC536C46269C9F3100DEF526 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC536C28269C9F3000DEF526 /* OddJobz */;
+			targetProxy = EC536C45269C9F3100DEF526 /* PBXContainerItemProxy */;
+		};
+		EC536C51269C9F3100DEF526 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC536C28269C9F3000DEF526 /* OddJobz */;
+			targetProxy = EC536C50269C9F3100DEF526 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EC536C35269C9F3000DEF526 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC536C36269C9F3000DEF526 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EC536C3A269C9F3100DEF526 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC536C3B269C9F3100DEF526 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EC536C56269C9F3100DEF526 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EC536C57269C9F3100DEF526 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EC536C59269C9F3100DEF526 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BBK4Y8S9Z5;
+				INFOPLIST_FILE = OddJobz/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.facebook.OddJobz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EC536C5A269C9F3100DEF526 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BBK4Y8S9Z5;
+				INFOPLIST_FILE = OddJobz/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.facebook.OddJobz;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EC536C5C269C9F3100DEF526 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BBK4Y8S9Z5;
+				INFOPLIST_FILE = OddJobzTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.facebook.OddJobzTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OddJobz.app/OddJobz";
+			};
+			name = Debug;
+		};
+		EC536C5D269C9F3100DEF526 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BBK4Y8S9Z5;
+				INFOPLIST_FILE = OddJobzTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.facebook.OddJobzTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OddJobz.app/OddJobz";
+			};
+			name = Release;
+		};
+		EC536C5F269C9F3100DEF526 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BBK4Y8S9Z5;
+				INFOPLIST_FILE = OddJobzUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.facebook.OddJobzUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OddJobz;
+			};
+			name = Debug;
+		};
+		EC536C60269C9F3100DEF526 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BBK4Y8S9Z5;
+				INFOPLIST_FILE = OddJobzUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.facebook.OddJobzUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OddJobz;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EC536C24269C9F3000DEF526 /* Build configuration list for PBXProject "OddJobz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC536C56269C9F3100DEF526 /* Debug */,
+				EC536C57269C9F3100DEF526 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC536C58269C9F3100DEF526 /* Build configuration list for PBXNativeTarget "OddJobz" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC536C59269C9F3100DEF526 /* Debug */,
+				EC536C5A269C9F3100DEF526 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC536C5B269C9F3100DEF526 /* Build configuration list for PBXNativeTarget "OddJobzTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC536C5C269C9F3100DEF526 /* Debug */,
+				EC536C5D269C9F3100DEF526 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC536C5E269C9F3100DEF526 /* Build configuration list for PBXNativeTarget "OddJobzUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC536C5F269C9F3100DEF526 /* Debug */,
+				EC536C60269C9F3100DEF526 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EC536C21269C9F3000DEF526 /* Project object */;
+}
