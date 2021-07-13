@@ -108,6 +108,43 @@ Listings:
 - Post date
 - Name
 - Description
+
+
+User
+
+| Property      | Type          | 
+| ------------- | ------------- |
+| name  | String  |
+| displayName  |String  |
+| starRating | double |
+| availableListings | int | 
+| completedJobs | int 
+| location | String |
+
+Listing
+
+| Property      | Type          | 
+| ------------- | ------------- |
+| price  | double  | 
+| skillLevel  |double  | 
+| postedBy | String | 
+| listingName | String | 
+
+
+Review
+
+| Property      | Type          | 
+| ------------- | ------------- |
+| poster  | String  | 
+| postedAt  | Date | 
+| reviewText| String | 
+| location | String | 
+| postDate | Date | 
+| jobTitle | String | 
+| jobDescription | String | 
+
+
+
 ### Models
 User
 
