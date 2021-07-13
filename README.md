@@ -116,6 +116,13 @@ User
 | ------------- | ------------- |
 | name  | String  |
 | password  | String  |
+| accountAge  |NSDate?  |
+
+
+Profile
+
+| Property      | Type          | 
+| ------------- | ------------- |
 | displayName  |String  |
 | starRating | double |
 | availableListings | int | 
