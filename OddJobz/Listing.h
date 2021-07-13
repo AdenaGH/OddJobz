@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Parse/Parse.h"
-NS_ASSUME_NONNULL_BEGIN
+//NS_ASSUME_NONNULL_BEGIN
 
 @interface Listing : PFObject<PFSubclassing>
 @property (nonatomic, strong) NSString *postID;
@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *jobTitle;
 @property (nonatomic, strong) PFFileObject *image;
 
++ (void) postListing;
+
 @end
 
-NS_ASSUME_NONNULL_END
+//NS_ASSUME_NONNULL_END

@@ -7,8 +7,13 @@
 
 #import "HomeTableViewController.h"
 #import "Parse/Parse.h"
+#import "Listing.h"
+#import "ListingCell.h"
 
-@interface HomeTableViewController ()
+@interface HomeTableViewController ()  <UITableViewDelegate, UITableViewDataSource>
+@property (strong, nonatomic) NSMutableArray *listings;
+@property (strong, nonatomic) UIRefreshControl *refreshCont;
+
 
 @end
 
@@ -17,6 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
+    //[Listing postListing];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -24,27 +34,20 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+
+    return 20;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    ListingCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListingCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    Listing *listing = self.listings[indexPath.row];
+    cell.listing = listing;
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
