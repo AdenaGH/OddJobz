@@ -115,6 +115,7 @@ User
 | Property      | Type          | 
 | ------------- | ------------- |
 | name  | String  |
+| password  | String  |
 | displayName  |String  |
 | starRating | double |
 | availableListings | int | 
