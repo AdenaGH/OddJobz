@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,8 @@
 		EC536C3F269C9F3100DEF526 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC536C3E269C9F3100DEF526 /* main.m */; };
 		EC536C49269C9F3100DEF526 /* OddJobzTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC536C48269C9F3100DEF526 /* OddJobzTests.m */; };
 		EC536C54269C9F3100DEF526 /* OddJobzUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC536C53269C9F3100DEF526 /* OddJobzUITests.m */; };
+		ECEBB4AF269DF46C00103BBF /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEBB4AE269DF46C00103BBF /* HomeTableViewController.m */; };
+		ECEBB4B2269DF9DE00103BBF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEBB4B1269DF9DE00103BBF /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,10 @@
 		EC536C4F269C9F3100DEF526 /* OddJobzUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OddJobzUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC536C53269C9F3100DEF526 /* OddJobzUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OddJobzUITests.m; sourceTree = "<group>"; };
 		EC536C55269C9F3100DEF526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECEBB4AD269DF46C00103BBF /* HomeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewController.h; sourceTree = "<group>"; };
+		ECEBB4AE269DF46C00103BBF /* HomeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewController.m; sourceTree = "<group>"; };
+		ECEBB4B0269DF9DE00103BBF /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		ECEBB4B1269DF9DE00103BBF /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,7 @@
 		EC536C2B269C9F3000DEF526 /* OddJobz */ = {
 			isa = PBXGroup;
 			children = (
+				ECEBB4AC269DF43900103BBF /* View Controllers */,
 				EC536C2C269C9F3000DEF526 /* AppDelegate.h */,
 				EC536C2D269C9F3000DEF526 /* AppDelegate.m */,
 				EC536C2F269C9F3000DEF526 /* SceneDelegate.h */,
@@ -172,6 +179,17 @@
 			path = OddJobzUITests;
 			sourceTree = "<group>";
 		};
+		ECEBB4AC269DF43900103BBF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ECEBB4AD269DF46C00103BBF /* HomeTableViewController.h */,
+				ECEBB4AE269DF46C00103BBF /* HomeTableViewController.m */,
+				ECEBB4B0269DF9DE00103BBF /* LoginViewController.h */,
+				ECEBB4B1269DF9DE00103BBF /* LoginViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -183,6 +201,7 @@
 				EC536C25269C9F3000DEF526 /* Sources */,
 				EC536C26269C9F3000DEF526 /* Frameworks */,
 				EC536C27269C9F3000DEF526 /* Resources */,
+				549768A92E3E886833929C87 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -220,6 +239,7 @@
 				EC536C4B269C9F3100DEF526 /* Sources */,
 				EC536C4C269C9F3100DEF526 /* Frameworks */,
 				EC536C4D269C9F3100DEF526 /* Resources */,
+				2CB39A6EBDC471CFAA42087E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -300,6 +320,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2CB39A6EBDC471CFAA42087E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OddJobz-OddJobzUITests/Pods-OddJobz-OddJobzUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OddJobz-OddJobzUITests/Pods-OddJobz-OddJobzUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OddJobz-OddJobzUITests/Pods-OddJobz-OddJobzUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		367140AAEFDB74919C8D819C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -320,6 +357,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		549768A92E3E886833929C87 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OddJobz/Pods-OddJobz-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OddJobz/Pods-OddJobz-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OddJobz/Pods-OddJobz-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		82EC0057BE471D07BF2914F2 /* [CP] Check Pods Manifest.lock */ = {
@@ -373,9 +427,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECEBB4AF269DF46C00103BBF /* HomeTableViewController.m in Sources */,
 				EC536C2E269C9F3000DEF526 /* AppDelegate.m in Sources */,
 				EC536C3F269C9F3100DEF526 /* main.m in Sources */,
 				EC536C31269C9F3000DEF526 /* SceneDelegate.m in Sources */,
+				ECEBB4B2269DF9DE00103BBF /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

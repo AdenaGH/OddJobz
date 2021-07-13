@@ -6,7 +6,7 @@ target 'OddJobz' do
   use_frameworks!
 
   # Pods for OddJobz
-
+  pod 'Parse'
   target 'OddJobzTests' do
     inherit! :search_paths
     # Pods for testing
