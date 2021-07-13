@@ -87,7 +87,7 @@
             </objects>
             <point key="canvasLocation" x="888" y="94"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Home-->
         <scene sceneID="IxZ-QP-Lg5">
             <objects>
                 <tableViewController storyboardIdentifier="HomeTableViewController" id="ykc-1c-WJD" customClass="HomeTableViewController" sceneMemberID="viewController">
@@ -138,7 +138,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="mRv-VJ-oXl" kind="presentation" id="jHO-Ux-oGJ"/>
+                                    <segue destination="mRv-VJ-oXl" kind="presentation" modalPresentationStyle="fullScreen" id="jHO-Ux-oGJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -147,7 +147,9 @@
                             <outlet property="delegate" destination="ykc-1c-WJD" id="Igg-th-uxA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="C2r-4g-VkN"/>
+                    <navigationItem key="navigationItem" title="Home" id="C2r-4g-VkN">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="KbZ-cw-fom"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oyp-8d-RGZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -175,7 +177,7 @@
             <objects>
                 <viewController id="mRv-VJ-oXl" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZiM-iq-rRL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e3e-ee-fW1">

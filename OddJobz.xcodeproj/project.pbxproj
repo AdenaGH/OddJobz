@@ -20,6 +20,7 @@
 		EC536C54269C9F3100DEF526 /* OddJobzUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC536C53269C9F3100DEF526 /* OddJobzUITests.m */; };
 		ECEBB4AF269DF46C00103BBF /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEBB4AE269DF46C00103BBF /* HomeTableViewController.m */; };
 		ECEBB4B2269DF9DE00103BBF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEBB4B1269DF9DE00103BBF /* LoginViewController.m */; };
+		ECEBB4B5269E2F6400103BBF /* Listing.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEBB4B4269E2F6400103BBF /* Listing.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		ECEBB4AE269DF46C00103BBF /* HomeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewController.m; sourceTree = "<group>"; };
 		ECEBB4B0269DF9DE00103BBF /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		ECEBB4B1269DF9DE00103BBF /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		ECEBB4B3269E2F6400103BBF /* Listing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Listing.h; sourceTree = "<group>"; };
+		ECEBB4B4269E2F6400103BBF /* Listing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Listing.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,8 @@
 				EC536C3A269C9F3100DEF526 /* LaunchScreen.storyboard */,
 				EC536C3D269C9F3100DEF526 /* Info.plist */,
 				EC536C3E269C9F3100DEF526 /* main.m */,
+				ECEBB4B3269E2F6400103BBF /* Listing.h */,
+				ECEBB4B4269E2F6400103BBF /* Listing.m */,
 			);
 			path = OddJobz;
 			sourceTree = "<group>";
@@ -427,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECEBB4B5269E2F6400103BBF /* Listing.m in Sources */,
 				ECEBB4AF269DF46C00103BBF /* HomeTableViewController.m in Sources */,
 				EC536C2E269C9F3000DEF526 /* AppDelegate.m in Sources */,
 				EC536C3F269C9F3100DEF526 /* main.m in Sources */,

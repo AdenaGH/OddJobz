@@ -7,6 +7,7 @@ target 'OddJobz' do
 
   # Pods for OddJobz
   pod 'Parse'
+  pod 'DateTools'
   target 'OddJobzTests' do
     inherit! :search_paths
     # Pods for testing
