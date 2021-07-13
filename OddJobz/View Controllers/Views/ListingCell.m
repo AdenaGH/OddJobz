@@ -20,5 +20,11 @@
 
     // Configure the view for the selected state
 }
-
+-(void) makePost:(Listing *)listing {
+    self.listing = listing;
+    
+    self.listingTitle.text = listing.jobTitle;
+    self.listingDescription.text = listing.jobDescription;
+    //self.listingPrice.text = listing.jobPrice;
+}
 @end

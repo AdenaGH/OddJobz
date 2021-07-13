@@ -6,6 +6,7 @@
 //
 
 #import "ComposeViewController.h"
+#import "Listing.h"
 
 @interface ComposeViewController ()
 
@@ -16,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+- (IBAction)pressShare:(id)sender {
+    [Listing postListing];
 }
 
 /*

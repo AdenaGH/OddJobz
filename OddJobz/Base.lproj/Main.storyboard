@@ -500,6 +500,14 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Asking Price" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="30B-xP-Upi">
+                                        <rect key="frame" x="18" y="150" width="104" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <viewLayoutGuide key="contentLayoutGuide" id="YJP-PE-8YA"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Q72-el-oRQ"/>
@@ -509,8 +517,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Listing" id="kd1-Y0-9oa">
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="Mpi-O3-XQt"/>
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="Mpi-O3-XQt">
+                            <connections>
+                                <action selector="pressShare:" destination="9iu-o7-ZA3" id="M5A-rj-hid"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addressTextView" destination="uV1-V0-wei" id="vk5-ak-TIR"/>
+                        <outlet property="descriptionTextView" destination="gZs-bY-aPx" id="fx7-NB-Dtv"/>
+                        <outlet property="listingImage" destination="lDq-WX-enG" id="Hpy-iz-evA"/>
+                        <outlet property="priceTextView" destination="30B-xP-Upi" id="mqj-Tf-9QN"/>
+                        <outlet property="titleTextView" destination="ESY-tT-jDm" id="ntN-a9-1aF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M87-2o-02o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

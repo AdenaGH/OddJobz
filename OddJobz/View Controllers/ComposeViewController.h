@@ -10,6 +10,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ComposeViewController : UIViewController <UINavigationControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *listingImage;
+@property (weak, nonatomic) IBOutlet UITextView *priceTextView;
+@property (weak, nonatomic) IBOutlet UITextView *titleTextView;
+@property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
+@property (weak, nonatomic) IBOutlet UITextView *addressTextView;
 
 @end
 
