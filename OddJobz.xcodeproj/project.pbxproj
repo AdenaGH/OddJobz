@@ -10,6 +10,7 @@
 		D05FB4F53427B77E5DB31D22 /* Pods_OddJobz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D8425548FD980CAED93C29 /* Pods_OddJobz.framework */; };
 		D949AEB47F8455FFA481548D /* Pods_OddJobzTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9687F71D2306D49697EFC729 /* Pods_OddJobzTests.framework */; };
 		E574734331BB0EC2D25BE576 /* Pods_OddJobz_OddJobzUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449BB603E87591BF9FE36077 /* Pods_OddJobz_OddJobzUITests.framework */; };
+		EC13CD9E269F83A5003EA20F /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC13CD9D269F83A5003EA20F /* DetailsViewController.m */; };
 		EC536C2E269C9F3000DEF526 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC536C2D269C9F3000DEF526 /* AppDelegate.m */; };
 		EC536C31269C9F3000DEF526 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC536C30269C9F3000DEF526 /* SceneDelegate.m */; };
 		EC536C37269C9F3000DEF526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC536C35269C9F3000DEF526 /* Main.storyboard */; };
@@ -52,6 +53,8 @@
 		AF4C8CC6036C7839AE8317FB /* Pods-OddJobz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OddJobz.release.xcconfig"; path = "Target Support Files/Pods-OddJobz/Pods-OddJobz.release.xcconfig"; sourceTree = "<group>"; };
 		BE2613994BFCED6B88FF35A5 /* Pods-OddJobzTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OddJobzTests.release.xcconfig"; path = "Target Support Files/Pods-OddJobzTests/Pods-OddJobzTests.release.xcconfig"; sourceTree = "<group>"; };
 		EA92A86A27F29FA4903A799C /* Pods-OddJobz-OddJobzUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OddJobz-OddJobzUITests.debug.xcconfig"; path = "Target Support Files/Pods-OddJobz-OddJobzUITests/Pods-OddJobz-OddJobzUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EC13CD9C269F83A5003EA20F /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		EC13CD9D269F83A5003EA20F /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		EC536C29269C9F3000DEF526 /* OddJobz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OddJobz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC536C2C269C9F3000DEF526 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EC536C2D269C9F3000DEF526 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -156,6 +159,7 @@
 		EC536C2B269C9F3000DEF526 /* OddJobz */ = {
 			isa = PBXGroup;
 			children = (
+				ECEBB4B9269E40D600103BBF /* Views */,
 				ECEBB4AC269DF43900103BBF /* View Controllers */,
 				EC536C2C269C9F3000DEF526 /* AppDelegate.h */,
 				EC536C2D269C9F3000DEF526 /* AppDelegate.m */,
@@ -193,13 +197,14 @@
 		ECEBB4AC269DF43900103BBF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				ECEBB4B9269E40D600103BBF /* Views */,
 				ECEBB4AD269DF46C00103BBF /* HomeTableViewController.h */,
 				ECEBB4AE269DF46C00103BBF /* HomeTableViewController.m */,
 				ECEBB4B0269DF9DE00103BBF /* LoginViewController.h */,
 				ECEBB4B1269DF9DE00103BBF /* LoginViewController.m */,
 				ECEBB4B6269E3BFF00103BBF /* ComposeViewController.h */,
 				ECEBB4B7269E3BFF00103BBF /* ComposeViewController.m */,
+				EC13CD9C269F83A5003EA20F /* DetailsViewController.h */,
+				EC13CD9D269F83A5003EA20F /* DetailsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -456,6 +461,7 @@
 				EC536C2E269C9F3000DEF526 /* AppDelegate.m in Sources */,
 				EC536C3F269C9F3100DEF526 /* main.m in Sources */,
 				ECEBB4B8269E3BFF00103BBF /* ComposeViewController.m in Sources */,
+				EC13CD9E269F83A5003EA20F /* DetailsViewController.m in Sources */,
 				EC536C31269C9F3000DEF526 /* SceneDelegate.m in Sources */,
 				ECEBB4B2269DF9DE00103BBF /* LoginViewController.m in Sources */,
 			);

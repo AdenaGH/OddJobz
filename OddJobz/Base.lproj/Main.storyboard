@@ -164,7 +164,7 @@
                                     <outlet property="listingImage" destination="ikf-1j-oD5" id="zjn-iX-NHX"/>
                                     <outlet property="listingPrice" destination="oCl-Mh-8d3" id="8dC-Tk-hgj"/>
                                     <outlet property="listingTitle" destination="81A-ze-wWy" id="nm8-Cp-qgn"/>
-                                    <segue destination="mRv-VJ-oXl" kind="presentation" modalPresentationStyle="automatic" id="jHO-Ux-oGJ"/>
+                                    <segue destination="mRv-VJ-oXl" kind="presentation" identifier="detailsSegue" modalPresentationStyle="automatic" id="jHO-Ux-oGJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -201,28 +201,106 @@
         <!--Job Details-->
         <scene sceneID="3bg-8P-g4A">
             <objects>
-                <viewController id="mRv-VJ-oXl" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsViewController" id="mRv-VJ-oXl" customClass="DetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZiM-iq-rRL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e3e-ee-fW1">
-                                <rect key="frame" x="0.0" y="-54" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3e-ee-fW1">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODI-vc-QFg">
+                                        <rect key="frame" x="342" y="32" width="67" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job Title: Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfE-A2-me6">
+                                        <rect key="frame" x="147" y="32" width="114" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="dj9-S6-EdF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skill:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikF-ad-IEi">
+                                        <rect key="frame" x="161" y="102" width="36" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detailed job description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpT-Jg-42f">
+                                        <rect key="frame" x="114" y="195" width="180.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6z-fY-GUi">
+                                        <rect key="frame" x="140.5" y="747" width="133" height="45"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <state key="normal" title="Accept Job"/>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8bC-p7-ysy">
+                                        <rect key="frame" x="5" y="5" width="113" height="104"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="113" id="1Il-Oz-vxB"/>
+                                            <constraint firstAttribute="height" constant="104" id="fG8-Yi-AGI"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job Poster" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDf-Af-MoE">
+                                        <rect key="frame" x="20.5" y="117" width="82" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="UfE-A2-me6" firstAttribute="centerX" secondItem="mpT-Jg-42f" secondAttribute="centerX" id="0Xv-FE-uLV"/>
+                                    <constraint firstItem="UfE-A2-me6" firstAttribute="leading" secondItem="8bC-p7-ysy" secondAttribute="trailing" constant="29" id="3Co-eR-KrA"/>
+                                    <constraint firstItem="UfE-A2-me6" firstAttribute="firstBaseline" secondItem="ODI-vc-QFg" secondAttribute="firstBaseline" id="7pF-kn-7cS"/>
+                                    <constraint firstItem="xDf-Af-MoE" firstAttribute="top" secondItem="8bC-p7-ysy" secondAttribute="bottom" constant="8" symbolic="YES" id="81K-Zt-LOH"/>
+                                    <constraint firstItem="8bC-p7-ysy" firstAttribute="top" secondItem="c82-Dv-XVr" secondAttribute="top" constant="5" id="Bf0-Xp-A7H"/>
+                                    <constraint firstItem="mpT-Jg-42f" firstAttribute="top" secondItem="ikF-ad-IEi" secondAttribute="bottom" constant="72" id="HFz-T7-63y"/>
+                                    <constraint firstAttribute="bottom" secondItem="8bC-p7-ysy" secondAttribute="bottom" constant="730" id="T4C-NJ-udb"/>
+                                    <constraint firstItem="ikF-ad-IEi" firstAttribute="leading" secondItem="8bC-p7-ysy" secondAttribute="trailing" constant="43" id="Vrf-T7-bGx"/>
+                                    <constraint firstItem="UfE-A2-me6" firstAttribute="top" secondItem="c82-Dv-XVr" secondAttribute="top" constant="32" id="Yac-fE-buq"/>
+                                    <constraint firstItem="c82-Dv-XVr" firstAttribute="bottom" secondItem="g6z-fY-GUi" secondAttribute="bottom" constant="50" id="Zz3-wE-5Ia"/>
+                                    <constraint firstItem="8bC-p7-ysy" firstAttribute="leading" secondItem="c82-Dv-XVr" secondAttribute="leading" constant="5" id="bND-h1-ffU"/>
+                                    <constraint firstAttribute="trailing" secondItem="8bC-p7-ysy" secondAttribute="trailing" constant="293" id="cc4-CA-CYb"/>
+                                    <constraint firstItem="8bC-p7-ysy" firstAttribute="centerX" secondItem="xDf-Af-MoE" secondAttribute="centerX" id="f4L-Z8-PB9"/>
+                                    <constraint firstItem="ikF-ad-IEi" firstAttribute="top" secondItem="UfE-A2-me6" secondAttribute="bottom" constant="40" id="tBf-i7-ELK"/>
+                                    <constraint firstItem="ODI-vc-QFg" firstAttribute="leading" secondItem="UfE-A2-me6" secondAttribute="trailing" constant="81" id="uvL-5H-dkt"/>
+                                    <constraint firstItem="g6z-fY-GUi" firstAttribute="centerX" secondItem="e3e-ee-fW1" secondAttribute="centerX" id="y7y-Nu-CSK"/>
+                                </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="o3e-WC-6FE"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="c82-Dv-XVr"/>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zAd-6d-Z5G"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="e3e-ee-fW1" firstAttribute="trailing" secondItem="zAd-6d-Z5G" secondAttribute="trailing" id="9m3-j3-rCc"/>
+                            <constraint firstItem="e3e-ee-fW1" firstAttribute="leading" secondItem="zAd-6d-Z5G" secondAttribute="leading" id="npr-gs-CA9"/>
+                            <constraint firstItem="e3e-ee-fW1" firstAttribute="top" secondItem="zAd-6d-Z5G" secondAttribute="top" id="xqr-y4-4NH"/>
+                            <constraint firstAttribute="bottom" secondItem="e3e-ee-fW1" secondAttribute="bottom" id="yup-n8-OwS"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Job Details" id="qYa-55-adt">
                         <barButtonItem key="backBarButtonItem" title="Back" id="BrH-wg-LxM"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="detailImageView" destination="8bC-p7-ysy" id="Yid-UK-CDJ"/>
+                        <outlet property="listingDescription" destination="mpT-Jg-42f" id="Q4l-6f-r8Q"/>
+                        <outlet property="listingDistance" destination="ODI-vc-QFg" id="qru-v8-Jql"/>
+                        <outlet property="listingPoster" destination="xDf-Af-MoE" id="ppL-wm-lL8"/>
+                        <outlet property="listingSkill" destination="ikF-ad-IEi" id="1gm-f6-dLa"/>
+                        <outlet property="listingTitle" destination="UfE-A2-me6" id="KFJ-nH-o8u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NOr-aj-kWF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-317" y="2379"/>
+            <point key="canvasLocation" x="-317.39130434782612" y="2378.5714285714284"/>
         </scene>
         <!--Item-->
         <scene sceneID="fUi-AR-0xU">
