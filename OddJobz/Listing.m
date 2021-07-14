@@ -16,17 +16,21 @@
 @dynamic jobTitle;
 @dynamic jobDescription;
 @dynamic image;
+@dynamic jobLocation;
+@dynamic price;
 
 
 + (nonnull NSString *)parseClassName {
     return @"Listing";
 }
 
-+ (void) postListing {
++ (void) postListing:(NSString *)title withDescription:(NSString *)descript andLocation:(NSString *)location {
     Listing *newListing = [Listing new];
     newListing.poster = [PFUser currentUser];
     newListing.postedAt = [NSDate date];
-    newListing.jobTitle = @"Plumbing";
+    newListing.jobTitle = title;
+    newListing.jobDescription = descript;
+    newListing.jobLocation = location;
     
     [newListing saveInBackground];
 }

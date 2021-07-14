@@ -19,7 +19,8 @@
     // Do any additional setup after loading the view.
 }
 - (IBAction)pressShare:(id)sender {
-    [Listing postListing];
+    [Listing postListing:self.titleTextView.text withDescription:self.descriptionTextView.text andLocation:self.addressTextView.text];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

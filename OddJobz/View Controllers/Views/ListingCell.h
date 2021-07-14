@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *listingDistance;
 
 @property (strong, nonatomic) Listing *listing;
--(void)makePost:(Listing *)listing;
+-(void)makeListing:(Listing *)listing;
 @end
 
 NS_ASSUME_NONNULL_END

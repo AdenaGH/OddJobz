@@ -25,6 +25,12 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
+    
+    [self fetchListings];
+    
+    self.refreshCont = [[UIRefreshControl alloc] init];
+    [self.refreshCont addTarget:self action:@selector(fetchListings) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshCont atIndex:0];
     //[Listing postListing];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -34,9 +40,28 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)fetchListings {
+    PFQuery *query = [PFQuery queryWithClassName:@"Listing"];
+    //[query includeKey:@"author"];
+    //[query orderByDescending:@"createdAt"];
+
+
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *listings, NSError *error) {
+        if (listings != nil) {
+            // do something with the array of object returned by the call
+            self.listings = (NSMutableArray *) listings;
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+        [self.refreshCont endRefreshing];
+    }];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 20;
+    return self.listings.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -44,7 +69,7 @@
     
     // Configure the cell...
     Listing *listing = self.listings[indexPath.row];
-    cell.listing = listing;
+    [cell makeListing:listing ];
     
     return cell;
 }
