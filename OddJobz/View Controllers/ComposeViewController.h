@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ComposeViewController : UIViewController <UINavigationControllerDelegate>
+@interface ComposeViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *listingImage;
 @property (weak, nonatomic) IBOutlet UITextView *priceTextView;
 @property (weak, nonatomic) IBOutlet UITextView *titleTextView;

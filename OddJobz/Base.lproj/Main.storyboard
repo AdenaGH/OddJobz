@@ -20,12 +20,12 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nWw-s8-JoF">
                                 <rect key="frame" x="160" y="269.5" width="94" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YRw-GJ-nOS">
                                 <rect key="frame" x="162" y="353.5" width="90.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTk-Fb-EkU">
                                 <rect key="frame" x="65" y="487.5" width="54" height="30"/>
@@ -164,7 +164,7 @@
                                     <outlet property="listingImage" destination="ikf-1j-oD5" id="zjn-iX-NHX"/>
                                     <outlet property="listingPrice" destination="oCl-Mh-8d3" id="8dC-Tk-hgj"/>
                                     <outlet property="listingTitle" destination="81A-ze-wWy" id="nm8-Cp-qgn"/>
-                                    <segue destination="zRV-dH-ixk" kind="presentation" identifier="detailsSegue" modalPresentationStyle="fullScreen" id="lIM-h1-Wbx"/>
+                                    <segue destination="zRV-dH-ixk" kind="presentation" identifier="detailsSegue" modalPresentationStyle="automatic" id="lIM-h1-Wbx"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -203,11 +203,11 @@
             <objects>
                 <viewController storyboardIdentifier="DetailsViewController" id="mRv-VJ-oXl" customClass="DetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZiM-iq-rRL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3e-ee-fW1">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="786"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODI-vc-QFg">
                                         <rect key="frame" x="342" y="32" width="67" height="21"/>
@@ -240,7 +240,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6z-fY-GUi">
-                                        <rect key="frame" x="140.5" y="713" width="133" height="45"/>
+                                        <rect key="frame" x="140.5" y="691" width="133" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <state key="normal" title="Accept Job"/>
                                     </button>
@@ -566,7 +566,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lDq-WX-enG">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="folder.fill.badge.plus" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="lDq-WX-enG">
                                         <rect key="frame" x="8" y="21" width="117" height="121"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -610,6 +610,13 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="decimalPad"/>
                                     </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vcm-n4-gXO">
+                                        <rect key="frame" x="8" y="21" width="117" height="121"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="getLibraryImage:" destination="9iu-o7-ZA3" eventType="touchUpInside" id="S28-xZ-Waa"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <viewLayoutGuide key="contentLayoutGuide" id="YJP-PE-8YA"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Q72-el-oRQ"/>
@@ -660,7 +667,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zRV-dH-ixk" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ikw-32-aQp">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -674,6 +681,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="folder.fill.badge.plus" catalog="system" width="128" height="91"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="plus" catalog="system" width="128" height="113"/>

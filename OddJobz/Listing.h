@@ -20,7 +20,7 @@
 @property (nonatomic, strong) NSString *jobLocation;
 @property (nonatomic, strong) PFFileObject *image;
 
-+ (void) postListing:(NSString *)title withDescription:(NSString *)descript andLocation:(NSString *)location andPrice:(NSString *)price;
++ (void) postListing:(NSString *)title withDescription:(NSString *)descript andLocation:(NSString *)location andPrice:(NSString *)price andImage:( UIImage * _Nullable )image;
 
 @end
 

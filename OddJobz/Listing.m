@@ -24,9 +24,10 @@
     return @"Listing";
 }
 
-+ (void) postListing:(NSString *)title withDescription:(NSString *)descript andLocation:(NSString *)location andPrice:(NSString *)price {
++ (void) postListing:(NSString *)title withDescription:(NSString *)descript andLocation:(NSString *)location andPrice:(NSString *)price andImage: ( UIImage * _Nullable )image {
     Listing *newListing = [Listing new];
     newListing.poster = [PFUser currentUser];
+    newListing.image = [self getPFFileFromImage:image];
     newListing.postedAt = [NSDate date];
     newListing.jobTitle = title;
     newListing.jobDescription = descript;
@@ -34,6 +35,23 @@
     newListing.price = price;
     
     [newListing saveInBackground];
+}
+
+
++ (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
+ 
+    // check if image is not nil
+    if (!image) {
+        return nil;
+    }
+    
+    NSData *imageData = UIImagePNGRepresentation(image);
+    // get image data and check if that is not nil
+    if (!imageData) {
+        return nil;
+    }
+    
+    return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
 }
 
 @end
