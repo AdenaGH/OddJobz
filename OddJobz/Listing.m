@@ -24,13 +24,14 @@
     return @"Listing";
 }
 
-+ (void) postListing:(NSString *)title withDescription:(NSString *)descript andLocation:(NSString *)location {
++ (void) postListing:(NSString *)title withDescription:(NSString *)descript andLocation:(NSString *)location andPrice:(NSString *)price {
     Listing *newListing = [Listing new];
     newListing.poster = [PFUser currentUser];
     newListing.postedAt = [NSDate date];
     newListing.jobTitle = title;
     newListing.jobDescription = descript;
     newListing.jobLocation = location;
+    newListing.price = price;
     
     [newListing saveInBackground];
 }

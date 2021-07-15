@@ -19,7 +19,8 @@
     // Do any additional setup after loading the view.
 }
 - (IBAction)pressShare:(id)sender {
-    [Listing postListing:self.titleTextView.text withDescription:self.descriptionTextView.text andLocation:self.addressTextView.text];
+    NSString * priceString = self.priceTextView.text;
+    [Listing postListing:self.titleTextView.text withDescription:self.descriptionTextView.text andLocation:self.addressTextView.text andPrice:priceString];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

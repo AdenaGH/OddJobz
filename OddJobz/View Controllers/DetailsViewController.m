@@ -25,9 +25,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSLog(@"%@", self.listing);
-    self.listingTitle.text = self.listing.jobTitle;
+    self.listingTitle.text = [self.listing.jobTitle stringByAppendingString:self.listing.price];
     self.listingDescription.text = self.listing.jobDescription;
-    //self.listingPoster.text = self.listing.poster.username;
+    self.listingPoster.text = self.listing.poster.username;
 }
 
 /*

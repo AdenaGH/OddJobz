@@ -25,7 +25,6 @@
     
     self.listingTitle.text = listing.jobTitle;
     self.listingDescription.text = listing.jobDescription;
-    //self.listing
-    //self.listingPrice.text = listing.jobPrice;
+    self.listingPrice.text = listing.price;
 }
 @end

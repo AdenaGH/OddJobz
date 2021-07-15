@@ -164,7 +164,7 @@
                                     <outlet property="listingImage" destination="ikf-1j-oD5" id="zjn-iX-NHX"/>
                                     <outlet property="listingPrice" destination="oCl-Mh-8d3" id="8dC-Tk-hgj"/>
                                     <outlet property="listingTitle" destination="81A-ze-wWy" id="nm8-Cp-qgn"/>
-                                    <segue destination="mRv-VJ-oXl" kind="presentation" identifier="detailsSegue" modalPresentationStyle="automatic" id="jHO-Ux-oGJ"/>
+                                    <segue destination="zRV-dH-ixk" kind="presentation" identifier="detailsSegue" modalPresentationStyle="fullScreen" id="lIM-h1-Wbx"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -203,11 +203,11 @@
             <objects>
                 <viewController storyboardIdentifier="DetailsViewController" id="mRv-VJ-oXl" customClass="DetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZiM-iq-rRL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e3e-ee-fW1">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODI-vc-QFg">
                                         <rect key="frame" x="342" y="32" width="67" height="21"/>
@@ -232,12 +232,15 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detailed job description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mpT-Jg-42f">
                                         <rect key="frame" x="114" y="195" width="180.5" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="180.5" id="apW-lb-HjH"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6z-fY-GUi">
-                                        <rect key="frame" x="140.5" y="747" width="133" height="45"/>
+                                        <rect key="frame" x="140.5" y="713" width="133" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <state key="normal" title="Accept Job"/>
                                     </button>
@@ -287,7 +290,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Job Details" id="qYa-55-adt">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="BrH-wg-LxM"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="BrH-wg-LxM"/>
                     </navigationItem>
                     <connections>
                         <outlet property="detailImageView" destination="8bC-p7-ysy" id="Yid-UK-CDJ"/>
@@ -300,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NOr-aj-kWF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-317.39130434782612" y="2378.5714285714284"/>
+            <point key="canvasLocation" x="592.75362318840587" y="2378.5714285714284"/>
         </scene>
         <!--Item-->
         <scene sceneID="fUi-AR-0xU">
@@ -438,7 +441,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0tE-zw-vnh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2692.753623188406" y="2307.5892857142858"/>
+            <point key="canvasLocation" x="3602.898550724638" y="2307.5892857142858"/>
         </scene>
         <!--Item-->
         <scene sceneID="pto-Yf-nft">
@@ -597,7 +600,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="street-address"/>
                                     </textView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Asking Price" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="30B-xP-Upi">
                                         <rect key="frame" x="18" y="150" width="104" height="33"/>
@@ -605,7 +608,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="decimalPad"/>
                                     </textView>
                                 </subviews>
                                 <viewLayoutGuide key="contentLayoutGuide" id="YJP-PE-8YA"/>
@@ -650,6 +653,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AaM-zg-Mze" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-317" y="805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FrR-gR-NQT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zRV-dH-ixk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ikw-32-aQp">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mRv-VJ-oXl" kind="relationship" relationship="rootViewController" id="f9c-lp-pSr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3EQ-YB-Vfm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-317.39130434782612" y="2378.5714285714284"/>
         </scene>
     </scenes>
     <resources>

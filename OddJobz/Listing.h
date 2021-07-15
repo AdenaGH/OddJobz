@@ -16,11 +16,11 @@
 @property (nonatomic, strong) NSDate *postedAt;
 @property (nonatomic, strong) NSString *jobDescription;
 @property (nonatomic, strong) NSString *jobTitle;
-@property (nonatomic,strong) NSNumber *price;
+@property (nonatomic,strong) NSString *price;
 @property (nonatomic, strong) NSString *jobLocation;
 @property (nonatomic, strong) PFFileObject *image;
 
-+ (void) postListing:(NSString *)title withDescription:(NSString *)descript andLocation:(NSString *)location;
++ (void) postListing:(NSString *)title withDescription:(NSString *)descript andLocation:(NSString *)location andPrice:(NSString *)price;
 
 @end
 

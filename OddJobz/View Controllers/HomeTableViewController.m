@@ -37,8 +37,9 @@
 // Get info from database
 - (void)fetchListings {
     PFQuery *query = [PFQuery queryWithClassName:@"Listing"];
-    //[query includeKey:@"author"];
+    [query includeKey:@"poster"];
     //[query orderByDescending:@"createdAt"];
+
 
 
     // fetch data asynchronously
@@ -82,7 +83,8 @@
         ListingCell *clickedCell = (ListingCell *)sender;
         Listing *clickedListing = clickedCell.listing;
         [self.tableView reloadData];
-        DetailsViewController *detailsView = [segue destinationViewController];
+        UINavigationController *nav = [segue destinationViewController];
+        DetailsViewController *detailsView = (DetailsViewController *) nav.topViewController;
         detailsView.listing = clickedListing;
         
     }
