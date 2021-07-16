@@ -43,7 +43,7 @@
 
 - (IBAction)pressShare:(id)sender {
     UIImage *resizeImage = [self resizeImage:self.listingImage.image withSize:CGSizeMake(400, 400)];
-    NSString * priceString = self.priceTextView.text;
+    NSString * priceString = [@"$" stringByAppendingString: self.priceTextView.text];
     [Listing postListing:self.titleTextView.text withDescription:self.descriptionTextView.text andLocation:self.addressTextView.text andPrice:priceString andImage:resizeImage];
     
     NSString *sbName = @"Main";
