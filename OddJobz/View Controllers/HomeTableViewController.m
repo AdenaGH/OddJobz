@@ -10,6 +10,7 @@
 #import "Listing.h"
 #import "ListingCell.h"
 #import "DetailsViewController.h"
+#import "LoginViewController.h"
 
 @interface HomeTableViewController ()  <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) NSMutableArray *listings;
@@ -70,6 +71,27 @@
     return cell;
 }
 
+- (IBAction)logoutButtonPress:(id)sender {
+    NSLog(@"Logout action called");
+
+    //AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    //UITabBarController *tabController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
+    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    //appDelegate.window.rootViewController = loginViewController;
+    
+    //[[UIApplication sharedApplication].keyWindow setRootViewController: tabController];
+    [[UIApplication sharedApplication].keyWindow setRootViewController: loginViewController];
+    loginViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+    
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        // PFUser.current() will now be nil
+    }];
+    
+    NSLog(@"Logout action finished");
+}
 
 #pragma mark - Navigation
 
