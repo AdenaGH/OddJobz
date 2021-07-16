@@ -19,6 +19,7 @@
 		EC536C3F269C9F3100DEF526 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC536C3E269C9F3100DEF526 /* main.m */; };
 		EC536C49269C9F3100DEF526 /* OddJobzTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC536C48269C9F3100DEF526 /* OddJobzTests.m */; };
 		EC536C54269C9F3100DEF526 /* OddJobzUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC536C53269C9F3100DEF526 /* OddJobzUITests.m */; };
+		EC6CF77626A1032200C3ACE5 /* MyListingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6CF77526A1032200C3ACE5 /* MyListingsTableViewController.m */; };
 		ECEBB4AF269DF46C00103BBF /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEBB4AE269DF46C00103BBF /* HomeTableViewController.m */; };
 		ECEBB4B2269DF9DE00103BBF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEBB4B1269DF9DE00103BBF /* LoginViewController.m */; };
 		ECEBB4B5269E2F6400103BBF /* Listing.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEBB4B4269E2F6400103BBF /* Listing.m */; };
@@ -71,6 +72,8 @@
 		EC536C4F269C9F3100DEF526 /* OddJobzUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OddJobzUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC536C53269C9F3100DEF526 /* OddJobzUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OddJobzUITests.m; sourceTree = "<group>"; };
 		EC536C55269C9F3100DEF526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC6CF77426A1032200C3ACE5 /* MyListingsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyListingsTableViewController.h; sourceTree = "<group>"; };
+		EC6CF77526A1032200C3ACE5 /* MyListingsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyListingsTableViewController.m; sourceTree = "<group>"; };
 		ECEBB4AD269DF46C00103BBF /* HomeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewController.h; sourceTree = "<group>"; };
 		ECEBB4AE269DF46C00103BBF /* HomeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewController.m; sourceTree = "<group>"; };
 		ECEBB4B0269DF9DE00103BBF /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -205,6 +208,8 @@
 				ECEBB4B7269E3BFF00103BBF /* ComposeViewController.m */,
 				EC13CD9C269F83A5003EA20F /* DetailsViewController.h */,
 				EC13CD9D269F83A5003EA20F /* DetailsViewController.m */,
+				EC6CF77426A1032200C3ACE5 /* MyListingsTableViewController.h */,
+				EC6CF77526A1032200C3ACE5 /* MyListingsTableViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -463,6 +468,7 @@
 				ECEBB4B8269E3BFF00103BBF /* ComposeViewController.m in Sources */,
 				EC13CD9E269F83A5003EA20F /* DetailsViewController.m in Sources */,
 				EC536C31269C9F3000DEF526 /* SceneDelegate.m in Sources */,
+				EC6CF77626A1032200C3ACE5 /* MyListingsTableViewController.m in Sources */,
 				ECEBB4B2269DF9DE00103BBF /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

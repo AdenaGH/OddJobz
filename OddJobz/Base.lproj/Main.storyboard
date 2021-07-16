@@ -76,7 +76,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="EDb-rv-beT">
             <objects>
-                <tabBarController id="xl9-CT-YF4" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="xl9-CT-YF4" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="qhh-t9-tNy"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gxU-wu-8lQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -181,11 +181,11 @@
             </objects>
             <point key="canvasLocation" x="-317.39130434782612" y="1569.6428571428571"/>
         </scene>
-        <!--Item-->
+        <!--New Listing-->
         <scene sceneID="SjR-3G-tlq">
             <objects>
                 <navigationController id="7JN-Z6-uDh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="1gx-9h-Jcf"/>
+                    <tabBarItem key="tabBarItem" title="New Listing" image="plus" catalog="system" id="1gx-9h-Jcf"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="p5i-wD-2Es">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -305,11 +305,11 @@
             </objects>
             <point key="canvasLocation" x="592.75362318840587" y="2378.5714285714284"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="fUi-AR-0xU">
             <objects>
                 <navigationController id="uUk-xP-ZKO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Mra-uI-COu"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="Mra-uI-COu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="k9w-A6-GJD">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -325,13 +325,13 @@
         <!--Root View Controller-->
         <scene sceneID="2Oj-3v-PWd">
             <objects>
-                <tableViewController id="UbG-vZ-DJd" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MyListingsTableViewController" id="UbG-vZ-DJd" customClass="MyListingsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kJc-A2-wRB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="282" id="xcO-os-xih">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ListingCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListingCell" rowHeight="282" id="xcO-os-xih" customClass="ListingCell">
                                 <rect key="frame" x="0.0" y="24.5" width="414" height="282"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xcO-os-xih" id="pEM-K3-UY5">
@@ -443,11 +443,11 @@
             </objects>
             <point key="canvasLocation" x="3602.898550724638" y="2307.5892857142858"/>
         </scene>
-        <!--Item-->
+        <!--My Listings-->
         <scene sceneID="pto-Yf-nft">
             <objects>
                 <navigationController id="2hb-5A-jxn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="mWL-v6-lEW"/>
+                    <tabBarItem key="tabBarItem" title="My Listings" image="list.dash" catalog="system" id="mWL-v6-lEW"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Aul-lz-bux">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -683,7 +683,9 @@
     <resources>
         <image name="folder.fill.badge.plus" catalog="system" width="128" height="91"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus.viewfinder" catalog="system" width="128" height="115"/>
         <systemColor name="labelColor">

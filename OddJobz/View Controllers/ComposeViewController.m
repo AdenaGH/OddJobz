@@ -45,10 +45,15 @@
     UIImage *resizeImage = [self resizeImage:self.listingImage.image withSize:CGSizeMake(400, 400)];
     NSString * priceString = self.priceTextView.text;
     [Listing postListing:self.titleTextView.text withDescription:self.descriptionTextView.text andLocation:self.addressTextView.text andPrice:priceString andImage:resizeImage];
+    
+    NSString *sbName = @"Main";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:sbName bundle:nil];
+    UITableViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"HomeTableViewController"];
 
-    //[self.navigationController popViewControllerAnimated:YES];
-    //[self dismissModalViewControllerAnimated:YES];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    vc.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:vc animated:YES completion:nil];
+    
+    //[self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
