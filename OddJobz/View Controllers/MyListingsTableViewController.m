@@ -8,7 +8,7 @@
 #import "MyListingsTableViewController.h"
 #import "Parse/Parse.h"
 #import "Listing.h"
-#import "ListingCell.h"
+#import "MyListingCell.h"
 
 
 @interface MyListingsTableViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -62,12 +62,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ListingCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListingCell" forIndexPath:indexPath];
+    MyListingCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyListingCell" forIndexPath:indexPath];
     
-    // Configure the cell...
-//    Listing *listing = self.myListings[indexPath.row];
-//    [cell makeListing:listing ];
-//    
+     //Configure the cell...
+    Listing *listing = self.myListings[indexPath.row];
+    [cell showListing:listing ];
+    
     return cell;
 }
 
