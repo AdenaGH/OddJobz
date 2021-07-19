@@ -21,6 +21,7 @@
 		EC536C54269C9F3100DEF526 /* OddJobzUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC536C53269C9F3100DEF526 /* OddJobzUITests.m */; };
 		EC6CF77626A1032200C3ACE5 /* MyListingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6CF77526A1032200C3ACE5 /* MyListingsTableViewController.m */; };
 		EC6CF77926A20A8100C3ACE5 /* MyListingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6CF77826A20A8100C3ACE5 /* MyListingCell.m */; };
+		EC6CF77C26A633D900C3ACE5 /* AcceptedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6CF77B26A633D900C3ACE5 /* AcceptedTableViewController.m */; };
 		ECEBB4AF269DF46C00103BBF /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEBB4AE269DF46C00103BBF /* HomeTableViewController.m */; };
 		ECEBB4B2269DF9DE00103BBF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEBB4B1269DF9DE00103BBF /* LoginViewController.m */; };
 		ECEBB4B5269E2F6400103BBF /* Listing.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEBB4B4269E2F6400103BBF /* Listing.m */; };
@@ -77,6 +78,8 @@
 		EC6CF77526A1032200C3ACE5 /* MyListingsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyListingsTableViewController.m; sourceTree = "<group>"; };
 		EC6CF77726A20A8100C3ACE5 /* MyListingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyListingCell.h; sourceTree = "<group>"; };
 		EC6CF77826A20A8100C3ACE5 /* MyListingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyListingCell.m; sourceTree = "<group>"; };
+		EC6CF77A26A633D900C3ACE5 /* AcceptedTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AcceptedTableViewController.h; sourceTree = "<group>"; };
+		EC6CF77B26A633D900C3ACE5 /* AcceptedTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AcceptedTableViewController.m; sourceTree = "<group>"; };
 		ECEBB4AD269DF46C00103BBF /* HomeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewController.h; sourceTree = "<group>"; };
 		ECEBB4AE269DF46C00103BBF /* HomeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewController.m; sourceTree = "<group>"; };
 		ECEBB4B0269DF9DE00103BBF /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -213,6 +216,8 @@
 				EC13CD9D269F83A5003EA20F /* DetailsViewController.m */,
 				EC6CF77426A1032200C3ACE5 /* MyListingsTableViewController.h */,
 				EC6CF77526A1032200C3ACE5 /* MyListingsTableViewController.m */,
+				EC6CF77A26A633D900C3ACE5 /* AcceptedTableViewController.h */,
+				EC6CF77B26A633D900C3ACE5 /* AcceptedTableViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -465,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC6CF77C26A633D900C3ACE5 /* AcceptedTableViewController.m in Sources */,
 				ECEBB4B5269E2F6400103BBF /* Listing.m in Sources */,
 				ECEBB4AF269DF46C00103BBF /* HomeTableViewController.m in Sources */,
 				EC6CF77926A20A8100C3ACE5 /* MyListingCell.m in Sources */,
