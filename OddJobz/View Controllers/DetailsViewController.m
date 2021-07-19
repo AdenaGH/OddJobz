@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *listingPoster;
 @property (weak, nonatomic) IBOutlet UILabel *listingSkill;
 @property (weak, nonatomic) IBOutlet UILabel *listingDescription;
+@property (weak, nonatomic) IBOutlet UILabel *listingPrice;
 
 @end
 
@@ -25,9 +26,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSLog(@"%@", self.listing);
-    self.listingTitle.text = [self.listing.jobTitle stringByAppendingString:self.listing.price];
+    self.listingTitle.text = self.listing.jobTitle;
     self.listingDescription.text = self.listing.jobDescription;
     self.listingPoster.text = self.listing.poster.username;
+    self.listingPrice.text = self.listing.price;
 }
 
 /*
