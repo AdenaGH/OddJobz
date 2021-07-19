@@ -33,6 +33,9 @@
     newListing.jobDescription = descript;
     newListing.jobLocation = location;
     newListing.price = price;
+    //NSInteger *jobsPosted = [newListing.poster.jobsPosted integerValue];
+    
+    //newListing.poster.jobsPosted += 1;
     
     [newListing saveInBackground];
 }

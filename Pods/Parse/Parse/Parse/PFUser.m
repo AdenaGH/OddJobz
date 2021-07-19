@@ -527,6 +527,8 @@ static BOOL revocableSessionEnabled_;
                     currentUser->dirty = YES;
                     currentUser.password = self.password;
                     currentUser.username = self.username;
+                    //currentUser.jobsPosted = 0;
+                    //currentUser.jobsAccepted = 0;
 
                     [self rebuildEstimatedData];
                     [currentUser rebuildEstimatedData];

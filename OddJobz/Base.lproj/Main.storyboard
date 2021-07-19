@@ -25,7 +25,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YRw-GJ-nOS">
                                 <rect key="frame" x="162" y="353.5" width="90.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTk-Fb-EkU">
                                 <rect key="frame" x="65" y="487.5" width="54" height="30"/>
@@ -295,7 +295,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Job Details" id="qYa-55-adt">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="BrH-wg-LxM"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="BrH-wg-LxM">
+                            <connections>
+                                <segue destination="xl9-CT-YF4" kind="presentation" modalPresentationStyle="fullScreen" id="Ycg-cX-cdA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="detailImageView" destination="8bC-p7-ysy" id="Yid-UK-CDJ"/>
@@ -701,6 +705,9 @@
             <point key="canvasLocation" x="-317.39130434782612" y="2378.5714285714284"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="CJI-Yi-LxH"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="folder.fill.badge.plus" catalog="system" width="128" height="91"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>

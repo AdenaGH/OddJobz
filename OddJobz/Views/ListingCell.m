@@ -28,6 +28,7 @@
     self.listingPrice.text = listing.price;
     self.listingDistance.text = @"3.4 mi";
     
+    
     [self.listing.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (!error) {
             self.listingImage.image = [UIImage imageWithData:data];
