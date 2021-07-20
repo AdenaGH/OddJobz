@@ -48,7 +48,7 @@
     
     NSString *sbName = @"Main";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:sbName bundle:nil];
-    UITableViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"HomeTableViewController"];
+    UINavigationController *vc = [storyboard instantiateViewControllerWithIdentifier:@"HomeNavController"];
 
     vc.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:vc animated:YES completion:nil];

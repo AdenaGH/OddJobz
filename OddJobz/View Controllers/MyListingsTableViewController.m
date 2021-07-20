@@ -118,11 +118,14 @@
     
     if ([segue.identifier isEqual:@"applicantsSegue"]) {
         [self.tableView reloadData];
-        ApplicantCell *clickedCell = (ApplicantCell *)sender;
+        //sets to a mylisting cell???????????
+        //ApplicantCell *clickedCell = (ApplicantCell *)sender;
+        MyListingCell *clickedCell = (MyListingCell *)sender;
         Listing *clickedListing = clickedCell.listing;
         [self.tableView reloadData];
         UINavigationController *nav = [segue destinationViewController];
         ApplicantsTableViewController *applicantsView = (ApplicantsTableViewController *) nav.topViewController;
+    
         applicantsView.listing = clickedListing;
         
     }

@@ -402,7 +402,7 @@
                                     <outlet property="listingImage" destination="Sxz-L0-VQD" id="Hng-Lf-jRe"/>
                                     <outlet property="listingPrice" destination="eQA-3m-sZ8" id="ILP-th-2vj"/>
                                     <outlet property="listingTitle" destination="B4e-kU-dyp" id="3ck-57-zvM"/>
-                                    <segue destination="F2S-hb-POS" kind="presentation" identifier="applicantsSegue" trigger="accessoryAction" modalPresentationStyle="fullScreen" id="xb3-AQ-IBz"/>
+                                    <segue destination="F2S-hb-POS" kind="presentation" identifier="applicantsSegue" modalPresentationStyle="fullScreen" id="ZPN-iv-9dz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -671,7 +671,7 @@
         <!--Home-->
         <scene sceneID="MTC-CV-gfw">
             <objects>
-                <navigationController id="tRo-RB-gmk" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeNavController" id="tRo-RB-gmk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="yvq-co-hMn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="G1C-78-4m2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
