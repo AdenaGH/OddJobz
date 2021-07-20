@@ -18,6 +18,7 @@
 @dynamic image;
 @dynamic jobLocation;
 @dynamic price;
+@dynamic applicants;
 
 
 + (nonnull NSString *)parseClassName {

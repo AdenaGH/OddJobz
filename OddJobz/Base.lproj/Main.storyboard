@@ -239,6 +239,9 @@
                                         <rect key="frame" x="140.5" y="691" width="133" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <state key="normal" title="Accept Job"/>
+                                        <connections>
+                                            <action selector="acceptJob:" destination="mRv-VJ-oXl" eventType="touchUpInside" id="cfh-fc-fdH"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8bC-p7-ysy">
                                         <rect key="frame" x="5" y="5" width="116" height="104"/>
@@ -492,34 +495,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Yy-sb-yaD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2694" y="805"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="oWT-Yl-PVF">
-            <objects>
-                <tableViewController id="eMc-8Y-hrO" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WSY-5S-8V4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="165" id="rwi-v3-cfA" customClass="ListingCell">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="165"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rwi-v3-cfA" id="1ME-5S-8rg">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="165"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="eMc-8Y-hrO" id="nnt-uY-YwY"/>
-                            <outlet property="delegate" destination="eMc-8Y-hrO" id="WOQ-0x-1rj"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CWa-W4-bXr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3547.826086956522" y="819.64285714285711"/>
         </scene>
         <!--Profile-->
         <scene sceneID="LjF-Mp-Pxf">

@@ -19,6 +19,7 @@
 @property (nonatomic,strong) NSString *price;
 @property (nonatomic, strong) NSString *jobLocation;
 @property (nonatomic, strong) PFFileObject *image;
+@property (nonatomic, strong) NSMutableArray *applicants;
 
 + (void) postListing:(NSString *)title withDescription:(NSString *)descript andLocation:(NSString *)location andPrice:(NSString *)price andImage:( UIImage * _Nullable )image;
 

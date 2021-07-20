@@ -31,6 +31,32 @@
     self.listingPoster.text = self.listing.poster.username;
     self.listingPrice.text = self.listing.price;
 }
+- (IBAction)acceptJob:(id)sender {
+    UIAlertController *userAlert = [UIAlertController alertControllerWithTitle:@"Accept Job"
+                                                                        message:@"Are you sure you want to accept this job?"
+                                                                        preferredStyle:(UIAlertControllerStyleAlert)];
+    // create a cancel action
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"No"
+                                                        style:UIAlertActionStyleCancel
+                                                      handler:^(UIAlertAction * _Nonnull action) {
+                                                             // handle cancel response here. Doing nothing will dismiss the view.
+                                                      }];
+    // add the cancel action to the alertController
+    [userAlert addAction:cancelAction];
+
+    // create an OK action
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Yes"
+                                        style:UIAlertActionStyleDefault
+                                        handler:^(UIAlertAction * _Nonnull action) {
+                                        [self.listing.applicants addObject:[PFUser currentUser]];
+                                                     }];
+    // add the OK action to the alert controller
+    [userAlert addAction:okAction];
+    [self presentViewController:userAlert animated:YES completion:^{
+        // optional code for what happens after the alert controller has finished presenting
+    }];
+    
+}
 
 /*
 #pragma mark - Navigation
