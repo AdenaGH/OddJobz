@@ -402,7 +402,7 @@
                                     <outlet property="listingImage" destination="Sxz-L0-VQD" id="Hng-Lf-jRe"/>
                                     <outlet property="listingPrice" destination="eQA-3m-sZ8" id="ILP-th-2vj"/>
                                     <outlet property="listingTitle" destination="B4e-kU-dyp" id="3ck-57-zvM"/>
-                                    <segue destination="F2S-hb-POS" kind="presentation" trigger="accessoryAction" id="xb3-AQ-IBz"/>
+                                    <segue destination="F2S-hb-POS" kind="presentation" identifier="applicantsSegue" trigger="accessoryAction" modalPresentationStyle="fullScreen" id="xb3-AQ-IBz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -417,16 +417,16 @@
             </objects>
             <point key="canvasLocation" x="2692.753623188406" y="1581.6964285714284"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Applicants Table View Controller-->
         <scene sceneID="mvT-Dc-ZDw">
             <objects>
-                <tableViewController id="F2S-hb-POS" sceneMemberID="viewController">
+                <tableViewController id="F2S-hb-POS" customClass="ApplicantsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AOR-pW-sT3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="174" id="GP0-vj-rMQ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="174" id="GP0-vj-rMQ" customClass="ApplicantCell">
                                 <rect key="frame" x="0.0" y="24.5" width="414" height="174"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GP0-vj-rMQ" id="Bbo-Rb-OMZ">
@@ -440,33 +440,16 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcV-GH-Ws3">
-                                            <rect key="frame" x="35" y="131.5" width="39" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plus.viewfinder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zpS-8p-OXa">
                                             <rect key="frame" x="20" y="11.5" width="104" height="101"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Requested Pay:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKH-dW-vfv">
-                                            <rect key="frame" x="140" y="137" width="119" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skills:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XpQ-yL-HlV">
-                                            <rect key="frame" x="140" y="43" width="143" height="38"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="applicantName" destination="pf4-8F-lSC" id="IHe-yu-jY3"/>
+                                    <outlet property="profilePic" destination="zpS-8p-OXa" id="fKt-nX-Jqr"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

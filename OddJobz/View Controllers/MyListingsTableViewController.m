@@ -9,6 +9,8 @@
 #import "Parse/Parse.h"
 #import "Listing.h"
 #import "MyListingCell.h"
+#import "ApplicantCell.h"
+#import "ApplicantsTableViewController.h"
 
 
 @interface MyListingsTableViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -105,14 +107,28 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    
+    if ([segue.identifier isEqual:@"applicantsSegue"]) {
+        [self.tableView reloadData];
+        ApplicantCell *clickedCell = (ApplicantCell *)sender;
+        Listing *clickedListing = clickedCell.listing;
+        [self.tableView reloadData];
+        UINavigationController *nav = [segue destinationViewController];
+        ApplicantsTableViewController *applicantsView = (ApplicantsTableViewController *) nav.topViewController;
+        applicantsView.listing = clickedListing;
+        
+    }
+
+    
 }
-*/
+
 
 @end

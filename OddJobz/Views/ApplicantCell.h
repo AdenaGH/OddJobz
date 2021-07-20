@@ -1,5 +1,5 @@
 //
-//  ApplicantsTableViewController.h
+//  ApplicantCell.h
 //  OddJobz
 //
 //  Created by Adena Rowana Ninvalle on 7/19/21.
@@ -11,9 +11,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ApplicantsTableViewController : UITableViewController
+@interface ApplicantCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *profilePic;
+@property (weak, nonatomic) IBOutlet UILabel *applicantName;
 @property (nonatomic, strong) Listing *listing;
 
+-(void)showUser:(PFUser*)user;
 @end
 
 NS_ASSUME_NONNULL_END

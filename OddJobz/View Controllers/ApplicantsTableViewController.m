@@ -6,8 +6,12 @@
 //
 
 #import "ApplicantsTableViewController.h"
+#import "Parse/Parse.h"
+#import "ApplicantCell.h"
 
-@interface ApplicantsTableViewController ()
+
+@interface ApplicantsTableViewController ()<UITableViewDelegate, UITableViewDataSource>
+@property (strong, nonatomic) NSMutableArray *myApplicants;
 
 @end
 
@@ -15,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -23,27 +29,47 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)fetchListings {
+    PFQuery *query = [PFQuery queryWithClassName:@"Listing"];
+    [query includeKey:@"applicants"];
+    //[query whereKey:@"poster" equalTo:[PFUser currentUser]];
+    //[query orderByDescending:@"createdAt"];
+
+
+
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *listings, NSError *error) {
+        if (listings != nil) {
+            // do something with the array of object returned by the call
+            self.myApplicants = self.listing.applicants;
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+        //[self.refreshCont endRefreshing];
+    }];
+}
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return self.myApplicants.count;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
-}
 
-/*
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    ApplicantCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ApplicantCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    PFUser *user = self.myApplicants[indexPath.row];
+    [cell showUser: user];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
