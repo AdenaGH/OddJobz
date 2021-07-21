@@ -9,7 +9,7 @@
 #import "Parse/Parse.h"
 #import "Listing.h"
 #import "MyListingCell.h"
-#import "ApplicantCell.h"
+//#import "ApplicantCell.h"
 #import "ApplicantsTableViewController.h"
 
 
@@ -33,6 +33,8 @@
     self.refreshCont = [[UIRefreshControl alloc] init];
     [self.refreshCont addTarget:self action:@selector(fetchListings) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshCont atIndex:0];
+    
+    
  
 }
 // Get info from database
@@ -56,7 +58,10 @@
         [self.refreshCont endRefreshing];
     }];
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"applicantsSegue" sender:self];
+}
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -69,7 +74,7 @@
      //Configure the cell...
     Listing *listing = self.myListings[indexPath.row];
     [cell showListing:listing ];
-    
+    //[self performSegueWithIdentifier:@"applicantsSegue" sender:cell];
     return cell;
 }
 
@@ -112,26 +117,20 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-    
     
     if ([segue.identifier isEqual:@"applicantsSegue"]) {
-        [self.tableView reloadData];
-        //sets to a mylisting cell???????????
-        //ApplicantCell *clickedCell = (ApplicantCell *)sender;
-        MyListingCell *clickedCell = (MyListingCell *)sender;
-        Listing *clickedListing = clickedCell.listing;
-        [self.tableView reloadData];
+        //[self.tableView reloadData];
+        UITableViewCell *clickedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:clickedCell];
+        Listing *clickedListing = self.myListings[indexPath.row];
+        //[self.tableView reloadData];
         UINavigationController *nav = [segue destinationViewController];
         ApplicantsTableViewController *applicantsView = (ApplicantsTableViewController *) nav.topViewController;
-    
         applicantsView.listing = clickedListing;
-        
+    }
     }
 
-    
-}
+
 
 
 @end

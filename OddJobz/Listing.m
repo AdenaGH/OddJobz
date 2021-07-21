@@ -19,7 +19,7 @@
 @dynamic jobLocation;
 @dynamic price;
 @dynamic applicants;
-
+@dynamic fakeProp;
 
 + (nonnull NSString *)parseClassName {
     return @"Listing";
@@ -34,6 +34,8 @@
     newListing.jobDescription = descript;
     newListing.jobLocation = location;
     newListing.price = price;
+    newListing.fakeProp = @"Hey lol";
+    newListing.applicants = [NSMutableArray new];
     //NSInteger *jobsPosted = [newListing.poster.jobsPosted integerValue];
     
     //newListing.poster.jobsPosted += 1;

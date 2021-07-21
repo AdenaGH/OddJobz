@@ -6,6 +6,7 @@
 //
 
 #import "DetailsViewController.h"
+#import "Listing.h"
 
 #import "Parse/Parse.h"
 
@@ -48,7 +49,12 @@
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Yes"
                                         style:UIAlertActionStyleDefault
                                         handler:^(UIAlertAction * _Nonnull action) {
-                                        [self.listing.applicants addObject:[PFUser currentUser]];
+                                        NSMutableArray * testArray = self.listing.applicants;
+                                        [testArray addObject:[PFUser currentUser]];
+        //NSLog(@"%lu", (unsigned long)testArray.count);
+                                        self.listing.applicants = testArray;
+                                        [self.listing saveInBackground];
+        //NSLog(@"%@", self.listing.applicants);
                                                      }];
     // add the OK action to the alert controller
     [userAlert addAction:okAction];

@@ -26,8 +26,8 @@
     // set user properties
     newUser.username = self.usernameField.text;
     newUser.password = self.passwordField.text;
-    //newUser.jobsAccepted = 0;
-    //newUser.jobsPosted = 0;
+    newUser.jobsAccepted = 0;
+    newUser.jobsPosted = 0;
     
 
     // call sign up function on the object

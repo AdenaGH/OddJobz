@@ -2,7 +2,7 @@
 //  ApplicantCell.m
 //  OddJobz
 //
-//  Created by Adena Rowana Ninvalle on 7/19/21.
+//  Created by Adena Rowana Ninvalle on 7/21/21.
 //
 
 #import "ApplicantCell.h"
@@ -20,7 +20,6 @@
     // Configure the view for the selected state
 }
 
--(void)showUser:(PFUser *)user {
-    self.applicantName.text = user.username;
-}
+
+
 @end

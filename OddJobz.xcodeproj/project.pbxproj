@@ -21,9 +21,8 @@
 		EC536C54269C9F3100DEF526 /* OddJobzUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC536C53269C9F3100DEF526 /* OddJobzUITests.m */; };
 		EC6CF77626A1032200C3ACE5 /* MyListingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6CF77526A1032200C3ACE5 /* MyListingsTableViewController.m */; };
 		EC6CF77926A20A8100C3ACE5 /* MyListingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6CF77826A20A8100C3ACE5 /* MyListingCell.m */; };
-		EC6CF77C26A633D900C3ACE5 /* AcceptedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC6CF77B26A633D900C3ACE5 /* AcceptedTableViewController.m */; };
-		EC87803026A67362001077A3 /* ApplicantsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC87802F26A67362001077A3 /* ApplicantsTableViewController.m */; };
-		EC87803326A6790D001077A3 /* ApplicantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EC87803226A6790D001077A3 /* ApplicantCell.m */; };
+		ECB8073426A87C9D00C22E36 /* ApplicantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB8073326A87C9D00C22E36 /* ApplicantCell.m */; };
+		ECB8073A26A87E4500C22E36 /* ApplicantsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECB8073926A87E4500C22E36 /* ApplicantsTableViewController.m */; };
 		ECEBB4AF269DF46C00103BBF /* HomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEBB4AE269DF46C00103BBF /* HomeTableViewController.m */; };
 		ECEBB4B2269DF9DE00103BBF /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEBB4B1269DF9DE00103BBF /* LoginViewController.m */; };
 		ECEBB4B5269E2F6400103BBF /* Listing.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEBB4B4269E2F6400103BBF /* Listing.m */; };
@@ -80,12 +79,10 @@
 		EC6CF77526A1032200C3ACE5 /* MyListingsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyListingsTableViewController.m; sourceTree = "<group>"; };
 		EC6CF77726A20A8100C3ACE5 /* MyListingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyListingCell.h; sourceTree = "<group>"; };
 		EC6CF77826A20A8100C3ACE5 /* MyListingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyListingCell.m; sourceTree = "<group>"; };
-		EC6CF77A26A633D900C3ACE5 /* AcceptedTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AcceptedTableViewController.h; sourceTree = "<group>"; };
-		EC6CF77B26A633D900C3ACE5 /* AcceptedTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AcceptedTableViewController.m; sourceTree = "<group>"; };
-		EC87802E26A67362001077A3 /* ApplicantsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicantsTableViewController.h; sourceTree = "<group>"; };
-		EC87802F26A67362001077A3 /* ApplicantsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicantsTableViewController.m; sourceTree = "<group>"; };
-		EC87803126A6790D001077A3 /* ApplicantCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicantCell.h; sourceTree = "<group>"; };
-		EC87803226A6790D001077A3 /* ApplicantCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicantCell.m; sourceTree = "<group>"; };
+		ECB8073226A87C9D00C22E36 /* ApplicantCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicantCell.h; sourceTree = "<group>"; };
+		ECB8073326A87C9D00C22E36 /* ApplicantCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicantCell.m; sourceTree = "<group>"; };
+		ECB8073826A87E4500C22E36 /* ApplicantsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicantsTableViewController.h; sourceTree = "<group>"; };
+		ECB8073926A87E4500C22E36 /* ApplicantsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicantsTableViewController.m; sourceTree = "<group>"; };
 		ECEBB4AD269DF46C00103BBF /* HomeTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewController.h; sourceTree = "<group>"; };
 		ECEBB4AE269DF46C00103BBF /* HomeTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewController.m; sourceTree = "<group>"; };
 		ECEBB4B0269DF9DE00103BBF /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -222,10 +219,8 @@
 				EC13CD9D269F83A5003EA20F /* DetailsViewController.m */,
 				EC6CF77426A1032200C3ACE5 /* MyListingsTableViewController.h */,
 				EC6CF77526A1032200C3ACE5 /* MyListingsTableViewController.m */,
-				EC6CF77A26A633D900C3ACE5 /* AcceptedTableViewController.h */,
-				EC6CF77B26A633D900C3ACE5 /* AcceptedTableViewController.m */,
-				EC87802E26A67362001077A3 /* ApplicantsTableViewController.h */,
-				EC87802F26A67362001077A3 /* ApplicantsTableViewController.m */,
+				ECB8073826A87E4500C22E36 /* ApplicantsTableViewController.h */,
+				ECB8073926A87E4500C22E36 /* ApplicantsTableViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -237,8 +232,8 @@
 				ECEBB4BB269E431400103BBF /* ListingCell.m */,
 				EC6CF77726A20A8100C3ACE5 /* MyListingCell.h */,
 				EC6CF77826A20A8100C3ACE5 /* MyListingCell.m */,
-				EC87803126A6790D001077A3 /* ApplicantCell.h */,
-				EC87803226A6790D001077A3 /* ApplicantCell.m */,
+				ECB8073226A87C9D00C22E36 /* ApplicantCell.h */,
+				ECB8073326A87C9D00C22E36 /* ApplicantCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -480,15 +475,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC6CF77C26A633D900C3ACE5 /* AcceptedTableViewController.m in Sources */,
-				EC87803026A67362001077A3 /* ApplicantsTableViewController.m in Sources */,
 				ECEBB4B5269E2F6400103BBF /* Listing.m in Sources */,
+				ECB8073A26A87E4500C22E36 /* ApplicantsTableViewController.m in Sources */,
 				ECEBB4AF269DF46C00103BBF /* HomeTableViewController.m in Sources */,
 				EC6CF77926A20A8100C3ACE5 /* MyListingCell.m in Sources */,
 				ECEBB4BC269E431400103BBF /* ListingCell.m in Sources */,
 				EC536C2E269C9F3000DEF526 /* AppDelegate.m in Sources */,
 				EC536C3F269C9F3100DEF526 /* main.m in Sources */,
-				EC87803326A6790D001077A3 /* ApplicantCell.m in Sources */,
+				ECB8073426A87C9D00C22E36 /* ApplicantCell.m in Sources */,
 				ECEBB4B8269E3BFF00103BBF /* ComposeViewController.m in Sources */,
 				EC13CD9E269F83A5003EA20F /* DetailsViewController.m in Sources */,
 				EC536C31269C9F3000DEF526 /* SceneDelegate.m in Sources */,
