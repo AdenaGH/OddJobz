@@ -6,14 +6,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Listing.h"
+#import "Parse/Parse.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ApplicantCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (strong, nonatomic) Listing*listing;
 
+@property (strong, nonatomic) PFUser* user;
+-(void)makeApplicants:(PFUser *)user;
 @end
 
 NS_ASSUME_NONNULL_END

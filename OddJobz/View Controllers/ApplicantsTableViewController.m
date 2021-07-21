@@ -6,6 +6,7 @@
 //
 
 #import "ApplicantsTableViewController.h"
+#import "ApplicantCell.h"
 
 @interface ApplicantsTableViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) NSMutableArray *myApplicants;
@@ -19,6 +20,12 @@
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    [self fetchApplicants];
+    
+    self.refreshCont = [[UIRefreshControl alloc] init];
+    [self.refreshCont addTarget:self action:@selector(fetchApplicants) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshCont atIndex:0];
 
 }
 - (void)fetchApplicants {
@@ -30,15 +37,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete implementation, return the number of rows
-    return 5;
+    return self.myApplicants.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ApplicantCell" forIndexPath:indexPath];
+    ApplicantCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ApplicantCell" forIndexPath:indexPath];
     
     // Configure the cell...
     PFUser *user = self.myApplicants[indexPath.row];
+    [cell makeApplicants:user];
     return cell;
 }
 

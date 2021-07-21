@@ -20,6 +20,10 @@
     // Configure the view for the selected state
 }
 
+-(void) makeApplicants: (PFUser *)user {
+    [user fetchIfNeeded];
+    self.nameLabel.text = user.username;
 
+}
 
 @end

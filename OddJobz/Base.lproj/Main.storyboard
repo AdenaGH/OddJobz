@@ -448,7 +448,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="nameLabel" destination="P0p-jj-Ecs" id="hJ6-v0-f7a"/>
+                                    <outlet property="nameLabel" destination="P0p-jj-Ecs" id="K1u-TS-VPt"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
