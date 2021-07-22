@@ -88,6 +88,7 @@
                         <segue destination="7JN-Z6-uDh" kind="relationship" relationship="viewControllers" id="L44-VW-bnt"/>
                         <segue destination="uUk-xP-ZKO" kind="relationship" relationship="viewControllers" id="ffi-Si-7rH"/>
                         <segue destination="2hb-5A-jxn" kind="relationship" relationship="viewControllers" id="Ka6-lU-P03"/>
+                        <segue destination="CaZ-1Q-4Y6" kind="relationship" relationship="viewControllers" id="ACE-GG-9QP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i36-7I-BNv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -580,6 +581,22 @@
             </objects>
             <point key="canvasLocation" x="2694" y="805"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="eqs-VQ-w51">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="CaZ-1Q-4Y6" customClass="MapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9pF-cC-IAg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="FAo-Ak-XM9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="geo-vA-Ray"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zll-j5-aXj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3471" y="805"/>
+        </scene>
         <!--Profile-->
         <scene sceneID="LjF-Mp-Pxf">
             <objects>
@@ -696,7 +713,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confirm Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43c-aW-5c2">
-                                        <rect key="frame" x="96" y="260" width="133" height="21"/>
+                                        <rect key="frame" x="18" y="260" width="133" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -719,14 +736,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Addy" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uV1-V0-wei">
-                                        <rect key="frame" x="255" y="241" width="142" height="59"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="street-address"/>
-                                    </textView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Asking Price" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="30B-xP-Upi">
                                         <rect key="frame" x="18" y="150" width="104" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -740,6 +749,22 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="getLibraryImage:" destination="9iu-o7-ZA3" eventType="touchUpInside" id="S28-xZ-Waa"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Addy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHM-oe-xxR">
+                                        <rect key="frame" x="159" y="242" width="236" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="AddressButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGF-CG-6uz">
+                                        <rect key="frame" x="152" y="228" width="254" height="89"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="AddressButton"/>
+                                        <state key="normal" title="C"/>
+                                        <connections>
+                                            <action selector="pressAddress:" destination="9iu-o7-ZA3" eventType="touchUpInside" id="7Ff-TY-HNI"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -758,7 +783,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addressTextView" destination="uV1-V0-wei" id="vk5-ak-TIR"/>
+                        <outlet property="addressTextView" destination="HHM-oe-xxR" id="yMr-QQ-uVw"/>
                         <outlet property="descriptionTextView" destination="gZs-bY-aPx" id="fx7-NB-Dtv"/>
                         <outlet property="listingImage" destination="lDq-WX-enG" id="Hpy-iz-evA"/>
                         <outlet property="priceTextView" destination="30B-xP-Upi" id="mqj-Tf-9QN"/>

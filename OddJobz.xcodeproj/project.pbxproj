@@ -29,6 +29,7 @@
 		ECEBB4B5269E2F6400103BBF /* Listing.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEBB4B4269E2F6400103BBF /* Listing.m */; };
 		ECEBB4B8269E3BFF00103BBF /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEBB4B7269E3BFF00103BBF /* ComposeViewController.m */; };
 		ECEBB4BC269E431400103BBF /* ListingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECEBB4BB269E431400103BBF /* ListingCell.m */; };
+		ECFBA41E26A9E6FA0041C531 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECFBA41D26A9E6FA0041C531 /* MapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,8 @@
 		ECEBB4B7269E3BFF00103BBF /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		ECEBB4BA269E431400103BBF /* ListingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListingCell.h; sourceTree = "<group>"; };
 		ECEBB4BB269E431400103BBF /* ListingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListingCell.m; sourceTree = "<group>"; };
+		ECFBA41C26A9E6FA0041C531 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		ECFBA41D26A9E6FA0041C531 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +229,8 @@
 				ECB8073926A87E4500C22E36 /* ApplicantsTableViewController.m */,
 				EC8D698126A8D05B00CE88F2 /* AppliedTableViewController.h */,
 				EC8D698226A8D05B00CE88F2 /* AppliedTableViewController.m */,
+				ECFBA41C26A9E6FA0041C531 /* MapViewController.h */,
+				ECFBA41D26A9E6FA0041C531 /* MapViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 				EC536C26269C9F3000DEF526 /* Frameworks */,
 				EC536C27269C9F3000DEF526 /* Resources */,
 				549768A92E3E886833929C87 /* [CP] Embed Pods Frameworks */,
+				731A8156A80ACFB54C9E3CFB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -293,6 +299,7 @@
 				EC536C4C269C9F3100DEF526 /* Frameworks */,
 				EC536C4D269C9F3100DEF526 /* Resources */,
 				2CB39A6EBDC471CFAA42087E /* [CP] Embed Pods Frameworks */,
+				5C3C8D1197DBD2D3E994E627 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -429,6 +436,40 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OddJobz/Pods-OddJobz-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5C3C8D1197DBD2D3E994E627 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OddJobz-OddJobzUITests/Pods-OddJobz-OddJobzUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OddJobz-OddJobzUITests/Pods-OddJobz-OddJobzUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OddJobz-OddJobzUITests/Pods-OddJobz-OddJobzUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		731A8156A80ACFB54C9E3CFB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OddJobz/Pods-OddJobz-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OddJobz/Pods-OddJobz-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OddJobz/Pods-OddJobz-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		82EC0057BE471D07BF2914F2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -492,6 +533,7 @@
 				ECEBB4B8269E3BFF00103BBF /* ComposeViewController.m in Sources */,
 				EC13CD9E269F83A5003EA20F /* DetailsViewController.m in Sources */,
 				EC536C31269C9F3000DEF526 /* SceneDelegate.m in Sources */,
+				ECFBA41E26A9E6FA0041C531 /* MapViewController.m in Sources */,
 				EC6CF77626A1032200C3ACE5 /* MyListingsTableViewController.m in Sources */,
 				ECEBB4B2269DF9DE00103BBF /* LoginViewController.m in Sources */,
 			);
