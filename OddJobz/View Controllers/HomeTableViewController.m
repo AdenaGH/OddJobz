@@ -11,11 +11,13 @@
 #import "ListingCell.h"
 #import "DetailsViewController.h"
 #import "LoginViewController.h"
+#import <GoogleMaps/GoogleMaps.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface HomeTableViewController ()  <UITableViewDelegate, UITableViewDataSource>
+@interface HomeTableViewController ()  <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate>
 @property (strong, nonatomic) NSMutableArray *listings;
 @property (strong, nonatomic) UIRefreshControl *refreshCont;
-
+@property CLLocationManager *manager;
 
 @end
 
@@ -26,6 +28,14 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.manager = [[CLLocationManager alloc] init];
+    self.manager.delegate = self;
+    //[self.manager requestWhenInUseAuthorization];
+    if ([self.manager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self.manager requestWhenInUseAuthorization];
+    }
+    [self.manager startUpdatingLocation];
+    
     
     
     [self fetchListings];
@@ -33,12 +43,21 @@
     self.refreshCont = [[UIRefreshControl alloc] init];
     [self.refreshCont addTarget:self action:@selector(fetchListings) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshCont atIndex:0];
+    
  
+}
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    CLLocation *location = locations.firstObject;
+    if (location == nil) {
+        NSLog(@"Help wanted");
+        [self.manager stopUpdatingLocation];
+    }
 }
 // Get info from database
 - (void)fetchListings {
     PFQuery *query = [PFQuery queryWithClassName:@"Listing"];
     [query includeKey:@"poster"];
+    [query includeKey:@"location"];
     //[query orderByDescending:@"createdAt"];
     [query whereKey:@"poster" notEqualTo:[PFUser currentUser]];
 
@@ -67,7 +86,9 @@
     
     // Configure the cell...
     Listing *listing = self.listings[indexPath.row];
-    [cell makeListing:listing ];
+    [cell setUserLocation: [PFGeoPoint geoPointWithLocation:self.manager.location]];
+    [cell makeListing:listing];
+    
     
     return cell;
 }

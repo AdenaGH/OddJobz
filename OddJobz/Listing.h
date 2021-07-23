@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 #import "Parse/Parse.h"
+#import <GoogleMaps/GoogleMaps.h>
+#import <CoreLocation/CoreLocation.h>
 //NS_ASSUME_NONNULL_BEGIN
 
 @interface Listing : PFObject<PFSubclassing>
@@ -21,8 +23,9 @@
 @property (nonatomic, strong) PFFileObject *image;
 @property (nonatomic, strong) NSMutableArray *applicants;
 @property (nonatomic,strong) NSString *fakeProp;
+@property (nonatomic, strong) PFGeoPoint *location;
 
-+ (void) postListing:(NSString *)title withDescription:(NSString *)descript andLocation:(NSString *)location andPrice:(NSString *)price andImage:( UIImage * _Nullable )image;
++ (void) postListing:(NSString *)title withDescription:(NSString *)descript andLocation:(NSString *)location andPrice:(NSString *)price andImage:( UIImage * _Nullable )image andListingLocation: (CLLocation *_Nonnull) listingLocation;
 
 @end
 

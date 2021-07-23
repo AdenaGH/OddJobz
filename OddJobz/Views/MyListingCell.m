@@ -7,6 +7,7 @@
 
 #import "MyListingCell.h"
 
+
 @implementation MyListingCell
 
 - (void)awakeFromNib {
@@ -33,4 +34,5 @@
         }
     }];
 }
+
 @end

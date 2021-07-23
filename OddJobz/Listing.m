@@ -6,6 +6,10 @@
 //
 
 #import "Listing.h"
+#import <GoogleMaps/GoogleMaps.h>
+#import <CoreLocation/CoreLocation.h>
+#import "MapKit/MapKit.h"
+#import "Parse/Parse.h"
 
 @implementation Listing
 
@@ -20,12 +24,13 @@
 @dynamic price;
 @dynamic applicants;
 @dynamic fakeProp;
+@dynamic location;
 
 + (nonnull NSString *)parseClassName {
     return @"Listing";
 }
 
-+ (void) postListing:(NSString *)title withDescription:(NSString *)descript andLocation:(NSString *)location andPrice:(NSString *)price andImage: ( UIImage * _Nullable )image {
++ (void) postListing:(NSString *)title withDescription:(NSString *)descript andLocation:(NSString *)location andPrice:(NSString *)price andImage: ( UIImage * _Nullable )image andListingLocation: (CLLocation *) listingLocation{
     Listing *newListing = [Listing new];
     newListing.poster = [PFUser currentUser];
     newListing.image = [self getPFFileFromImage:image];
@@ -36,6 +41,12 @@
     newListing.price = price;
     newListing.fakeProp = @"Hey lol";
     newListing.applicants = [NSMutableArray new];
+    //NSValue *locationValue = [NSValue valueWithMKCoordinate:listingLocation.coordinate];
+    //newListing.location = locationValue;
+    //PFGeoPoint *geoLocation =
+    newListing.location = [PFGeoPoint geoPointWithLatitude:listingLocation.coordinate.latitude longitude:listingLocation.coordinate.longitude];
+    //newListing.location = [PFGeoPoint geoPointWithLocation:listingLocation];
+    
     //NSInteger *jobsPosted = [newListing.poster.jobsPosted integerValue];
     
     //newListing.poster.jobsPosted += 1;

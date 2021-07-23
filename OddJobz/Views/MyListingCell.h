@@ -7,10 +7,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Listing.h"
+#import <GoogleMaps/GoogleMaps.h>
+#import <CoreLocation/CoreLocation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MyListingCell : UITableViewCell
+@interface MyListingCell : UITableViewCell 
 @property (weak, nonatomic) IBOutlet UIImageView *listingImage;
 @property (weak, nonatomic) IBOutlet UILabel *listingPrice;
 @property (weak, nonatomic) IBOutlet UILabel *listingTitle;

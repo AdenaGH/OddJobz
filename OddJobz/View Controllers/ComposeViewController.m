@@ -8,9 +8,16 @@
 #import "ComposeViewController.h"
 #import "Listing.h"
 #import "Photos/Photos.h"
+#import <GoogleMaps/GoogleMaps.h>
+#import <CoreLocation/CoreLocation.h>
+#import <GooglePlaces/GooglePlaces.h>
+@import GoogleMaps;
+
 @import GooglePlaces;
 
-@interface ComposeViewController () <GMSAutocompleteViewControllerDelegate>
+@interface ComposeViewController () <GMSAutocompleteViewControllerDelegate, CLLocationManagerDelegate, GMSAutocompleteResultsViewControllerDelegate>
+@property CLLocation* otherLocation;
+@property CLLocationManager *manager;
 
 @end
 
@@ -20,6 +27,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.manager = [[CLLocationManager alloc] init];
+    self.manager.delegate = self;
+    //[self.manager requestWhenInUseAuthorization];
+    //if ([self.manager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self.manager requestWhenInUseAuthorization];
+   // }
+    //[self.manager startUpdatingLocation];
     // Do any additional setup after loading the view.
 }
 - (IBAction)getLibraryImage:(id)sender {
@@ -27,6 +41,7 @@
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
     imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
 
     [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
@@ -47,7 +62,7 @@
 - (IBAction)pressShare:(id)sender {
     UIImage *resizeImage = [self resizeImage:self.listingImage.image withSize:CGSizeMake(400, 400)];
     NSString * priceString = [@"$" stringByAppendingString: self.priceTextView.text];
-    [Listing postListing:self.titleTextView.text withDescription:self.descriptionTextView.text andLocation:self.addressTextView.text andPrice:priceString andImage:resizeImage];
+    [Listing postListing:self.titleTextView.text withDescription:self.descriptionTextView.text andLocation:self.addressTextView.text andPrice:priceString andImage:resizeImage andListingLocation:self.otherLocation];
     
     NSString *sbName = @"Main";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:sbName bundle:nil];
@@ -75,7 +90,7 @@
     acController.delegate = self;
 
     // Specify the place data types to return.
-    GMSPlaceField fields = (GMSPlaceFieldName | GMSPlaceFieldPlaceID);
+    GMSPlaceField fields = (GMSPlaceFieldName | GMSPlaceFieldPlaceID) | GMSPlaceFieldCoordinate;
     acController.placeFields = fields;
 
     // Specify a filter.
@@ -94,6 +109,8 @@ didAutocompleteWithPlace:(GMSPlace *)place {
   NSLog(@"Place name %@", place.name);
   NSLog(@"Place ID %@", place.placeID);
   NSLog(@"Place attributions %@", place.attributions.string);
+    self.otherLocation = [[CLLocation alloc] initWithLatitude:place.coordinate.latitude longitude:place.coordinate.longitude];
+
     
     self.addressTextView.text = place.name;
 }
