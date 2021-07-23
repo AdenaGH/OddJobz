@@ -102,11 +102,18 @@ typedef void(^PFUserLogoutResultBlock)(NSError *_Nullable error);
  */
 @property (nullable, nonatomic, strong) NSString *username;
 
+//The first name of the user (optional)
+@property (nullable, nonatomic, strong) NSString *firstName;
+//The last name of the user (optional)
+@property (nullable, nonatomic, strong) NSString *lastName;
 
 //The amount of job listings accepted by the current user.
 @property (nonatomic, assign) NSInteger jobsAccepted;
 //The amount of job listings posted by the current user.
 @property (nonatomic, assign) NSInteger jobsPosted;
+
+//User's profile picture
+@property (nonatomic, strong) UIImage *profileImage;
 
 /**!
  The password for the `PFUser`.
