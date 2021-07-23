@@ -15,7 +15,7 @@
 
 @import GooglePlaces;
 
-@interface ComposeViewController () <GMSAutocompleteViewControllerDelegate, CLLocationManagerDelegate, GMSAutocompleteResultsViewControllerDelegate>
+@interface ComposeViewController () <GMSAutocompleteViewControllerDelegate, CLLocationManagerDelegate>
 @property CLLocation* otherLocation;
 @property CLLocationManager *manager;
 

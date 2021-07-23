@@ -548,10 +548,10 @@
             </objects>
             <point key="canvasLocation" x="4608.695652173913" y="2414.7321428571427"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Profile View Controller-->
         <scene sceneID="Ba2-ho-FxQ">
             <objects>
-                <viewController id="T7P-vI-SAV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditProfileViewController" id="T7P-vI-SAV" customClass="EditProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1dl-hg-TNx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -564,6 +564,9 @@
                                 <rect key="frame" x="184" y="118" width="136" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Edit Profile Picture"/>
+                                <connections>
+                                    <action selector="pressPicEdit:" destination="T7P-vI-SAV" eventType="touchUpInside" id="Rbx-eg-ThE"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5I4-66-f8o">
                                 <rect key="frame" x="81" y="287" width="252" height="34"/>
@@ -588,12 +591,21 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Save Changes"/>
+                                <connections>
+                                    <action selector="pressSaveChanges:" destination="T7P-vI-SAV" eventType="touchUpInside" id="rbd-Fk-lQG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cIk-9q-bYU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="sif-zh-a4s"/>
+                    <connections>
+                        <outlet property="confirmPassword" destination="E7b-nO-1W8" id="GrZ-JR-Jtp"/>
+                        <outlet property="firstName" destination="5I4-66-f8o" id="IBC-oN-oYp"/>
+                        <outlet property="lastName" destination="FTc-kR-qBQ" id="VTf-sW-hce"/>
+                        <outlet property="profileImage" destination="Ym8-6z-jMX" id="Rbc-PM-JB0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CB4-JE-hff" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -728,6 +740,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHC-ZW-H6M">
+                                        <rect key="frame" x="157" y="174" width="99" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <viewLayoutGuide key="contentLayoutGuide" id="cHN-Y1-Rou"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="XOn-PT-Hat"/>
@@ -744,7 +763,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="jobsAvailableLabel" destination="fG2-1J-m7r" id="t6z-39-9bo"/>
+                        <outlet property="jobsDoneLabel" destination="oNr-gO-v03" id="sXo-S6-YUM"/>
                         <outlet property="profileImageView" destination="gA1-i6-4fG" id="1sk-Hv-cgk"/>
+                        <outlet property="usernameLabel" destination="kHC-ZW-H6M" id="D3F-eJ-rWm"/>
+                        <outlet property="wholeNameLabel" destination="rpJ-w7-Adx" id="pif-67-t3X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fT4-Zc-IGC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

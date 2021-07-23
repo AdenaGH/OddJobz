@@ -1,0 +1,92 @@
+//
+//  EditProfileViewController.m
+//  OddJobz
+//
+//  Created by Adena Rowana Ninvalle on 7/23/21.
+//
+
+#import "EditProfileViewController.h"
+#import "Parse/Parse.h"
+
+@interface EditProfileViewController ()
+//@property (strong, nonatomic) UIGestureRecognizer *tapper;
+@end
+
+@implementation EditProfileViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+
+    [self.view addGestureRecognizer:tap];
+    // Do any additional setup after loading the view.
+}
+- (IBAction)pressPicEdit:(id)sender {
+    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+    imagePickerVC.delegate = self;
+    imagePickerVC.allowsEditing = YES;
+    imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+
+    [self presentViewController:imagePickerVC animated:YES completion:nil];
+    
+}
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
+-(void)dismissKeyboard
+{
+    [self.firstName resignFirstResponder];
+    [self.lastName resignFirstResponder];
+    [self.confirmPassword resignFirstResponder];
+}
+- (IBAction)pressSaveChanges:(id)sender {
+    PFUser *curUser = [PFUser currentUser];
+    if ([self.confirmPassword.text isEqual:curUser.username]) {
+        UIImage *resizeImage = [self resizeImage:self.profileImage.image withSize:CGSizeMake(120, 120)];
+        //self.profileImage.image = resizeImage;
+        curUser.firstName = self.firstName.text;
+        curUser.lastName = self.lastName.text;
+        //[PFUser currentUser].profileImage = resizeImage;
+        [curUser saveInBackground];
+        
+    }
+
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    // Get the image captured by the UIImagePickerController
+    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+    //UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+
+    // Do something with the images (based on your use case)
+    self.profileImage.image = originalImage;
+    // Dismiss UIImagePickerController to go back to your original view controller
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

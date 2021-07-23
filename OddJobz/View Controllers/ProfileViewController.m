@@ -6,9 +6,14 @@
 //
 
 #import "ProfileViewController.h"
+#import "Parse/Parse.h"
 
 @interface ProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet UILabel *jobsDoneLabel;
+@property (weak, nonatomic) IBOutlet UILabel *jobsAvailableLabel;
+@property (weak, nonatomic) IBOutlet UILabel *wholeNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 
 @end
 
@@ -16,6 +21,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.user = [PFUser currentUser];
+    self.usernameLabel.text = self.user.username;
+    self.wholeNameLabel.text = [self.user.firstName stringByAppendingString:self.user.lastName];
+    self.profileImageView.image = self.user.profileImage;
     // Do any additional setup after loading the view.
 }
 
