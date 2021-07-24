@@ -14,6 +14,8 @@
 #import <Parse/PFConstants.h>
 #import <Parse/PFObject.h>
 #import <Parse/PFSubclassing.h>
+#import "PFFileObject.h"
+//#import "Parse/Parse.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,6 +23,7 @@ typedef void(^PFUserSessionUpgradeResultBlock)(NSError *_Nullable error);
 typedef void(^PFUserLogoutResultBlock)(NSError *_Nullable error);
 
 @class PFQuery<PFGenericObject : PFObject *>;
+@class Parse;
 @protocol PFUserAuthenticationDelegate;
 
 /**
@@ -113,7 +116,7 @@ typedef void(^PFUserLogoutResultBlock)(NSError *_Nullable error);
 @property (nonatomic, assign) NSInteger jobsPosted;
 
 //User's profile picture
-@property (nonatomic, strong) UIImage *profileImage;
+@property (nonatomic, strong) PFFileObject *profileImage;
 
 /**!
  The password for the `PFUser`.

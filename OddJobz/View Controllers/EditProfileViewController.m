@@ -60,12 +60,31 @@
         //self.profileImage.image = resizeImage;
         curUser.firstName = self.firstName.text;
         curUser.lastName = self.lastName.text;
+        curUser.profileImage = [self getPFFileFromImage:resizeImage];
         //[PFUser currentUser].profileImage = resizeImage;
+        
         [curUser saveInBackground];
         
     }
 
 }
+
+-(PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
+ 
+    // check if image is not nil
+    if (!image) {
+        return nil;
+    }
+    
+    NSData *imageData = UIImagePNGRepresentation(image);
+    // get image data and check if that is not nil
+    if (!imageData) {
+        return nil;
+    }
+    
+    return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
+}
+
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     

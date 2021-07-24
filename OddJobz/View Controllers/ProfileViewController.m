@@ -24,7 +24,12 @@
     self.user = [PFUser currentUser];
     self.usernameLabel.text = self.user.username;
     self.wholeNameLabel.text = [self.user.firstName stringByAppendingString:self.user.lastName];
-    self.profileImageView.image = self.user.profileImage;
+    [self.user.profileImage getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        if (!error) {
+            self.profileImageView.image = [UIImage imageWithData:data];
+        }
+    }];
+    //self.profileImageView.image = self.user.profileImage;
     // Do any additional setup after loading the view.
 }
 
