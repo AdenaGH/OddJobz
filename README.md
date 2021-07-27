@@ -32,15 +32,20 @@
 * There should be a profile details page for any user
 * Jobs detail page for any job listing (includes person that posted it, info about the job, distance, skill rating, pay, address)
 * Must have some way to pay and accept payments (collect card info, apple pay, paypal, etc.)
-* Should have list and grid views of jobs
+* Should have list or grid view of jobs
 * Must have a search and sort function (sort through listings by category, for example)
-* Must have some kind of rating system (so that if someone has bad ratings, you know not to hire or work for them)
 * Must utilize location services (so that you only see nearby listings)
+* Must show image, title, and description for each job
+* User should be able to accept a job
+* Users should be able to see applicants on their own job listings
+* Users should be able to edit their own profile
+* Users shouuld be able to post a new listing
 
 **Optional Nice-to-have Stories**
 
 * Some sort of safety feature (maybe having an emergency contact notified when you arrive for a job or someone arrives for yours)
 * Messaging between clients
+* some kind of rating system (so that if someone has bad ratings, you know not to hire or work for them)
 * Add an option for setting a time for the job to be done:
    - Warn users if jobs they sign up for has a time conflict
 
