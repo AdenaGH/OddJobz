@@ -125,7 +125,7 @@
         MyListingCell *clickedCell = (MyListingCell *)sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:clickedCell];
         Listing *clickedListing = self.myListings[indexPath.row];
-        //[self.tableView reloadData];
+        [self.tableView reloadData];
         UINavigationController *nav = [segue destinationViewController];
         ApplicantsTableViewController *applicantsView = (ApplicantsTableViewController *) nav.topViewController;
         applicantsView.listing = clickedListing;

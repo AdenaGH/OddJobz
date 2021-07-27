@@ -99,7 +99,7 @@
         [self.tableView reloadData];
         ApplicantCell *clickedCell = (ApplicantCell *)sender;
         PFUser *user = clickedCell.user;
-        [self.tableView reloadData];
+        //[self.tableView reloadData];
         UINavigationController *nav = [segue destinationViewController];
         ProfileViewController *profileView = (ProfileViewController *) nav.topViewController;
         profileView.user = user;
