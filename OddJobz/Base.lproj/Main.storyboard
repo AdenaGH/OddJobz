@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="887" y="-616"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Swipeable Tab Bar Controller-->
         <scene sceneID="EDb-rv-beT">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" id="xl9-CT-YF4" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="xl9-CT-YF4" customClass="SwipeableTabBarController" customModule="SwipeableTabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="qhh-t9-tNy"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gxU-wu-8lQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -191,6 +191,11 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oyp-8d-RGZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="3RM-tQ-2j3">
+                    <connections>
+                        <action selector="tappedLeftButton:" destination="ykc-1c-WJD" id="DCs-km-8sz"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-317.39130434782612" y="1569.6428571428571"/>
         </scene>
@@ -338,7 +343,7 @@
                 <navigationController id="uUk-xP-ZKO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="Mra-uI-COu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="k9w-A6-GJD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -421,6 +426,16 @@
                     <navigationItem key="navigationItem" title="My Listings" id="bQf-tV-IxA"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EEj-Ja-j2s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="t8v-OX-aAQ">
+                    <connections>
+                        <action selector="tappedRightButton:" destination="UbG-vZ-DJd" id="9cM-ad-Kpm"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="F5P-L4-nMG">
+                    <connections>
+                        <action selector="tappedLeftButton:" destination="UbG-vZ-DJd" id="grW-mR-x5o"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2692.753623188406" y="1581.6964285714284"/>
         </scene>
@@ -704,11 +719,11 @@
             <objects>
                 <viewController storyboardIdentifier="ProfileViewController" id="vaZ-FF-Q9l" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QSI-KX-gP3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ntl-Le-Fcf">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHC-ZW-H6M">
                                         <rect key="frame" x="169" y="67" width="76" height="20.5"/>
@@ -762,6 +777,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fma-M8-G5p"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Ntl-Le-Fcf" firstAttribute="leading" secondItem="Fma-M8-G5p" secondAttribute="leading" id="1cJ-c1-grc"/>
                             <constraint firstItem="Ntl-Le-Fcf" firstAttribute="top" secondItem="QSI-KX-gP3" secondAttribute="topMargin" constant="-88" id="6gh-f4-do3"/>
@@ -772,6 +788,10 @@
                             <constraint firstItem="Ntl-Le-Fcf" firstAttribute="leading" secondItem="Fma-M8-G5p" secondAttribute="leading" id="wtV-c6-7Ma"/>
                             <constraint firstAttribute="bottom" secondItem="Ntl-Le-Fcf" secondAttribute="bottom" id="xkC-PO-m5Y"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="EX0-5C-XfY" appends="YES" id="HdS-mA-eyw"/>
+                            <outletCollection property="gestureRecognizers" destination="rrx-Lb-XoY" appends="YES" id="N3A-g9-dUr"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="T4k-HV-WFh">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="vmS-37-3Fk">
@@ -790,6 +810,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fT4-Zc-IGC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="EX0-5C-XfY">
+                    <connections>
+                        <action selector="tappedRightButton:" destination="vaZ-FF-Q9l" id="ZFk-J9-rqA"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="rrx-Lb-XoY">
+                    <connections>
+                        <action selector="tappedLeftButton:" destination="vaZ-FF-Q9l" id="NFv-ZF-dC7"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1773.913043478261" y="1569.6428571428571"/>
         </scene>
@@ -865,8 +895,13 @@ Address:</string>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <gestureRecognizers/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="YJP-PE-8YA"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Q72-el-oRQ"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="9B7-D2-Uv9" appends="YES" id="Wsv-j1-83a"/>
+                                    <outletCollection property="gestureRecognizers" destination="bE4-Fg-XNe" appends="YES" id="zZE-dP-hWl"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2NH-fH-fmF"/>
@@ -888,6 +923,16 @@ Address:</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M87-2o-02o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="9B7-D2-Uv9">
+                    <connections>
+                        <action selector="tappedLeftButton:" destination="9iu-o7-ZA3" id="1YK-YW-zYw"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="bE4-Fg-XNe">
+                    <connections>
+                        <action selector="tappedRightButton:" destination="9iu-o7-ZA3" id="uxR-Sm-vcv"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="695.6521739130435" y="1582.3660714285713"/>
         </scene>
@@ -946,7 +991,7 @@ Address:</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="91C-AP-Bcn"/>
+        <segue reference="ffi-Si-7rH"/>
         <segue reference="CJI-Yi-LxH"/>
     </inferredMetricsTieBreakers>
     <resources>

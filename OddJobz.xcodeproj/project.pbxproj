@@ -11,6 +11,7 @@
 		D949AEB47F8455FFA481548D /* Pods_OddJobzTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9687F71D2306D49697EFC729 /* Pods_OddJobzTests.framework */; };
 		E574734331BB0EC2D25BE576 /* Pods_OddJobz_OddJobzUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 449BB603E87591BF9FE36077 /* Pods_OddJobz_OddJobzUITests.framework */; };
 		EC13CD9E269F83A5003EA20F /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC13CD9D269F83A5003EA20F /* DetailsViewController.m */; };
+		EC2C415926B07A38002DC100 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC2C415826B07A38002DC100 /* TabBarController.m */; };
 		EC536C2E269C9F3000DEF526 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC536C2D269C9F3000DEF526 /* AppDelegate.m */; };
 		EC536C31269C9F3000DEF526 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC536C30269C9F3000DEF526 /* SceneDelegate.m */; };
 		EC536C37269C9F3000DEF526 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC536C35269C9F3000DEF526 /* Main.storyboard */; };
@@ -63,6 +64,8 @@
 		EA92A86A27F29FA4903A799C /* Pods-OddJobz-OddJobzUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OddJobz-OddJobzUITests.debug.xcconfig"; path = "Target Support Files/Pods-OddJobz-OddJobzUITests/Pods-OddJobz-OddJobzUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EC13CD9C269F83A5003EA20F /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		EC13CD9D269F83A5003EA20F /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		EC2C415726B07A38002DC100 /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		EC2C415826B07A38002DC100 /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		EC536C29269C9F3000DEF526 /* OddJobz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OddJobz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC536C2C269C9F3000DEF526 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EC536C2D269C9F3000DEF526 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 				EC536C3A269C9F3100DEF526 /* LaunchScreen.storyboard */,
 				EC536C3D269C9F3100DEF526 /* Info.plist */,
 				EC536C3E269C9F3100DEF526 /* main.m */,
+				EC2C415726B07A38002DC100 /* TabBarController.h */,
+				EC2C415826B07A38002DC100 /* TabBarController.m */,
 			);
 			path = OddJobz;
 			sourceTree = "<group>";
@@ -289,6 +294,7 @@
 				EC536C40269C9F3100DEF526 /* Sources */,
 				EC536C41269C9F3100DEF526 /* Frameworks */,
 				EC536C42269C9F3100DEF526 /* Resources */,
+				2BB1B9F0075DD48AD70AA82E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -390,6 +396,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2BB1B9F0075DD48AD70AA82E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OddJobzTests/Pods-OddJobzTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OddJobzTests/Pods-OddJobzTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OddJobzTests/Pods-OddJobzTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2CB39A6EBDC471CFAA42087E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -534,6 +557,7 @@
 				ECEBB4B5269E2F6400103BBF /* Listing.m in Sources */,
 				ECB8073A26A87E4500C22E36 /* ApplicantsTableViewController.m in Sources */,
 				EC9B525D26AB65B7006D9323 /* ProfileViewController.m in Sources */,
+				EC2C415926B07A38002DC100 /* TabBarController.m in Sources */,
 				ECEBB4AF269DF46C00103BBF /* HomeTableViewController.m in Sources */,
 				EC8D698326A8D05B00CE88F2 /* AppliedTableViewController.m in Sources */,
 				EC6CF77926A20A8100C3ACE5 /* MyListingCell.m in Sources */,

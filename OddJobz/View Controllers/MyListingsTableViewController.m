@@ -59,6 +59,28 @@
         }
         [self.refreshCont endRefreshing];
     }];
+    
+    UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedRightButton:)];
+    [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+    [self.view addGestureRecognizer:swipeLeft];
+
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedLeftButton:)];
+    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    [self.view addGestureRecognizer:swipeRight];
+}
+
+- (IBAction)tappedRightButton:(id)sender
+{
+    NSUInteger selectedIndex = [self.tabBarController selectedIndex];
+
+    [self.tabBarController setSelectedIndex:selectedIndex + 1];
+}
+
+- (IBAction)tappedLeftButton:(id)sender
+{
+    NSUInteger selectedIndex = [self.tabBarController selectedIndex];
+
+    [self.tabBarController setSelectedIndex:selectedIndex - 1];
 }
 //-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 //{
@@ -125,7 +147,7 @@
         MyListingCell *clickedCell = (MyListingCell *)sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:clickedCell];
         Listing *clickedListing = self.myListings[indexPath.row];
-        [self.tableView reloadData];
+        //[self.tableView reloadData];
         UINavigationController *nav = [segue destinationViewController];
         ApplicantsTableViewController *applicantsView = (ApplicantsTableViewController *) nav.topViewController;
         applicantsView.listing = clickedListing;

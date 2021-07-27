@@ -11,12 +11,14 @@ PODS:
     - Parse/Core (= 1.19.2)
   - Parse/Core (1.19.2):
     - Bolts/Tasks (= 1.9.1)
+  - SwipeableTabBarController (3.4.2)
 
 DEPENDENCIES:
   - DateTools
   - GoogleMaps (= 5.1.0)
   - GooglePlaces (= 5.0.0)
   - Parse
+  - SwipeableTabBarController
 
 SPEC REPOS:
   trunk:
@@ -25,6 +27,7 @@ SPEC REPOS:
     - GoogleMaps
     - GooglePlaces
     - Parse
+    - SwipeableTabBarController
 
 SPEC CHECKSUMS:
   Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
@@ -32,7 +35,8 @@ SPEC CHECKSUMS:
   GoogleMaps: 086ae1dab659eaa7339bdb30fc88e2f44e7c597c
   GooglePlaces: 5d87ca13ed98b7a937e0d8bc7026f718c7263271
   Parse: 081fb8755c3000fd11df817eec235def233d0af3
+  SwipeableTabBarController: 9a218bdee9426d1bfe36d7962f852024bb08d61b
 
-PODFILE CHECKSUM: a9a7eec5f8581ba307ee93a05e33f79084f550d9
+PODFILE CHECKSUM: 1e158b05531669f24fff6818de452681cc850401
 
 COCOAPODS: 1.10.1

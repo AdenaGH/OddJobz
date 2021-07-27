@@ -12,6 +12,7 @@ target 'OddJobz' do
   pod 'GoogleMaps', '5.1.0'
   pod 'GooglePlaces', '5.0.0'
   target 'OddJobzTests' do
+  pod 'SwipeableTabBarController'
     inherit! :search_paths
     # Pods for testing
   end
