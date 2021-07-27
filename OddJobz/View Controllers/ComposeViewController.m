@@ -66,7 +66,7 @@
     
     NSString *sbName = @"Main";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:sbName bundle:nil];
-    UINavigationController *vc = [storyboard instantiateViewControllerWithIdentifier:@"HomeNavController"];
+    UINavigationController *vc = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
 
     vc.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:vc animated:YES completion:nil];

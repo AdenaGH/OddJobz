@@ -14,6 +14,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *jobsAvailableLabel;
 @property (weak, nonatomic) IBOutlet UILabel *wholeNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *strengthLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bioLabel;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *theEditButton;
+
 
 @end
 
@@ -21,9 +25,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //self.theEditButton.enabled = NO;
+    //self.theEditButton = nil;
+    
     self.user = [PFUser currentUser];
     self.usernameLabel.text = self.user.username;
     self.wholeNameLabel.text = [self.user.firstName stringByAppendingString:self.user.lastName];
+    self.strengthLabel.text = self.user.strength;
+    self.bioLabel.text = self.user.biography;
     [self.user.profileImage getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (!error) {
             self.profileImageView.image = [UIImage imageWithData:data];

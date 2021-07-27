@@ -45,6 +45,7 @@
     //newListing.location = locationValue;
     //PFGeoPoint *geoLocation =
     newListing.location = [PFGeoPoint geoPointWithLatitude:listingLocation.coordinate.latitude longitude:listingLocation.coordinate.longitude];
+    [newListing.poster.availableListings addObject:newListing];
     //newListing.location = [PFGeoPoint geoPointWithLocation:listingLocation];
     
     //NSInteger *jobsPosted = [newListing.poster.jobsPosted integerValue];
@@ -52,6 +53,7 @@
     //newListing.poster.jobsPosted += 1;
     
     [newListing saveInBackground];
+    [newListing.poster saveInBackground];
 }
 
 

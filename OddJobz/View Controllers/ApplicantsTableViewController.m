@@ -29,6 +29,7 @@
 
 }
 - (void)fetchApplicants {
+    [self.listing fetchIfNeeded];
     self.myApplicants = self.listing.applicants;
 }
 #pragma mark - Table view data source

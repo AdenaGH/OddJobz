@@ -28,6 +28,10 @@
     newUser.password = self.passwordField.text;
     newUser.jobsAccepted = 0;
     newUser.jobsPosted = 0;
+    newUser.availableListings = [NSMutableArray new];
+    newUser.completedListings = [NSMutableArray new];
+    newUser.strength = @"Undecided";
+    newUser.biography = @"";
     
 
     // call sign up function on the object

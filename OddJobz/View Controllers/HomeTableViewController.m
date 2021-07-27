@@ -14,9 +14,11 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface HomeTableViewController ()  <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate>
+@interface HomeTableViewController ()  <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, UISearchBarDelegate>
 @property (strong, nonatomic) NSMutableArray *listings;
+@property (strong, nonatomic) NSMutableArray *filteredListings;
 @property (strong, nonatomic) UIRefreshControl *refreshCont;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property CLLocationManager *manager;
 
 @end
@@ -30,6 +32,7 @@
     self.tableView.delegate = self;
     self.manager = [[CLLocationManager alloc] init];
     self.manager.delegate = self;
+    self.searchBar.delegate = self;
     //[self.manager requestWhenInUseAuthorization];
     if ([self.manager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [self.manager requestWhenInUseAuthorization];
@@ -39,11 +42,11 @@
     
     
     [self fetchListings];
-    
+    //self.filteredListings = self.listings;
     self.refreshCont = [[UIRefreshControl alloc] init];
     [self.refreshCont addTarget:self action:@selector(fetchListings) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshCont atIndex:0];
-    
+        
  
 }
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
@@ -68,6 +71,8 @@
         if (listings != nil) {
             // do something with the array of object returned by the call
             self.listings = (NSMutableArray *) listings;
+            self.filteredListings = [[NSMutableArray alloc] initWithArray:self.listings];
+
             [self.tableView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
@@ -78,19 +83,51 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.listings.count;
+    return self.filteredListings.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ListingCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListingCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    Listing *listing = self.listings[indexPath.row];
+    Listing *listing = self.filteredListings[indexPath.row];
     [cell setUserLocation: [PFGeoPoint geoPointWithLocation:self.manager.location]];
     [cell makeListing:listing];
     
     
     return cell;
+}
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    //self.listings = self.filteredListings;
+    //
+    [self.filteredListings removeAllObjects];
+    
+    if([searchText isEqualToString:@""]||searchText==nil){
+        self.filteredListings = self.listings;
+        [self.tableView reloadData];
+        return;
+    } else {
+        for (Listing *searchListing in self.listings) {
+            NSRange rangeValue = [searchListing.jobDescription rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            if (rangeValue.length > 0) {
+                [self.filteredListings addObject:searchListing];
+            }
+        }
+    }
+    
+    [self.tableView reloadData];
+ 
+}
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    self.searchBar.showsCancelButton = YES;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    self.searchBar.showsCancelButton = NO;
+    self.searchBar.text = @"";
+    self.filteredListings = self.listings;
+    [self.searchBar resignFirstResponder];
+    [self.tableView reloadData];
 }
 
 - (IBAction)logoutButtonPress:(id)sender {

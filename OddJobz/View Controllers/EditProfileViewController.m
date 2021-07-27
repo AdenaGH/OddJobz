@@ -10,12 +10,16 @@
 
 @interface EditProfileViewController ()
 //@property (strong, nonatomic) UIGestureRecognizer *tapper;
+@property (strong, nonatomic) NSArray * strongsuits;
 @end
 
 @implementation EditProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.strongsuits = @[@"Education", @"Tech", @"Handywork", @"Art"];
+    self.strongsuitPicker.dataSource = self;
+    self.strongsuitPicker.delegate = self;
 
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
@@ -61,6 +65,8 @@
         curUser.firstName = self.firstName.text;
         curUser.lastName = self.lastName.text;
         curUser.profileImage = [self getPFFileFromImage:resizeImage];
+        curUser.strength = self.strongsuit.text;
+        curUser.biography = self.bio.text;
         //[PFUser currentUser].profileImage = resizeImage;
         
         [curUser saveInBackground];
@@ -107,5 +113,20 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (NSInteger)numberOfComponentsInPickerView:(nonnull UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(nonnull UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return self.strongsuits.count;
+}
+- (NSString*) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    return self.strongsuits[row];
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    self.strongsuit.text = self.strongsuits[row];
+}
 
 @end

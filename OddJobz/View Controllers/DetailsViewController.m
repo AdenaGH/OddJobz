@@ -13,11 +13,12 @@
 @interface DetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *detailImageView;
 @property (weak, nonatomic) IBOutlet UILabel *listingTitle;
-@property (weak, nonatomic) IBOutlet UILabel *listingDistance;
+//@property (weak, nonatomic) IBOutlet UILabel *listingDistance;
 @property (weak, nonatomic) IBOutlet UILabel *listingPoster;
 @property (weak, nonatomic) IBOutlet UILabel *listingSkill;
 @property (weak, nonatomic) IBOutlet UILabel *listingDescription;
 @property (weak, nonatomic) IBOutlet UILabel *listingPrice;
+@property (weak, nonatomic) IBOutlet UIImageView *listingImageView;
 
 @end
 
@@ -27,10 +28,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSLog(@"%@", self.listing);
+    [self.listing.poster.profileImage getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        if (!error) {
+            self.detailImageView.image = [UIImage imageWithData:data];
+        }
+    }];
     self.listingTitle.text = self.listing.jobTitle;
     self.listingDescription.text = self.listing.jobDescription;
     self.listingPoster.text = self.listing.poster.username;
     self.listingPrice.text = self.listing.price;
+    [self.listing.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        if (!error) {
+            self.listingImageView.image = [UIImage imageWithData:data];
+        }
+    }];
+
+    //self.listingDistance.text =
 }
 - (IBAction)acceptJob:(id)sender {
     UIAlertController *userAlert = [UIAlertController alertControllerWithTitle:@"Accept Job"
