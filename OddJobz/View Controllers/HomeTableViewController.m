@@ -61,6 +61,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Listing"];
     [query includeKey:@"poster"];
     [query includeKey:@"location"];
+    [query includeKey:@"applicants"];
     //[query orderByDescending:@"createdAt"];
     [query whereKey:@"poster" notEqualTo:[PFUser currentUser]];
 

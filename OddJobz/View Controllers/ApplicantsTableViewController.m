@@ -7,6 +7,7 @@
 
 #import "ApplicantsTableViewController.h"
 #import "ApplicantCell.h"
+#import "ProfileViewController.h"
 
 @interface ApplicantsTableViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) NSMutableArray *myApplicants;
@@ -18,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.listing fetchIfNeeded];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
@@ -30,7 +32,7 @@
 }
 - (void)fetchApplicants {
     [self.listing fetchIfNeeded];
-    self.myApplicants = self.listing.applicants;
+    self.myApplicants = [[NSMutableArray alloc] initWithArray: self.listing.applicants];
 }
 #pragma mark - Table view data source
 
@@ -86,14 +88,25 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqual:@"appliedSegue"]) {
+        [self.tableView reloadData];
+        ApplicantCell *clickedCell = (ApplicantCell *)sender;
+        PFUser *user = clickedCell.user;
+        [self.tableView reloadData];
+        UINavigationController *nav = [segue destinationViewController];
+        ProfileViewController *profileView = (ProfileViewController *) nav.topViewController;
+        profileView.user = user;
+        
+    }
+
 }
-*/
+
 
 @end

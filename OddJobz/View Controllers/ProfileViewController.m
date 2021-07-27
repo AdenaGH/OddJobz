@@ -27,8 +27,10 @@
     [super viewDidLoad];
     //self.theEditButton.enabled = NO;
     //self.theEditButton = nil;
+    if (self.user == nil) {
+        self.user = [PFUser currentUser];
+    }
     
-    self.user = [PFUser currentUser];
     self.usernameLabel.text = self.user.username;
     self.wholeNameLabel.text = [self.user.firstName stringByAppendingString:self.user.lastName];
     self.strengthLabel.text = self.user.strength;

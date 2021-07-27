@@ -338,7 +338,7 @@
                 <navigationController id="uUk-xP-ZKO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="Mra-uI-COu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="k9w-A6-GJD">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -409,7 +409,7 @@
                                     <outlet property="listingImage" destination="Sxz-L0-VQD" id="Hng-Lf-jRe"/>
                                     <outlet property="listingPrice" destination="eQA-3m-sZ8" id="ILP-th-2vj"/>
                                     <outlet property="listingTitle" destination="B4e-kU-dyp" id="3ck-57-zvM"/>
-                                    <segue destination="FUC-ZF-NYF" kind="presentation" identifier="applicantsSegue" trigger="accessoryAction" id="ZIF-Bk-7yd"/>
+                                    <segue destination="FUC-ZF-NYF" kind="presentation" identifier="applicantsSegue" id="cIm-pV-2sb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -524,22 +524,27 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="134"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Applicant's Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0p-jj-Ecs">
-                                            <rect key="frame" x="124" y="45" width="135" height="44"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Applicant's Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0p-jj-Ecs">
+                                            <rect key="frame" x="124" y="57" width="135" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jk0-rj-GXb">
+                                            <rect key="frame" x="20" y="50" width="86" height="34"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="P0p-jj-Ecs" secondAttribute="bottom" constant="34" id="Mct-yf-KtR"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="P0p-jj-Ecs" secondAttribute="trailing" constant="135" id="Upw-bf-YfZ"/>
-                                        <constraint firstItem="P0p-jj-Ecs" firstAttribute="leading" secondItem="3in-IC-a17" secondAttribute="leadingMargin" constant="104" id="jg0-lP-uUd"/>
-                                        <constraint firstItem="P0p-jj-Ecs" firstAttribute="top" secondItem="3in-IC-a17" secondAttribute="topMargin" constant="34" id="ygf-7z-h4W"/>
+                                        <constraint firstAttribute="bottom" secondItem="jk0-rj-GXb" secondAttribute="bottom" constant="50" id="TA0-Iy-FLJ"/>
+                                        <constraint firstItem="jk0-rj-GXb" firstAttribute="centerY" secondItem="3in-IC-a17" secondAttribute="centerY" id="dIa-pO-RZd"/>
+                                        <constraint firstItem="jk0-rj-GXb" firstAttribute="centerX" secondItem="3in-IC-a17" secondAttribute="centerX" id="j2v-K2-V9m"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="applicantImage" destination="jk0-rj-GXb" id="Fin-9R-tbV"/>
                                     <outlet property="nameLabel" destination="P0p-jj-Ecs" id="K1u-TS-VPt"/>
+                                    <segue destination="uUk-xP-ZKO" kind="presentation" identifier="appliedSegue" id="91C-AP-Bcn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -693,11 +698,11 @@
             <objects>
                 <viewController storyboardIdentifier="ProfileViewController" id="vaZ-FF-Q9l" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QSI-KX-gP3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ntl-Le-Fcf">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHC-ZW-H6M">
                                         <rect key="frame" x="169" y="67" width="76" height="20.5"/>
@@ -935,6 +940,7 @@ Address:</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="91C-AP-Bcn"/>
         <segue reference="CJI-Yi-LxH"/>
     </inferredMetricsTieBreakers>
     <resources>

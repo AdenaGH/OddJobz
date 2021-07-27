@@ -21,8 +21,16 @@
 }
 
 -(void) makeApplicants: (PFUser *)user {
+    self.user = user;
     [user fetchIfNeeded];
+    [user fetch];
+    [self.user.profileImage getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        if (!error) {
+            self.applicantImage.image = [UIImage imageWithData:data];
+        }
+    }];
     self.nameLabel.text = user.username;
+
 
 }
 

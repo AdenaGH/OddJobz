@@ -41,6 +41,8 @@
 - (void)fetchListings {
     PFQuery *query = [PFQuery queryWithClassName:@"Listing"];
     [query includeKey:@"poster"];
+    [query includeKey:@"applicants"];
+    [query includeKey:@"profileImage"];
     [query whereKey:@"poster" equalTo:[PFUser currentUser]];
     //[query orderByDescending:@"createdAt"];
 
@@ -58,10 +60,10 @@
         [self.refreshCont endRefreshing];
     }];
 }
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [self performSegueWithIdentifier:@"applicantsSegue" sender:self];
-}
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    [self performSegueWithIdentifier:@"applicantsSegue" sender:self];
+//}
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -120,7 +122,7 @@
     
     if ([segue.identifier isEqual:@"applicantsSegue"]) {
         //[self.tableView reloadData];
-        UITableViewCell *clickedCell = sender;
+        MyListingCell *clickedCell = (MyListingCell *)sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:clickedCell];
         Listing *clickedListing = self.myListings[indexPath.row];
         //[self.tableView reloadData];
