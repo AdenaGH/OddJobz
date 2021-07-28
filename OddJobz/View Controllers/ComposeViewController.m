@@ -18,6 +18,7 @@
 @interface ComposeViewController () <GMSAutocompleteViewControllerDelegate, CLLocationManagerDelegate>
 @property CLLocation* otherLocation;
 @property CLLocationManager *manager;
+@property (strong, nonatomic) NSArray * categories;
 
 @end
 
@@ -27,6 +28,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.categories = @[@"Education", @"Tech", @"Handywork", @"Art", @"Cleaning"];
+    self.categoryPicker.delegate = self;
+    self.categoryPicker.dataSource = self;
     self.manager = [[CLLocationManager alloc] init];
     self.manager.delegate = self;
     //[self.manager requestWhenInUseAuthorization];
@@ -84,7 +88,7 @@
 - (IBAction)pressShare:(id)sender {
     UIImage *resizeImage = [self resizeImage:self.listingImage.image withSize:CGSizeMake(400, 400)];
     NSString * priceString = [@"$" stringByAppendingString: self.priceTextView.text];
-    [Listing postListing:self.titleTextView.text withDescription:self.descriptionTextView.text andLocation:self.addressTextView.text andPrice:priceString andImage:resizeImage andListingLocation:self.otherLocation];
+    [Listing postListing:self.titleTextView.text withDescription:self.descriptionTextView.text andLocation:self.addressTextView.text andPrice:priceString andImage:resizeImage andListingLocation:self.otherLocation andCategory:self.categoryTextField.text];
     
     NSString *sbName = @"Main";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:sbName bundle:nil];
@@ -166,4 +170,20 @@ didFailAutocompleteWithError:(NSError *)error {
     // Pass the selected object to the new view controller.
 }
 */
+
+- (NSInteger)numberOfComponentsInPickerView:(nonnull UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(nonnull UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return self.categories.count;
+}
+- (NSString*) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    return self.categories[row];
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    self.categoryTextField.text = self.categories[row];
+}
+
 @end

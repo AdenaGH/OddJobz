@@ -27,12 +27,13 @@
 @dynamic fakeProp;
 @dynamic location;
 @dynamic jobChance;
+@dynamic category;
 
 + (nonnull NSString *)parseClassName {
     return @"Listing";
 }
 
-+ (void) postListing:(NSString *)title withDescription:(NSString *)descript andLocation:(NSString *)location andPrice:(NSString *)price andImage: ( UIImage * _Nullable )image andListingLocation: (CLLocation *) listingLocation{
++ (void) postListing:(NSString *)title withDescription:(NSString *)descript andLocation:(NSString *)location andPrice:(NSString *)price andImage: ( UIImage * _Nullable )image andListingLocation: (CLLocation *) listingLocation andCategory:(NSString * _Nonnull)category{
     Listing *newListing = [Listing new];
     newListing.poster = [PFUser currentUser];
     newListing.image = [self getPFFileFromImage:image];
@@ -43,6 +44,7 @@
     newListing.price = price;
     newListing.fakeProp = @"Hey lol";
     newListing.applicants = [NSMutableArray new];
+    newListing.category = category;
     //NSValue *locationValue = [NSValue valueWithMKCoordinate:listingLocation.coordinate];
     //newListing.location = locationValue;
     //PFGeoPoint *geoLocation =
