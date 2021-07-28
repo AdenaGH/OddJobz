@@ -10,6 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "MapKit/MapKit.h"
 #import "Parse/Parse.h"
+#import "DateTools/DateTools.h"
 
 @implementation Listing
 
@@ -25,6 +26,7 @@
 @dynamic applicants;
 @dynamic fakeProp;
 @dynamic location;
+@dynamic jobChance;
 
 + (nonnull NSString *)parseClassName {
     return @"Listing";
@@ -72,5 +74,7 @@
     
     return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
 }
+
+
 
 @end

@@ -24,6 +24,7 @@
 @property (nonatomic, strong) NSMutableArray *applicants;
 @property (nonatomic,strong) NSString *fakeProp;
 @property (nonatomic, strong) PFGeoPoint *location;
+@property (nonatomic, strong) NSNumber* jobChance;
 
 + (void) postListing:(NSString *)title withDescription:(NSString *)descript andLocation:(NSString *)location andPrice:(NSString *)price andImage:( UIImage * _Nullable )image andListingLocation: (CLLocation *_Nonnull) listingLocation;
 
