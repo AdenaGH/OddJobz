@@ -354,7 +354,7 @@
                 <navigationController id="uUk-xP-ZKO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="Mra-uI-COu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="k9w-A6-GJD">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -563,6 +563,11 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urk-r6-0cs">
+                                            <rect key="frame" x="184" y="85" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Hire"/>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="P0p-jj-Ecs" firstAttribute="leading" secondItem="jk0-rj-GXb" secondAttribute="trailing" constant="10" id="0wS-jE-jMU"/>
@@ -730,11 +735,11 @@
             <objects>
                 <viewController storyboardIdentifier="ProfileViewController" id="vaZ-FF-Q9l" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QSI-KX-gP3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ntl-Le-Fcf">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHC-ZW-H6M">
                                         <rect key="frame" x="169" y="67" width="76" height="20.5"/>
@@ -1014,7 +1019,7 @@ Address:</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ffi-Si-7rH"/>
+        <segue reference="91C-AP-Bcn"/>
         <segue reference="CJI-Yi-LxH"/>
     </inferredMetricsTieBreakers>
     <resources>

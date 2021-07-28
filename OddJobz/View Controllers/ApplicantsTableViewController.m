@@ -49,7 +49,7 @@
     
     // Configure the cell...
     PFUser *user = self.myApplicants[indexPath.row];
-    [cell makeApplicants:user];
+    [cell makeApplicants:user withListing: self.listing];
     return cell;
 }
 

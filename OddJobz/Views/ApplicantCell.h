@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Parse/Parse.h"
+#import "Listing.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,7 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *applicantImage;
 
 @property (strong, nonatomic) PFUser* user;
--(void)makeApplicants:(PFUser *)user;
+@property (strong, nonatomic) Listing* listing;
+-(void)makeApplicants:(PFUser *)user withListing: (Listing*) listing;
 @end
 
 NS_ASSUME_NONNULL_END

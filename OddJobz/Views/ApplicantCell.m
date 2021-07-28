@@ -20,8 +20,10 @@
     // Configure the view for the selected state
 }
 
--(void) makeApplicants: (PFUser *)user {
+-(void) makeApplicants: (PFUser *)user withListing:(nonnull Listing *)listing {
     self.user = user;
+    self.listing = listing;
+    [listing fetch];
     [user fetchIfNeeded];
     [user fetch];
     [self.user.profileImage getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {

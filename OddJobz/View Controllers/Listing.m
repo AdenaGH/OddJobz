@@ -28,6 +28,7 @@
 @dynamic location;
 @dynamic jobChance;
 @dynamic category;
+@dynamic hire;
 
 + (nonnull NSString *)parseClassName {
     return @"Listing";
