@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *listingDescription;
 @property (weak, nonatomic) IBOutlet UILabel *listingPrice;
 @property (weak, nonatomic) IBOutlet UIImageView *listingImageView;
+@property (strong, nonatomic) NSArray *chanceMessages;
 
 @end
 
@@ -28,11 +29,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSLog(@"%@", self.listing);
+    self.chanceMessages = @[@"Odds are very high that you'll be selected for the job!", @"Odds are high that you'll be selected for the job!", @"Odds are decent that you'll get the job.", @"Odds are fair that you'll get the job.", @"Yikes! The odds are not in your favor for this job."];
     [self.listing.poster.profileImage getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (!error) {
             self.detailImageView.image = [UIImage imageWithData:data];
         }
     }];
+    self.listingSkill.text = @"Apply to the job to check your odds";
     self.listingTitle.text = self.listing.jobTitle;
     self.listingDescription.text = self.listing.jobDescription;
     self.listingPoster.text = self.listing.poster.username;
@@ -74,6 +77,7 @@
     [self presentViewController:userAlert animated:YES completion:^{
         // optional code for what happens after the alert controller has finished presenting
     }];
+    
     
 }
 

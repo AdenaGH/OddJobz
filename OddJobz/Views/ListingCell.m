@@ -44,6 +44,8 @@
             self.listingImage.image = [UIImage imageWithData:data];
         }
     }];
+    [self determineChance];
+    
 }
 
 -(void)giveUserLocation:(CLLocation *)userLocation {
@@ -120,5 +122,6 @@
     
     
 }
+
 
 @end
