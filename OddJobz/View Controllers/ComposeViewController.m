@@ -29,12 +29,10 @@
     [super viewDidLoad];
     self.manager = [[CLLocationManager alloc] init];
     self.manager.delegate = self;
-    //[self.manager requestWhenInUseAuthorization];
-    //if ([self.manager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-        [self.manager requestWhenInUseAuthorization];
-   // }
-    //[self.manager startUpdatingLocation];
-    // Do any additional setup after loading the view.
+    [self.manager requestWhenInUseAuthorization];
+    self.strongsuits = @[@"Education", @"Tech", @"Handywork", @"Art", @"Repair"];
+    self.categoryPickerView.dataSource = self;
+    self.categoryPickerView.delegate = self;
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedRightButton:)];
     [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
     [self.view addGestureRecognizer:swipeLeft];
@@ -84,7 +82,7 @@
 - (IBAction)pressShare:(id)sender {
     UIImage *resizeImage = [self resizeImage:self.listingImage.image withSize:CGSizeMake(400, 400)];
     NSString * priceString = [@"$" stringByAppendingString: self.priceTextView.text];
-    [Listing postListing:self.titleTextView.text withDescription:self.descriptionTextView.text andLocation:self.addressTextView.text andPrice:priceString andImage:resizeImage andListingLocation:self.otherLocation];
+    [Listing postListing:self.titleTextView.text withDescription:self.descriptionTextView.text andLocation:self.addressTextView.text andPrice:priceString andImage:resizeImage andListingLocation:self.otherLocation andCategory:self.categoryTextField.text];
     
     NSString *sbName = @"Main";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:sbName bundle:nil];
@@ -166,4 +164,20 @@ didFailAutocompleteWithError:(NSError *)error {
     // Pass the selected object to the new view controller.
 }
 */
+
+- (NSInteger)numberOfComponentsInPickerView:(nonnull UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(nonnull UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return self.strongsuits.count;
+}
+- (NSString*) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    return self.strongsuits[row];
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    self.categoryTextField.text = self.strongsuits[row];
+}
+
 @end

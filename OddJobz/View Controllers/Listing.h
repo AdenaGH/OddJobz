@@ -25,8 +25,9 @@
 @property (nonatomic,strong) NSString *fakeProp;
 @property (nonatomic, strong) PFGeoPoint *location;
 @property (nonatomic, strong) NSNumber* jobChance;
+@property (nonatomic, strong) NSString* category;
 
-+ (void) postListing:(NSString *)title withDescription:(NSString *)descript andLocation:(NSString *)location andPrice:(NSString *)price andImage:( UIImage * _Nullable )image andListingLocation: (CLLocation *_Nonnull) listingLocation;
++ (void) postListing:(NSString *)title withDescription:(NSString *)descript andLocation:(NSString *)location andPrice:(NSString *)price andImage:( UIImage * _Nullable )image andListingLocation: (CLLocation *_Nonnull) listingLocation andCategory: (NSString*) category;
 
 @end
 

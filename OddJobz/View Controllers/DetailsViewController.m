@@ -42,6 +42,7 @@
             self.listingImageView.image = [UIImage imageWithData:data];
         }
     }];
+    //self.listingSkill.text = 
 
     //self.listingDistance.text =
 }

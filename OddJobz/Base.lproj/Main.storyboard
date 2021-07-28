@@ -243,9 +243,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6z-fY-GUi">
-                                        <rect key="frame" x="140.5" y="691" width="133" height="45"/>
+                                        <rect key="frame" x="134" y="691" width="146" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                        <state key="normal" title="Accept Job"/>
+                                        <state key="normal" title="Apply to Job"/>
+                                        <state key="selected" title="Unapply"/>
                                         <connections>
                                             <action selector="acceptJob:" destination="mRv-VJ-oXl" eventType="touchUpInside" id="cfh-fc-fdH"/>
                                         </connections>
@@ -894,6 +895,19 @@ Address:</string>
                                             <action selector="pressAddress:" destination="9iu-o7-ZA3" eventType="touchUpInside" id="7Ff-TY-HNI"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose a category below" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wem-fb-uUi">
+                                        <rect key="frame" x="43" y="343" width="330" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                        </accessibility>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hsg-pm-vmI">
+                                        <rect key="frame" x="43" y="385" width="331" height="127"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    </pickerView>
                                 </subviews>
                                 <gestureRecognizers/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="YJP-PE-8YA"/>
@@ -916,6 +930,8 @@ Address:</string>
                     </navigationItem>
                     <connections>
                         <outlet property="addressTextView" destination="HHM-oe-xxR" id="yMr-QQ-uVw"/>
+                        <outlet property="categoryPickerView" destination="Hsg-pm-vmI" id="HJP-Bm-J47"/>
+                        <outlet property="categoryTextField" destination="wem-fb-uUi" id="60m-zB-ZdC"/>
                         <outlet property="descriptionTextView" destination="gZs-bY-aPx" id="fx7-NB-Dtv"/>
                         <outlet property="listingImage" destination="lDq-WX-enG" id="Hpy-iz-evA"/>
                         <outlet property="priceTextView" destination="30B-xP-Upi" id="mqj-Tf-9QN"/>
@@ -991,8 +1007,9 @@ Address:</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="lIM-h1-Wbx"/>
         <segue reference="ffi-Si-7rH"/>
-        <segue reference="CJI-Yi-LxH"/>
+        <segue reference="Ycg-cX-cdA"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="folder.fill.badge.plus" catalog="system" width="128" height="91"/>

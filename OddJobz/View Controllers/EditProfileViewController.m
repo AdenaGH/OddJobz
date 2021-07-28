@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.strongsuits = @[@"Education", @"Tech", @"Handywork", @"Art"];
+    self.strongsuits = @[@"Education", @"Tech", @"Handywork", @"Art", @"Repair"];
     self.strongsuitPicker.dataSource = self;
     self.strongsuitPicker.delegate = self;
 
