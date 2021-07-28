@@ -564,9 +564,20 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urk-r6-0cs">
-                                            <rect key="frame" x="184" y="85" width="30" height="30"/>
+                                            <rect key="frame" x="139" y="85" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Hire"/>
+                                            <connections>
+                                                <action selector="pressHire:" destination="Lnl-uc-2Tt" eventType="touchUpInside" id="btc-el-RvF"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0z1-t1-Mnw">
+                                            <rect key="frame" x="214" y="85" width="114" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Mark Completed"/>
+                                            <connections>
+                                                <action selector="markCompleted:" destination="Lnl-uc-2Tt" eventType="touchUpInside" id="e5P-9w-fyl"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>

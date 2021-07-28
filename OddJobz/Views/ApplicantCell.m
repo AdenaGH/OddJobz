@@ -36,4 +36,26 @@
 
 }
 
+//Two new buttons
+- (IBAction)pressHire:(id)sender {
+    self.listing.hire = self.user;
+    for (PFUser * user in self.listing.applicants) {
+        if (user != self.user) {
+            //remove other applicants from list
+            [self.listing.applicants removeObject:user];
+        }
+    }
+    //Listing = [self.listing copy]
+    [self.listing saveInBackground];
+}
+
+- (IBAction)markCompleted:(id)sender {
+    //Doing this because I don't want the listing to be shown in the home screen anymore, but still be saved with the user
+    [self.user.completedListings addObject: [self.listing copy]];
+    [self.user saveInBackground];
+    [self.listing deleteInBackground];
+    
+}
+
+
 @end

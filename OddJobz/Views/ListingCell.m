@@ -65,7 +65,7 @@
 //        }
 //    }
     // Chance for distance
-    int dX = 20;
+    int dX = 25;
     int distance = [self.distanceNumber intValue] - 10;
     //distance = 40
     if ([self.distanceNumber intValue] <= 10) {
@@ -80,12 +80,12 @@
     
     //Chance based on listing age
     //self.listing.postedAt since
-    NSTimeInterval timeSince = [[NSDate date] timeIntervalSinceDate:self.listing.postedAt]/86400; //converting seconds to days idk
+    NSTimeInterval timeSince = [[NSDate date] timeIntervalSinceDate:self.listing.postedAt]/86400; //converting seconds to days
     int timeInDays = timeSince;
     if (timeInDays <= 3) {
         chance = chance;
-    } else if (timeInDays > 60) {
-        chance -=20;
+    } else if (timeInDays > 70) {
+        chance -=25;
     } else {
         while (timeInDays >3){
             timeInDays -=3;
@@ -94,11 +94,27 @@
     }
     
     //Chance based on whether or not the category matches your strength
-    if (![self.listing.category isEqual: [PFUser currentUser].strength]) {
-        chance -=20;
+    PFUser *currentUser = [PFUser currentUser];
+    if (![self.listing.category isEqual: currentUser.strength]) {
+        chance -=25;
     }
     
     //Chance based on experience
+    chance -=25; //They earn these instead of starting out with all
+    if (currentUser.completedListings.count <5) {
+        chance += 5; //To make it fair for new users, dont penalize for not having completed many jobs
+    } else {
+        if (chance < 100) {
+            for (Listing *listing in currentUser.completedListings) {
+                if ([listing.category isEqual:currentUser.strength] ) {
+                    chance +=1;
+                } else {
+                    chance +=0.25;
+                }
+            }
+        }
+    }
+    self.listing.jobChance = [[NSNumber alloc] initWithFloat:chance];
     
     
     

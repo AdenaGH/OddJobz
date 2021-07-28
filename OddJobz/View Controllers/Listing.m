@@ -29,6 +29,8 @@
 @dynamic jobChance;
 @dynamic category;
 @dynamic hire;
+@dynamic jobDone;
+//@dynamic jobDistance;
 
 + (nonnull NSString *)parseClassName {
     return @"Listing";
@@ -60,6 +62,10 @@
     [newListing saveInBackground];
     [newListing.poster saveInBackground];
 }
+//+ (Listing *)makeCopy: (Listing *) listing{
+//    Listing *newListing = [Listing new];
+//    newListing.
+//}
 
 
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
