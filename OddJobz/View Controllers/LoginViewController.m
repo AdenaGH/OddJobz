@@ -30,6 +30,7 @@
     newUser.jobsPosted = 0;
     newUser.availableListings = [NSMutableArray new];
     newUser.completedListings = [NSMutableArray new];
+    newUser.appliedListings = [NSMutableArray new];
     newUser.strength = @"Undecided";
     newUser.biography = @"";
     

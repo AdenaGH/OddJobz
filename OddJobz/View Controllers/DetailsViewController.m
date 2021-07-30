@@ -13,7 +13,6 @@
 @interface DetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *detailImageView;
 @property (weak, nonatomic) IBOutlet UILabel *listingTitle;
-//@property (weak, nonatomic) IBOutlet UILabel *listingDistance;
 @property (weak, nonatomic) IBOutlet UILabel *listingPoster;
 @property (weak, nonatomic) IBOutlet UILabel *listingSkill;
 @property (weak, nonatomic) IBOutlet UILabel *listingDescription;
@@ -29,7 +28,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSLog(@"%@", self.listing);
-    self.chanceMessages = @[@"Odds are very high that you'll be selected for the job!", @"Odds are high that you'll be selected for the job!", @"Odds are decent that you'll get the job.", @"Odds are fair that you'll get the job.", @"Yikes! The odds are not in your favor for this job."];
+    self.chanceMessages = @[@"Odds are very high that you'll be selected for the job!",
+                            @"Odds are high that you'll be selected for the job!",
+                            @"Odds are decent that you'll get the job.",
+                            @"Odds are fair that you'll get the job.",
+                            @"Yikes! The odds are not in your favor for this job."];
     [self.listing.poster.profileImage getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (!error) {
             self.detailImageView.image = [UIImage imageWithData:data];
@@ -46,7 +49,6 @@
         }
     }];
 
-    //self.listingDistance.text =
 }
 - (IBAction)acceptJob:(id)sender {
     UIAlertController *userAlert = [UIAlertController alertControllerWithTitle:@"Accept Job"
@@ -62,14 +64,18 @@
     [userAlert addAction:cancelAction];
 
     // create an OK action
+    PFUser *curUser = [PFUser currentUser];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Yes"
                                         style:UIAlertActionStyleDefault
                                         handler:^(UIAlertAction * _Nonnull action) {
                                         NSMutableArray * testArray = self.listing.applicants;
-                                        [testArray addObject:[PFUser currentUser]];
+                                        [testArray addObject:curUser];
+        [self.listing saveInBackground];
         //NSLog(@"%lu", (unsigned long)testArray.count);
+        [curUser.appliedListings addObject:self.listing];
                                         self.listing.applicants = testArray;
-                                        [self.listing saveInBackground];
+        [curUser saveInBackground];
+                                        
         //NSLog(@"%@", self.listing.applicants);
                                                      }];
     // add the OK action to the alert controller
@@ -77,7 +83,6 @@
     [self presentViewController:userAlert animated:YES completion:^{
         // optional code for what happens after the alert controller has finished presenting
     }];
-    
     
 }
 

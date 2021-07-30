@@ -39,21 +39,51 @@
 //Two new buttons
 - (IBAction)pressHire:(id)sender {
     self.listing.hire = self.user;
+    
+    
+    
+    
+    NSMutableArray *toDelete = [NSMutableArray array];
     for (PFUser * user in self.listing.applicants) {
-        if (user != self.user) {
-            //remove other applicants from list
-            [self.listing.applicants removeObject:user];
-        }
+       if (user!= self.user)
+           [toDelete addObject:user];
     }
+    // Remove them
+    [self.listing.applicants removeObjectsInArray:toDelete];
+    [self.listing saveInBackground];
+    
+    
+    
+    
+    
+//    for (PFUser * user in [self.listing.applicants reverseObjectEnumerator]) {
+//        if (user != self.user) {
+//            //remove other applicants from list
+//            [self.listing.applicants removeObject:user];
+//        }
+//    }
     //Listing = [self.listing copy]
     [self.listing saveInBackground];
+    //[[PFUser currentUser] saveInBackground];
 }
 
 - (IBAction)markCompleted:(id)sender {
     //Doing this because I don't want the listing to be shown in the home screen anymore, but still be saved with the user
-    [self.user.completedListings addObject: [self.listing copy]];
+    Listing * listingCopy = [[Listing alloc] init];
+    [self.user.completedListings addObject: [listingCopy manualCopy:self.listing]];
+    [listingCopy saveInBackground];
+    
+    [self.user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                NSLog(@"AYOOOOOOOOO");
+            } else {
+                NSLog(@"No errors foun d");
+            }
+    }];
+    //[listingCopy saveInBackground];
+    //[[PFUser currentUser] saveInBackground];
     [self.user saveInBackground];
-    [self.listing deleteInBackground];
+    //[self.listing deleteInBackground];
     
 }
 

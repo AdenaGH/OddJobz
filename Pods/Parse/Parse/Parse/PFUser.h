@@ -118,6 +118,8 @@ typedef void(^PFUserLogoutResultBlock)(NSError *_Nullable error);
 
 @property (nonatomic, strong) NSMutableArray *completedListings;
 
+@property (nonatomic, strong) NSMutableArray *appliedListings;
+
 //The amount of job listings accepted by the current user.
 @property (nonatomic, assign) NSInteger jobsAccepted;
 //The amount of job listings posted by the current user.

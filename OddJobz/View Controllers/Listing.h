@@ -11,7 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 //NS_ASSUME_NONNULL_BEGIN
 
-@interface Listing : PFObject<PFSubclassing>
+@interface Listing : PFObject<PFSubclassing, NSCopying>
 @property (nonatomic, strong) NSString *postID;
 @property (nonatomic, strong) NSString *userID;
 @property (nonatomic, strong) PFUser *poster;
@@ -29,8 +29,8 @@
 @property (nonatomic, strong) PFUser *hire;
 @property (nonatomic, assign) BOOL jobDone;
 //@property (nonatomic, strong) NSNumber* jobDistance;
-
-+ (void) postListing:(NSString *)title withDescription:(NSString *)descript andLocation:(NSString *)location andPrice:(NSString *)price andImage:( UIImage * _Nullable )image andListingLocation: (CLLocation *_Nonnull) listingLocation andCategory: (NSString*_Nonnull) category;
+-(Listing*) manualCopy: (Listing *) listing;
+- (void) postListing:(NSString *)title withDescription:(NSString *)descript andLocation:(NSString *)location andPrice:(NSString *)price andImage:( UIImage * _Nullable )image andListingLocation: (CLLocation *_Nonnull) listingLocation andCategory: (NSString*_Nonnull) category;
 
 @end
 
