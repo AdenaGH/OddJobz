@@ -81,7 +81,6 @@
     }
     
     //Chance based on listing age
-    //self.listing.postedAt since
     NSTimeInterval timeSince = [[NSDate date] timeIntervalSinceDate:self.listing.postedAt]/86400; //converting seconds to days
     int timeInDays = timeSince;
     if (timeInDays <= 3) {
