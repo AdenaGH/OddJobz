@@ -25,8 +25,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //self.theEditButton.enabled = NO;
-    //self.theEditButton = nil;
     if (self.user == nil) {
         self.user = [PFUser currentUser];
     }
@@ -40,8 +38,6 @@
             self.profileImageView.image = [UIImage imageWithData:data];
         }
     }];
-    //self.profileImageView.image = self.user.profileImage;
-    // Do any additional setup after loading the view.
     
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedRightButton:)];
     [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
@@ -64,14 +60,6 @@
 
     [self.tabBarController setSelectedIndex:selectedIndex - 1];
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

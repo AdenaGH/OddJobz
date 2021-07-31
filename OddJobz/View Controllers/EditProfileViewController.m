@@ -61,13 +61,11 @@
     PFUser *curUser = [PFUser currentUser];
     if ([self.confirmPassword.text isEqual:curUser.username]) {
         UIImage *resizeImage = [self resizeImage:self.profileImage.image withSize:CGSizeMake(120, 120)];
-        //self.profileImage.image = resizeImage;
         curUser.firstName = self.firstName.text;
         curUser.lastName = self.lastName.text;
         curUser.profileImage = [self getPFFileFromImage:resizeImage];
         curUser.strength = self.strongsuit.text;
         curUser.biography = self.bio.text;
-        //[PFUser currentUser].profileImage = resizeImage;
         
         [curUser saveInBackground];
         
@@ -104,15 +102,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (NSInteger)numberOfComponentsInPickerView:(nonnull UIPickerView *)pickerView {
     return 1;

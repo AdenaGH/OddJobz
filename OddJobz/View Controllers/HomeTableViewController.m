@@ -50,9 +50,6 @@
     [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
     [self.view addGestureRecognizer:swipeLeft];
 
-//    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedLeftButton:)];
-//    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
-//    [self.view addGestureRecognizer:swipeRight];
         
  
 }
@@ -116,8 +113,6 @@
     return cell;
 }
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    //self.listings = self.filteredListings;
-    //
     [self.filteredListings removeAllObjects];
     
     if([searchText isEqualToString:@""]||searchText==nil){
@@ -150,16 +145,9 @@
 
 - (IBAction)logoutButtonPress:(id)sender {
     NSLog(@"Logout action called");
-
-    //AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    //UITabBarController *tabController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
     LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-    //appDelegate.window.rootViewController = loginViewController;
-    
-    //[[UIApplication sharedApplication].keyWindow setRootViewController: tabController];
     [[UIApplication sharedApplication].keyWindow setRootViewController: loginViewController];
     loginViewController.modalPresentationStyle = UIModalPresentationFullScreen;
     

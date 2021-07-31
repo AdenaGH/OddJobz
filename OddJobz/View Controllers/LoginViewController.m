@@ -34,7 +34,7 @@
     newUser.strength = @"Undecided";
     newUser.biography = @"";
     
-
+    
     // call sign up function on the object
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
         if (error != nil) {
@@ -67,13 +67,13 @@
     if ([self.usernameField.text isEqual:@""]) {
         NSLog(@"username field be empty");
         UIAlertController *userAlert = [UIAlertController alertControllerWithTitle:@"Missing Username"
-                                                                            message:@"Please enter a username!"
-                                                                            preferredStyle:(UIAlertControllerStyleAlert)];
+                                                                           message:@"Please enter a username!"
+                                                                    preferredStyle:(UIAlertControllerStyleAlert)];
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
                                                            style:UIAlertActionStyleDefault
                                                          handler:^(UIAlertAction * _Nonnull action) {
-                                                                 // handle response here.
-                                                         }];
+            // handle response here.
+        }];
         
         // add the OK action to the alert controller
         [userAlert addAction:okAction];
@@ -82,13 +82,13 @@
         }];
     } else if ([self.passwordField.text isEqual:@""]) {
         UIAlertController *passwordAlert = [UIAlertController alertControllerWithTitle:@"Missing Password"
-                                                                                   message:@"Please enter a password!"
-                                                                            preferredStyle:(UIAlertControllerStyleAlert)];
+                                                                               message:@"Please enter a password!"
+                                                                        preferredStyle:(UIAlertControllerStyleAlert)];
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
                                                            style:UIAlertActionStyleDefault
                                                          handler:^(UIAlertAction * _Nonnull action) {
-                                                                 // handle response here.
-                                                         }];
+            // handle response here.
+        }];
         // add the OK action to the alert controller
         [passwordAlert addAction:okAction];
         [self presentViewController:passwordAlert animated:YES completion:^{
@@ -103,13 +103,13 @@
     if ([self.usernameField.text isEqual:@""]) {
         NSLog(@"username field be empty");
         UIAlertController *userAlert = [UIAlertController alertControllerWithTitle:@"Missing Username"
-                                                                                   message:@"Please enter a username!"
-                                                                            preferredStyle:(UIAlertControllerStyleAlert)];
+                                                                           message:@"Please enter a username!"
+                                                                    preferredStyle:(UIAlertControllerStyleAlert)];
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
                                                            style:UIAlertActionStyleDefault
                                                          handler:^(UIAlertAction * _Nonnull action) {
-                                                                 // handle response here.
-                                                         }];
+            // handle response here.
+        }];
         
         // add the OK action to the alert controller
         [userAlert addAction:okAction];
@@ -118,13 +118,13 @@
         }];
     } else if ([self.passwordField.text isEqual:@""]) {
         UIAlertController *passwordAlert = [UIAlertController alertControllerWithTitle:@"Missing Password"
-                                                                                   message:@"Please enter a password!"
-                                                                            preferredStyle:(UIAlertControllerStyleAlert)];
+                                                                               message:@"Please enter a password!"
+                                                                        preferredStyle:(UIAlertControllerStyleAlert)];
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
                                                            style:UIAlertActionStyleDefault
                                                          handler:^(UIAlertAction * _Nonnull action) {
-                                                                 // handle response here.
-                                                         }];
+            // handle response here.
+        }];
         // add the OK action to the alert controller
         [passwordAlert addAction:okAction];
         [self presentViewController:passwordAlert animated:YES completion:^{
@@ -136,14 +136,5 @@
     }
     
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

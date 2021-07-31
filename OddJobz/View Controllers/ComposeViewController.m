@@ -24,7 +24,7 @@
 
 @implementation ComposeViewController {
     GMSAutocompleteFilter *_filter;
-  }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,16 +33,12 @@
     self.categoryPicker.dataSource = self;
     self.manager = [[CLLocationManager alloc] init];
     self.manager.delegate = self;
-    //[self.manager requestWhenInUseAuthorization];
-    //if ([self.manager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-        [self.manager requestWhenInUseAuthorization];
-   // }
-    //[self.manager startUpdatingLocation];
+    [self.manager requestWhenInUseAuthorization];
     // Do any additional setup after loading the view.
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedRightButton:)];
     [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
     [self.view addGestureRecognizer:swipeLeft];
-
+    
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedLeftButton:)];
     [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
     [self.view addGestureRecognizer:swipeRight];
@@ -51,14 +47,14 @@
 - (IBAction)tappedRightButton:(id)sender
 {
     NSUInteger selectedIndex = [self.tabBarController selectedIndex];
-
+    
     [self.tabBarController setSelectedIndex:selectedIndex + 1];
 }
 
 - (IBAction)tappedLeftButton:(id)sender
 {
     NSUInteger selectedIndex = [self.tabBarController selectedIndex];
-
+    
     [self.tabBarController setSelectedIndex:selectedIndex - 1];
 }
 
@@ -68,7 +64,7 @@
     imagePickerVC.allowsEditing = YES;
     imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
-
+    
     [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
@@ -94,18 +90,16 @@
     NSString *sbName = @"Main";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:sbName bundle:nil];
     UINavigationController *vc = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
-
+    
     vc.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:vc animated:YES completion:nil];
-    
-    //[self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
     // Get the image captured by the UIImagePickerController
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     //UIImage *editedImage = info[UIImagePickerControllerEditedImage];
-
+    
     // Do something with the images (based on your use case)
     self.listingImage.image = originalImage;
     // Dismiss UIImagePickerController to go back to your original view controller
@@ -115,62 +109,52 @@
 - (IBAction)pressAddress:(id)sender {
     GMSAutocompleteViewController *acController = [[GMSAutocompleteViewController alloc] init];
     acController.delegate = self;
-
+    
     // Specify the place data types to return.
     GMSPlaceField fields = (GMSPlaceFieldName | GMSPlaceFieldPlaceID) | GMSPlaceFieldCoordinate;
     acController.placeFields = fields;
-
+    
     // Specify a filter.
     _filter = [[GMSAutocompleteFilter alloc] init];
     _filter.type = kGMSPlacesAutocompleteTypeFilterAddress;
     acController.autocompleteFilter = _filter;
-
+    
     // Display the autocomplete view controller.
     [self presentViewController:acController animated:YES completion:nil];
     
 }
 - (void)viewController:(GMSAutocompleteViewController *)viewController
 didAutocompleteWithPlace:(GMSPlace *)place {
-  [self dismissViewControllerAnimated:YES completion:nil];
-  // Do something with the selected place.
-  NSLog(@"Place name %@", place.name);
-  NSLog(@"Place ID %@", place.placeID);
-  NSLog(@"Place attributions %@", place.attributions.string);
+    [self dismissViewControllerAnimated:YES completion:nil];
+    // Do something with the selected place.
+    
     self.otherLocation = [[CLLocation alloc] initWithLatitude:place.coordinate.latitude longitude:place.coordinate.longitude];
-
+    
     
     self.addressTextView.text = place.name;
 }
 
 - (void)viewController:(GMSAutocompleteViewController *)viewController
 didFailAutocompleteWithError:(NSError *)error {
-  [self dismissViewControllerAnimated:YES completion:nil];
-  // TODO: handle the error.
-  NSLog(@"Error: %@", [error description]);
+    [self dismissViewControllerAnimated:YES completion:nil];
+    // TODO: handle the error.
+    NSLog(@"Error: %@", [error description]);
 }
 
 // User canceled the operation.
 - (void)wasCancelled:(GMSAutocompleteViewController *)viewController {
-[self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 // Turn the network activity indicator on and off again.
 - (void)didRequestAutocompletePredictions:(GMSAutocompleteViewController *)viewController {
-[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
 
 - (void)didUpdateAutocompletePredictions:(GMSAutocompleteViewController *)viewController {
-[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (NSInteger)numberOfComponentsInPickerView:(nonnull UIPickerView *)pickerView {
     return 1;

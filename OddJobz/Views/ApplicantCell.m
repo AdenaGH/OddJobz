@@ -69,17 +69,14 @@
 
 - (IBAction)markCompleted:(id)sender {
     //Doing this because I don't want the listing to be shown in the home screen anymore, but still be saved with the user
-    Listing * listingCopy = [[Listing alloc] init];
-    [self.user.completedListings addObject: [listingCopy manualCopy:self.listing]];
-    [listingCopy saveInBackground];
-    
-    [self.user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-            if (succeeded) {
-                NSLog(@"AYOOOOOOOOO");
-            } else {
-                NSLog(@"No errors foun d");
-            }
-    }];
+    //Listing * listingCopy = [[Listing alloc] init];
+    //listingCopy = [listingCopy copy];
+    //[listingCopy saveInBackground];
+    NSMutableArray * testArray = self.user.completedListings;
+    [testArray addObject: self.listing.category];
+    self.user.completedListings = testArray;
+    [self.user saveInBackground];
+   //
     //[listingCopy saveInBackground];
     //[[PFUser currentUser] saveInBackground];
     [self.user saveInBackground];

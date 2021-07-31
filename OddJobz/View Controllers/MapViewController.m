@@ -17,10 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //self.manager.desiredAccuracy = kCLLocationAccuracyBest;
     self.manager = [[CLLocationManager alloc] init];
     self.manager.delegate = self;
-    //[self.manager requestWhenInUseAuthorization];
     if ([self.manager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [self.manager requestWhenInUseAuthorization];
     }
@@ -56,16 +54,5 @@
     [self.manager stopUpdatingLocation];
 }
 
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -70,13 +70,11 @@
                                         handler:^(UIAlertAction * _Nonnull action) {
         NSMutableArray * testArray = self.listing.applicants;
                                                 [testArray addObject:[PFUser currentUser]];
-                //NSLog(@"%lu", (unsigned long)testArray.count);
                                                 self.listing.applicants = testArray;
                                                 [self.listing saveInBackground];
                                                      }];
     NSMutableArray * testArray2 = curUser.appliedListings;
                                             [testArray2 addObject:self.listing];
-            //NSLog(@"%lu", (unsigned long)testArray.count);
                                            curUser.appliedListings = testArray2;
                                             [curUser saveInBackground];
     // add the OK action to the alert controller
@@ -87,14 +85,5 @@
     
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
