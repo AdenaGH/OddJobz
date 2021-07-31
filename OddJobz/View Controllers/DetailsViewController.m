@@ -68,16 +68,17 @@
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Yes"
                                         style:UIAlertActionStyleDefault
                                         handler:^(UIAlertAction * _Nonnull action) {
-                                        NSMutableArray * testArray = self.listing.applicants;
-                                        [testArray addObject:curUser];
-        [self.listing saveInBackground];
-        //NSLog(@"%lu", (unsigned long)testArray.count);
-        [curUser.appliedListings addObject:self.listing];
-                                        self.listing.applicants = testArray;
-        [curUser saveInBackground];
-                                        
-        //NSLog(@"%@", self.listing.applicants);
+        NSMutableArray * testArray = self.listing.applicants;
+                                                [testArray addObject:[PFUser currentUser]];
+                //NSLog(@"%lu", (unsigned long)testArray.count);
+                                                self.listing.applicants = testArray;
+                                                [self.listing saveInBackground];
                                                      }];
+    NSMutableArray * testArray2 = curUser.appliedListings;
+                                            [testArray2 addObject:self.listing];
+            //NSLog(@"%lu", (unsigned long)testArray.count);
+                                           curUser.appliedListings = testArray2;
+                                            [curUser saveInBackground];
     // add the OK action to the alert controller
     [userAlert addAction:okAction];
     [self presentViewController:userAlert animated:YES completion:^{
