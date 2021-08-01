@@ -6,6 +6,7 @@
 //
 
 #import "ApplicantCell.h"
+#import "Parse/Parse.h"
 
 @implementation ApplicantCell
 
@@ -50,7 +51,28 @@
     }
     // Remove them
     [self.listing.applicants removeObjectsInArray:toDelete];
-    [self.listing saveInBackground];
+    NSLog(@"HEllo");
+    [self.user saveInBackground];
+    [self.user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                NSLog(@"Succeeded with hiring");
+            } else {
+                NSLog(@"FAILURE1");
+                NSLog(@"%@", error);
+            }
+    }];
+    [self.listing saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                NSLog(@"Succeeded with listing");
+            } else {
+                NSLog(@"FAILURE2");
+                NSLog(@"%@", error);
+            }
+    }];
+    
+    NSLog(@"Goodbye");
+
+    
     
     
     
@@ -69,18 +91,8 @@
 
 - (IBAction)markCompleted:(id)sender {
     //Doing this because I don't want the listing to be shown in the home screen anymore, but still be saved with the user
-    //Listing * listingCopy = [[Listing alloc] init];
-    //listingCopy = [listingCopy copy];
-    //[listingCopy saveInBackground];
-    NSMutableArray * testArray = self.user.completedListings;
-    [testArray addObject: self.listing.category];
-    self.user.completedListings = testArray;
-    [self.user saveInBackground];
-   //
-    //[listingCopy saveInBackground];
-    //[[PFUser currentUser] saveInBackground];
-    [self.user saveInBackground];
-    //[self.listing deleteInBackground];
+    self.listing.jobDone = YES;
+    [self.listing saveInBackground];
     
 }
 

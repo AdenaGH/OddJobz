@@ -86,6 +86,7 @@
     NSString * priceString = [@"$" stringByAppendingString: self.priceTextView.text];
     Listing *newListing = [[Listing alloc] init];
     [newListing postListing:self.titleTextView.text withDescription:self.descriptionTextView.text andLocation:self.addressTextView.text andPrice:priceString andImage:resizeImage andListingLocation:self.otherLocation andCategory:self.categoryTextField.text];
+    [[PFUser currentUser].availableListings addObject:newListing];
     
     NSString *sbName = @"Main";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:sbName bundle:nil];

@@ -47,7 +47,7 @@
     self.applicants = [NSMutableArray new];
     self.category = category;
     self.location = [PFGeoPoint geoPointWithLatitude:listingLocation.coordinate.latitude longitude:listingLocation.coordinate.longitude];
-    [self.poster.availableListings addObject:self];
+    //[self.poster.availableListings addObject:self];
     
     //Saves to database
     [self saveInBackground];

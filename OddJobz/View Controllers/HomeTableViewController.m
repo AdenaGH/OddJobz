@@ -157,6 +157,15 @@
     
     NSLog(@"Logout action finished");
 }
+-(void)updateCompletedListings {
+    for (Listing * listing in [PFUser currentUser].appliedListings) {
+        if (listing.jobDone) {
+            Listing *newListing = [Listing new];
+            [newListing postListing:listing.jobTitle withDescription:listing.jobDescription andLocation:listing.jobLocation andPrice:listing.price andImage:listing.image andListingLocation:listing.location andCategory:listing.category];
+            
+        }
+    }
+}
 
 #pragma mark - Navigation
 
