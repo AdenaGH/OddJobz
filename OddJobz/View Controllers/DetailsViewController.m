@@ -80,7 +80,6 @@
     // add the OK action to the alert controller
     [userAlert addAction:okAction];
     [self presentViewController:userAlert animated:YES completion:^{
-        // optional code for what happens after the alert controller has finished presenting
     }];
     
 }

@@ -19,15 +19,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.listing saveInBackground];
     [self.listing fetchIfNeeded];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
     [self fetchApplicants];
-    
+    //[self.listing saveInBackground];
     self.refreshCont = [[UIRefreshControl alloc] init];
     [self.refreshCont addTarget:self action:@selector(fetchApplicants) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshCont atIndex:0];
+    [self.tableView reloadData];
 
 }
 - (void)fetchApplicants {
@@ -49,7 +51,9 @@
     
     // Configure the cell...
     PFUser *user = self.myApplicants[indexPath.row];
+    [user saveInBackground];
     [cell makeApplicants:user withListing: self.listing];
+    cell.tableView = self.tableView;
     return cell;
 }
 

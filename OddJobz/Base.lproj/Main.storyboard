@@ -567,6 +567,7 @@
                                             <rect key="frame" x="139" y="85" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Hire"/>
+                                            <state key="selected" title="Hired"/>
                                             <connections>
                                                 <action selector="pressHire:" destination="Lnl-uc-2Tt" eventType="touchUpInside" id="btc-el-RvF"/>
                                             </connections>
@@ -591,6 +592,8 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="applicantImage" destination="jk0-rj-GXb" id="Fin-9R-tbV"/>
+                                    <outlet property="completedButton" destination="0z1-t1-Mnw" id="EWe-4K-r91"/>
+                                    <outlet property="hireButton" destination="urk-r6-0cs" id="Hwk-lT-tnh"/>
                                     <outlet property="nameLabel" destination="P0p-jj-Ecs" id="K1u-TS-VPt"/>
                                     <segue destination="uUk-xP-ZKO" kind="presentation" identifier="appliedSegue" id="91C-AP-Bcn"/>
                                 </connections>

@@ -34,59 +34,25 @@
     }];
     self.nameLabel.text = user.username;
 
-
 }
 
 //Two new buttons
 - (IBAction)pressHire:(id)sender {
     self.listing.hire = self.user;
-    
-    
-    
-    
+    [self.hireButton setSelected:YES];
     NSMutableArray *toDelete = [NSMutableArray array];
+    NSMutableArray *newArray = self.listing.applicants;
     for (PFUser * user in self.listing.applicants) {
        if (user!= self.user)
            [toDelete addObject:user];
     }
     // Remove them
-    [self.listing.applicants removeObjectsInArray:toDelete];
-    NSLog(@"HEllo");
-    [self.user saveInBackground];
-    [self.user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-            if (succeeded) {
-                NSLog(@"Succeeded with hiring");
-            } else {
-                NSLog(@"FAILURE1");
-                NSLog(@"%@", error);
-            }
-    }];
-    [self.listing saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-            if (succeeded) {
-                NSLog(@"Succeeded with listing");
-            } else {
-                NSLog(@"FAILURE2");
-                NSLog(@"%@", error);
-            }
-    }];
-    
-    NSLog(@"Goodbye");
+    [newArray removeObjectsInArray:toDelete];
+    self.listing.applicants = newArray;
+    [self.listing saveInBackground];
 
     
-    
-    
-    
-    
-    
-//    for (PFUser * user in [self.listing.applicants reverseObjectEnumerator]) {
-//        if (user != self.user) {
-//            //remove other applicants from list
-//            [self.listing.applicants removeObject:user];
-//        }
-//    }
-    //Listing = [self.listing copy]
-    [self.listing saveInBackground];
-    //[[PFUser currentUser] saveInBackground];
+
 }
 
 - (IBAction)markCompleted:(id)sender {

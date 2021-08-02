@@ -222,8 +222,8 @@
             filePath = "OddJobz/View Controllers/ApplicantsTableViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "ApplicantsTableViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -238,8 +238,8 @@
             filePath = "OddJobz/View Controllers/ApplicantsTableViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
             <Locations>
@@ -286,10 +286,10 @@
             filePath = "OddJobz/Views/ApplicantCell.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "ApplicantCell"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -606,8 +606,8 @@
             filePath = "OddJobz/Views/ApplicantCell.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101">
+            startingLineNumber = "67"
+            endingLineNumber = "67">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -636,8 +636,8 @@
             filePath = "OddJobz/View Controllers/ApplicantsTableViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -712,8 +712,8 @@
             filePath = "OddJobz/View Controllers/ApplicantsTableViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -728,8 +728,8 @@
             filePath = "OddJobz/View Controllers/ApplicantsTableViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "-tableView:numberOfRowsInSection:"
             landmarkType = "7">
          </BreakpointContent>
@@ -760,8 +760,8 @@
             filePath = "OddJobz/View Controllers/ApplicantsTableViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "-fetchApplicants"
             landmarkType = "7">
          </BreakpointContent>
@@ -1344,8 +1344,8 @@
             filePath = "OddJobz/View Controllers/ApplicantsTableViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "-fetchApplicants"
             landmarkType = "7">
          </BreakpointContent>
@@ -1363,22 +1363,6 @@
             startingLineNumber = "21"
             endingLineNumber = "21"
             landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D39BD43A-EED1-4C53-93BA-53A4AE0103AC"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OddJobz/Views/ApplicantCell.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "-makeApplicants:withListing:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1632,8 +1616,8 @@
             filePath = "OddJobz/View Controllers/ApplicantsTableViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1648,8 +1632,8 @@
             filePath = "OddJobz/View Controllers/ApplicantsTableViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1664,8 +1648,8 @@
             filePath = "OddJobz/View Controllers/ApplicantsTableViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "-prepareForSegue:sender:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1818,14 +1802,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "78E27F45-1B30-456E-9783-DE4A732955B1"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OddJobz/Views/ApplicantCell.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "-markCompleted:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1834,14 +1818,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "DEDFA483-E051-49FA-8E9D-57572D329DD8"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OddJobz/Views/ApplicantCell.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "-markCompleted:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1849,15 +1833,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5F17D175-4CF5-4BBB-A973-1F57C2F6F76C"
+            uuid = "8B03344A-9452-4704-8185-88390122DD99"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OddJobz/Views/ApplicantCell.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "-pressHire:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1865,16 +1849,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8B03344A-9452-4704-8185-88390122DD99"
-            shouldBeEnabled = "Yes"
+            uuid = "A19B9CA4-05E8-49E4-9BEE-915B1195483F"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OddJobz/Views/ApplicantCell.m"
+            filePath = "OddJobz/View Controllers/ApplicantsTableViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "-pressHire:"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
