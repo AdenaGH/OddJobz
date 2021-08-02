@@ -38,6 +38,7 @@
             self.detailImageView.image = [UIImage imageWithData:data];
         }
     }];
+
     self.listingSkill.text = @"Apply to the job to check your odds";
     self.listingTitle.text = self.listing.jobTitle;
     self.listingDescription.text = self.listing.jobDescription;

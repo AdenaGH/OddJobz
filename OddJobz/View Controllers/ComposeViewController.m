@@ -84,9 +84,11 @@
 - (IBAction)pressShare:(id)sender {
     UIImage *resizeImage = [self resizeImage:self.listingImage.image withSize:CGSizeMake(400, 400)];
     NSString * priceString = [@"$" stringByAppendingString: self.priceTextView.text];
-    Listing *newListing = [[Listing alloc] init];
+    Listing *newListing = [Listing new];
+    [[PFUser currentUser] fetch];
     [newListing postListing:self.titleTextView.text withDescription:self.descriptionTextView.text andLocation:self.addressTextView.text andPrice:priceString andImage:resizeImage andListingLocation:self.otherLocation andCategory:self.categoryTextField.text];
     [[PFUser currentUser].availableListings addObject:newListing];
+    [newListing saveInBackground];
     
     NSString *sbName = @"Main";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:sbName bundle:nil];

@@ -7,6 +7,9 @@
 
 #import "ApplicantCell.h"
 #import "Parse/Parse.h"
+#import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+
 
 @implementation ApplicantCell
 
@@ -57,8 +60,16 @@
 
 - (IBAction)markCompleted:(id)sender {
     //Doing this because I don't want the listing to be shown in the home screen anymore, but still be saved with the user
+
     self.listing.jobDone = YES;
     [self.listing saveInBackground];
+    //self getpffilefromimage
+    NSMutableArray * newArray = self.user.completedListings;;
+    [newArray addObject:self.listing.category];
+    self.user.completedListings = newArray;
+    [self.listing saveInBackground];
+    [self.user saveInBackground];
+    
     
 }
 

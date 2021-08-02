@@ -41,6 +41,7 @@
     
     
     
+    
     [self fetchListings];
     //self.filteredListings = self.listings;
     self.refreshCont = [[UIRefreshControl alloc] init];
@@ -76,6 +77,7 @@
     [query includeKey:@"poster"];
     [query includeKey:@"location"];
     [query includeKey:@"applicants"];
+    [query includeKey:@"jobDone"];
     //[query orderByDescending:@"createdAt"];
     [query whereKey:@"poster" notEqualTo:[PFUser currentUser]];
 
@@ -94,6 +96,17 @@
         }
         [self.refreshCont endRefreshing];
     }];
+    PFUser *curUser = [PFUser currentUser];
+    for (Listing* listing in curUser.appliedListings) {
+        [listing fetchIfNeeded];
+        if (listing.jobDone == YES) {
+            NSMutableArray * newArray = [NSMutableArray new];
+            NSString * completedCategory = [[NSString alloc] initWithString:listing.category];
+            [newArray addObject:completedCategory];
+            curUser.completedListings = newArray;
+        }
+    }
+    [curUser saveInBackground];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
