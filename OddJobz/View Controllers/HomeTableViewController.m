@@ -170,6 +170,7 @@
         UINavigationController *nav = [segue destinationViewController];
         DetailsViewController *detailsView = (DetailsViewController *) nav.topViewController;
         detailsView.listing = clickedListing;
+        detailsView.distanceNumber = clickedCell.distanceNumber;
     }
 }
 @end

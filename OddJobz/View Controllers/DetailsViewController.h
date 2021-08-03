@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DetailsViewController : UIViewController
 @property (nonatomic, strong) Listing *listing;
+@property (strong, nonatomic) NSNumber *distanceNumber;
 @end
 
 NS_ASSUME_NONNULL_END
