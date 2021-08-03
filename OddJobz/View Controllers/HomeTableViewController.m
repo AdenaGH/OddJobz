@@ -79,15 +79,15 @@
         [self.refreshCont endRefreshing];
     }];
     PFUser *curUser = [PFUser currentUser];
-    for (Listing* listing in curUser.appliedListings) {
-        [listing fetchIfNeeded];
-        if (listing.jobDone == YES) {
-            NSMutableArray * newArray = [NSMutableArray new];
-            NSString * completedCategory = [[NSString alloc] initWithString:listing.category];
-            [newArray addObject:completedCategory];
-            curUser.completedListings = newArray;
-        }
-    }
+//    for (Listing* listing in curUser.appliedListings) {
+//        [listing fetchIfNeeded];
+//        if (listing.jobDone == YES) {
+//            NSMutableArray * newArray = [NSMutableArray new];
+//            NSString * completedCategory = [[NSString alloc] initWithString:listing.category];
+//            [newArray addObject:completedCategory];
+//            curUser.completedListings = newArray;
+//        }
+//    }
     [curUser saveInBackground];
 }
 

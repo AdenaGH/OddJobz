@@ -382,14 +382,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Job Tile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4e-kU-dyp">
-                                            <rect key="frame" x="115" y="16" width="60" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="115" y="16" width="59" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsP-kZ-gMz">
                                             <rect key="frame" x="115" y="52" width="279" height="210"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -401,9 +401,9 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQA-3m-sZ8">
-                                            <rect key="frame" x="45.5" y="106" width="39" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <rect key="frame" x="25" y="106" width="80" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
+                                            <color key="textColor" systemColor="systemGreenColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -412,9 +412,11 @@
                                         <constraint firstItem="eQA-3m-sZ8" firstAttribute="centerX" secondItem="Sxz-L0-VQD" secondAttribute="centerX" id="6Af-Em-P7I"/>
                                         <constraint firstItem="Sxz-L0-VQD" firstAttribute="leading" secondItem="pEM-K3-UY5" secondAttribute="leadingMargin" constant="5" id="7pY-8J-nlO"/>
                                         <constraint firstAttribute="bottom" secondItem="IsP-kZ-gMz" secondAttribute="bottom" constant="20" id="8OP-mH-nDd"/>
+                                        <constraint firstItem="eQA-3m-sZ8" firstAttribute="centerX" secondItem="Sxz-L0-VQD" secondAttribute="centerX" id="F8Z-d4-FA9"/>
                                         <constraint firstItem="Sxz-L0-VQD" firstAttribute="top" secondItem="pEM-K3-UY5" secondAttribute="topMargin" constant="5" id="Mep-IO-CoQ"/>
                                         <constraint firstItem="IsP-kZ-gMz" firstAttribute="leading" secondItem="B4e-kU-dyp" secondAttribute="leading" id="SnN-Wr-cmb"/>
                                         <constraint firstItem="eQA-3m-sZ8" firstAttribute="top" secondItem="Sxz-L0-VQD" secondAttribute="bottom" constant="10" id="czg-pm-TUz"/>
+                                        <constraint firstItem="IsP-kZ-gMz" firstAttribute="leading" secondItem="eQA-3m-sZ8" secondAttribute="trailing" constant="10" id="dqu-Hn-yjw"/>
                                         <constraint firstItem="IsP-kZ-gMz" firstAttribute="top" secondItem="B4e-kU-dyp" secondAttribute="bottom" constant="15" id="q0u-1Y-7NP"/>
                                         <constraint firstItem="B4e-kU-dyp" firstAttribute="top" secondItem="Sxz-L0-VQD" secondAttribute="top" id="qdh-YZ-jZl"/>
                                         <constraint firstItem="B4e-kU-dyp" firstAttribute="leading" secondItem="Sxz-L0-VQD" secondAttribute="trailing" constant="10" id="ycO-DB-In6"/>
@@ -559,13 +561,14 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Applicant's Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0p-jj-Ecs">
                                             <rect key="frame" x="139" y="57" width="265" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urk-r6-0cs">
-                                            <rect key="frame" x="139" y="85" width="30" height="30"/>
+                                            <rect key="frame" x="139" y="79" width="52" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
                                             <state key="normal" title="Hire"/>
                                             <state key="selected" title="Hired"/>
                                             <connections>
@@ -573,9 +576,11 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0z1-t1-Mnw">
-                                            <rect key="frame" x="214" y="85" width="114" height="30"/>
+                                            <rect key="frame" x="216" y="79" width="158" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
                                             <state key="normal" title="Mark Completed"/>
+                                            <state key="selected" title="Completed"/>
                                             <connections>
                                                 <action selector="markCompleted:" destination="Lnl-uc-2Tt" eventType="touchUpInside" id="e5P-9w-fyl"/>
                                             </connections>
@@ -1053,6 +1058,9 @@ Address:</string>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

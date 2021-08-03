@@ -43,6 +43,7 @@
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedLeftButton:)];
     [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
     [self.view addGestureRecognizer:swipeRight];
+    [self.view reloadInputViews];
 }
 
 - (IBAction)tappedRightButton:(id)sender

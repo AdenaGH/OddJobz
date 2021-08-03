@@ -77,8 +77,9 @@
                                                 [testArray addObject:curUser];
         } else {
             for (PFUser* user in testArray) {
-                if (user.appliedListings[self.listing] >= self.permChance) {
+                if ([user.appliedListings objectForKey:self.listing] >= self.permChance) {
                     [testArray insertObject:curUser atIndex:[self.listing.applicants indexOfObject:user]];
+                    break;
                 } else {
                     [testArray addObject:curUser];
                 }

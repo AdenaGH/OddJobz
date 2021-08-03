@@ -28,7 +28,7 @@
     newUser.jobsPosted = 0;
     newUser.availableListings = [NSMutableArray new];
     newUser.completedListings = [NSMutableArray new];
-    newUser.appliedListings = [NSMutableDictionary new];
+    newUser.appliedListings = [NSMutableDictionary new] ;
     newUser.strength = @"Undecided";
     newUser.biography = @"";
     // call sign up function on the object
