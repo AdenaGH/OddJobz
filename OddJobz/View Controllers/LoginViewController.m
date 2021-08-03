@@ -19,10 +19,8 @@
     // Do any additional setup after loading the view.
 }
 - (void)registerUser {
-    
     // Make new user object
     PFUser *newUser = [PFUser user];
-    
     // set user properties
     newUser.username = self.usernameField.text;
     newUser.password = self.passwordField.text;
@@ -33,15 +31,11 @@
     newUser.appliedListings = [NSMutableArray new];
     newUser.strength = @"Undecided";
     newUser.biography = @"";
-    
-    
     // call sign up function on the object
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
         if (error != nil) {
             NSLog(@"Error: %@", error.localizedDescription);
         } else {
-            NSLog(@"User registered successfully");
-            
             [self performSegueWithIdentifier:@"loginSegue" sender:nil];
         }
     }];
@@ -55,8 +49,6 @@
         if (error != nil) {
             NSLog(@"User log in failed: %@", error.localizedDescription);
         } else {
-            NSLog(@"User logged in successfully");
-            
             // display view controller that needs to shown after successful login
             [self performSegueWithIdentifier:@"loginSegue" sender:nil];
         }
@@ -65,7 +57,6 @@
 
 - (IBAction)loginButton:(id)sender {
     if ([self.usernameField.text isEqual:@""]) {
-        NSLog(@"username field be empty");
         UIAlertController *userAlert = [UIAlertController alertControllerWithTitle:@"Missing Username"
                                                                            message:@"Please enter a username!"
                                                                     preferredStyle:(UIAlertControllerStyleAlert)];
@@ -74,7 +65,6 @@
                                                          handler:^(UIAlertAction * _Nonnull action) {
             // handle response here.
         }];
-        
         // add the OK action to the alert controller
         [userAlert addAction:okAction];
         [self presentViewController:userAlert animated:YES completion:^{
@@ -99,9 +89,9 @@
         [self loginUser];
     }
 }
+
 - (IBAction)signUpButton:(id)sender {
     if ([self.usernameField.text isEqual:@""]) {
-        NSLog(@"username field be empty");
         UIAlertController *userAlert = [UIAlertController alertControllerWithTitle:@"Missing Username"
                                                                            message:@"Please enter a username!"
                                                                     preferredStyle:(UIAlertControllerStyleAlert)];
@@ -110,7 +100,6 @@
                                                          handler:^(UIAlertAction * _Nonnull action) {
             // handle response here.
         }];
-        
         // add the OK action to the alert controller
         [userAlert addAction:okAction];
         [self presentViewController:userAlert animated:YES completion:^{
@@ -130,11 +119,9 @@
         [self presentViewController:passwordAlert animated:YES completion:^{
             // optional code for what happens after the alert controller has finished presenting
         }];
-        
     } else {
         [self registerUser];
     }
-    
 }
 
 @end

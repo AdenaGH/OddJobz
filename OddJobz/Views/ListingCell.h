@@ -20,7 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *listingDistance;
 @property (strong, nonatomic) PFGeoPoint *userLocation;
 @property (strong, nonatomic) NSNumber *distanceNumber;
-
 @property (strong, nonatomic) Listing *listing;
 -(void)makeListing:(Listing *)listing;
 -(void)giveUserLocation:(CLLocation *)userLocation;

@@ -23,18 +23,12 @@
         [self.manager requestWhenInUseAuthorization];
     }
     [self.manager startUpdatingLocation];
-    
-    
-    // Do any additional setup after loading the view.
-
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     CLLocation *location = locations.firstObject;
     if (location == nil) {
-        NSLog(@"Help wanted");
     }
-    
     CLLocationCoordinate2D coord = location.coordinate;
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:coord.latitude
                                                             longitude:coord.longitude
@@ -42,17 +36,12 @@
     GMSMapView *mapView = [GMSMapView mapWithFrame:self.view.frame camera:camera];
     mapView.myLocationEnabled = YES;
     [self.view addSubview:mapView];
-
     // Creates a marker in the center of the map.
     GMSMarker *marker = [[GMSMarker alloc] init];
     marker.position = CLLocationCoordinate2DMake(coord.latitude, coord.longitude);
     marker.title = @"Sydney";
     marker.snippet = @"Australia";
     marker.map = mapView;
-    
-    
     [self.manager stopUpdatingLocation];
 }
-
-
 @end

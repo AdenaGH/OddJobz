@@ -26,10 +26,7 @@
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    
-    
     [self fetchListings];
-    
     self.refreshCont = [[UIRefreshControl alloc] init];
     [self.refreshCont addTarget:self action:@selector(fetchListings) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshCont atIndex:0];
@@ -44,9 +41,6 @@
     [query includeKey:@"applicants"];
     [query includeKey:@"profileImage"];
     [query whereKey:@"poster" equalTo:[PFUser currentUser]];
-
-
-
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *listings, NSError *error) {
         if (listings != nil) {
@@ -62,7 +56,6 @@
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedRightButton:)];
     [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
     [self.view addGestureRecognizer:swipeLeft];
-
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedLeftButton:)];
     [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
     [self.view addGestureRecognizer:swipeRight];
@@ -71,14 +64,12 @@
 - (IBAction)tappedRightButton:(id)sender
 {
     NSUInteger selectedIndex = [self.tabBarController selectedIndex];
-
     [self.tabBarController setSelectedIndex:selectedIndex + 1];
 }
 
 - (IBAction)tappedLeftButton:(id)sender
 {
     NSUInteger selectedIndex = [self.tabBarController selectedIndex];
-
     [self.tabBarController setSelectedIndex:selectedIndex - 1];
 }
 #pragma mark - Table view data source
@@ -89,7 +80,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MyListingCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyListingCell" forIndexPath:indexPath];
-    
      //Configure the cell...
     Listing *listing = self.myListings[indexPath.row];
     [cell showListing:listing ];

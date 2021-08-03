@@ -20,7 +20,6 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
 }
 
@@ -36,7 +35,6 @@
         }
     }];
     self.nameLabel.text = user.username;
-
 }
 
 //Two new buttons
@@ -52,25 +50,22 @@
     // Remove them
     [newArray removeObjectsInArray:toDelete];
     self.listing.applicants = newArray;
-    [self.listing saveInBackground];
-
-    
-
+    BFTask *goodTask =[self.listing saveInBackground];
+    [goodTask waitUntilFinished];
 }
 
 - (IBAction)markCompleted:(id)sender {
     //Doing this because I don't want the listing to be shown in the home screen anymore, but still be saved with the user
-
     self.listing.jobDone = YES;
-    [self.listing saveInBackground];
     //self getpffilefromimage
     NSMutableArray * newArray = self.user.completedListings;;
     [newArray addObject:self.listing.category];
     self.user.completedListings = newArray;
-    [self.listing saveInBackground];
-    [self.user saveInBackground];
-    
-    
+    //self.user access
+    BFTask *task = [self.user saveInBackground];
+    [task waitUntilFinished];
+    BFTask *task2 =[self.listing saveInBackground];
+    [task2 waitUntilFinished];
 }
 
 

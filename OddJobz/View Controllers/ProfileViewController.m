@@ -28,7 +28,6 @@
     if (self.user == nil) {
         self.user = [PFUser currentUser];
     }
-    
     self.usernameLabel.text = self.user.username;
     self.wholeNameLabel.text = [self.user.firstName stringByAppendingString:self.user.lastName];
     self.strengthLabel.text = self.user.strength;
@@ -38,26 +37,23 @@
             self.profileImageView.image = [UIImage imageWithData:data];
         }
     }];
-    
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedRightButton:)];
     [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
     [self.view addGestureRecognizer:swipeLeft];
-
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedLeftButton:)];
     [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
     [self.view addGestureRecognizer:swipeRight];
 }
+
 - (IBAction)tappedRightButton:(id)sender
 {
     NSUInteger selectedIndex = [self.tabBarController selectedIndex];
-
     [self.tabBarController setSelectedIndex:selectedIndex + 1];
 }
 
 - (IBAction)tappedLeftButton:(id)sender
 {
     NSUInteger selectedIndex = [self.tabBarController selectedIndex];
-
     [self.tabBarController setSelectedIndex:selectedIndex - 1];
 }
 

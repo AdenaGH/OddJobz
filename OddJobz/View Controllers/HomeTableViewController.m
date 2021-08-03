@@ -27,47 +27,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.manager = [[CLLocationManager alloc] init];
     self.manager.delegate = self;
     self.searchBar.delegate = self;
-    //[self.manager requestWhenInUseAuthorization];
     if ([self.manager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [self.manager requestWhenInUseAuthorization];
     }
     [self.manager startUpdatingLocation];
-    
-    
-    
-    
     [self fetchListings];
-    //self.filteredListings = self.listings;
     self.refreshCont = [[UIRefreshControl alloc] init];
     [self.refreshCont addTarget:self action:@selector(fetchListings) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshCont atIndex:0];
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedRightButton:)];
     [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
     [self.view addGestureRecognizer:swipeLeft];
-
-        
- 
 }
-
-
 
 - (IBAction)tappedRightButton:(id)sender
 {
     NSUInteger selectedIndex = [self.tabBarController selectedIndex];
-
     [self.tabBarController setSelectedIndex:selectedIndex + 1];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
     CLLocation *location = locations.firstObject;
     if (location == nil) {
-        NSLog(@"Help wanted");
         [self.manager stopUpdatingLocation];
     }
 }
@@ -78,11 +64,7 @@
     [query includeKey:@"location"];
     [query includeKey:@"applicants"];
     [query includeKey:@"jobDone"];
-    //[query orderByDescending:@"createdAt"];
     [query whereKey:@"poster" notEqualTo:[PFUser currentUser]];
-
-
-
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *listings, NSError *error) {
         if (listings != nil) {
@@ -116,15 +98,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ListingCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListingCell" forIndexPath:indexPath];
-    
     // Configure the cell...
     Listing *listing = self.filteredListings[indexPath.row];
     [cell setUserLocation: [PFGeoPoint geoPointWithLocation:self.manager.location]];
     [cell makeListing:listing];
-    
-    
     return cell;
 }
+
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     [self.filteredListings removeAllObjects];
     
@@ -144,6 +124,7 @@
     [self.tableView reloadData];
  
 }
+
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
     self.searchBar.showsCancelButton = YES;
 }
@@ -157,19 +138,15 @@
 }
 
 - (IBAction)logoutButtonPress:(id)sender {
-    NSLog(@"Logout action called");
-    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
     [[UIApplication sharedApplication].keyWindow setRootViewController: loginViewController];
     loginViewController.modalPresentationStyle = UIModalPresentationFullScreen;
-    
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         // PFUser.current() will now be nil
     }];
-    
-    NSLog(@"Logout action finished");
 }
+
 -(void)updateCompletedListings {
     for (Listing * listing in [PFUser currentUser].appliedListings) {
         if (listing.jobDone) {
@@ -182,11 +159,9 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    
     if ([segue.identifier isEqual:@"detailsSegue"]) {
         [self.tableView reloadData];
         ListingCell *clickedCell = (ListingCell *)sender;
@@ -195,10 +170,6 @@
         UINavigationController *nav = [segue destinationViewController];
         DetailsViewController *detailsView = (DetailsViewController *) nav.topViewController;
         detailsView.listing = clickedListing;
-        
     }
-
 }
-
-
 @end

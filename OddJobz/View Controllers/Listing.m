@@ -47,37 +47,30 @@
     self.applicants = [NSMutableArray new];
     self.category = category;
     self.location = [PFGeoPoint geoPointWithLatitude:listingLocation.coordinate.latitude longitude:listingLocation.coordinate.longitude];
-    //[self.poster.availableListings addObject:self];
-    
     //Saves to database
     [self saveInBackground];
     [self.poster saveInBackground];
     self.jobDone = NO;
 }
 
-
 - (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
- 
     // check if image is not nil
     if (!image) {
         return nil;
     }
-    
     NSData *imageData = UIImagePNGRepresentation(image);
     // get image data and check if that is not nil
     if (!imageData) {
         return nil;
     }
-    
     return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
 }
 
 -(id) copyWithZone: (NSZone *) zone
 {
-        Listing *listingCopy = [[Listing allocWithZone: zone] init];
-
+    Listing *listingCopy = [[Listing allocWithZone: zone] init];
     [listingCopy postListing:self.jobTitle withDescription:self.jobDescription andLocation:self.location andPrice:self.price andImage:self.image andListingLocation:self.location andCategory:self.category];
-        return listingCopy;
+    return listingCopy;
 }
 
 -(Listing*) manualCopy: (Listing *) listing {

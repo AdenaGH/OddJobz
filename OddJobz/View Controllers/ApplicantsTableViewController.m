@@ -23,32 +23,27 @@
     [self.listing fetchIfNeeded];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    
     [self fetchApplicants];
-    //[self.listing saveInBackground];
     self.refreshCont = [[UIRefreshControl alloc] init];
     [self.refreshCont addTarget:self action:@selector(fetchApplicants) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshCont atIndex:0];
     [self.tableView reloadData];
-
 }
+
 - (void)fetchApplicants {
     [self.listing fetchIfNeeded];
     self.myApplicants = [[NSMutableArray alloc] initWithArray: self.listing.applicants];
 }
+
 #pragma mark - Table view data source
 
-
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete implementation, return the number of rows
     return self.myApplicants.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ApplicantCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ApplicantCell" forIndexPath:indexPath];
-    
     // Configure the cell...
     PFUser *user = self.myApplicants[indexPath.row];
     [user saveInBackground];
@@ -56,8 +51,6 @@
     cell.tableView = self.tableView;
     return cell;
 }
-
-
 
 #pragma mark - Navigation
 
@@ -73,9 +66,7 @@
         UINavigationController *nav = [segue destinationViewController];
         ProfileViewController *profileView = (ProfileViewController *) nav.topViewController;
         profileView.user = user;
-        
     }
-
 }
 
 

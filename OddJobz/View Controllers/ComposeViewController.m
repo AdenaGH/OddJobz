@@ -38,7 +38,6 @@
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedRightButton:)];
     [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
     [self.view addGestureRecognizer:swipeLeft];
-    
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(tappedLeftButton:)];
     [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
     [self.view addGestureRecognizer:swipeRight];
@@ -47,7 +46,6 @@
 - (IBAction)tappedRightButton:(id)sender
 {
     NSUInteger selectedIndex = [self.tabBarController selectedIndex];
-    
     [self.tabBarController setSelectedIndex:selectedIndex + 1];
 }
 
@@ -63,8 +61,6 @@
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
     imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    
-    
     [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
@@ -89,59 +85,46 @@
     [newListing postListing:self.titleTextView.text withDescription:self.descriptionTextView.text andLocation:self.addressTextView.text andPrice:priceString andImage:resizeImage andListingLocation:self.otherLocation andCategory:self.categoryTextField.text];
     [[PFUser currentUser].availableListings addObject:newListing];
     [newListing saveInBackground];
-    
     NSString *sbName = @"Main";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:sbName bundle:nil];
     UINavigationController *vc = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
-    
     vc.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:vc animated:YES completion:nil];
 }
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    
     // Get the image captured by the UIImagePickerController
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
-    //UIImage *editedImage = info[UIImagePickerControllerEditedImage];
-    
-    // Do something with the images (based on your use case)
+    // Do something with the images
     self.listingImage.image = originalImage;
-    // Dismiss UIImagePickerController to go back to your original view controller
+    // Dismiss UIImagePickerController
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)pressAddress:(id)sender {
     GMSAutocompleteViewController *acController = [[GMSAutocompleteViewController alloc] init];
     acController.delegate = self;
-    
     // Specify the place data types to return.
     GMSPlaceField fields = (GMSPlaceFieldName | GMSPlaceFieldPlaceID) | GMSPlaceFieldCoordinate;
     acController.placeFields = fields;
-    
     // Specify a filter.
     _filter = [[GMSAutocompleteFilter alloc] init];
     _filter.type = kGMSPlacesAutocompleteTypeFilterAddress;
     acController.autocompleteFilter = _filter;
-    
     // Display the autocomplete view controller.
     [self presentViewController:acController animated:YES completion:nil];
-    
 }
+
 - (void)viewController:(GMSAutocompleteViewController *)viewController
 didAutocompleteWithPlace:(GMSPlace *)place {
     [self dismissViewControllerAnimated:YES completion:nil];
     // Do something with the selected place.
-    
     self.otherLocation = [[CLLocation alloc] initWithLatitude:place.coordinate.latitude longitude:place.coordinate.longitude];
-    
-    
     self.addressTextView.text = place.name;
 }
 
 - (void)viewController:(GMSAutocompleteViewController *)viewController
 didFailAutocompleteWithError:(NSError *)error {
     [self dismissViewControllerAnimated:YES completion:nil];
-    // TODO: handle the error.
-    NSLog(@"Error: %@", [error description]);
 }
 
 // User canceled the operation.

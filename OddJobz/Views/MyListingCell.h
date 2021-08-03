@@ -17,7 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *listingPrice;
 @property (weak, nonatomic) IBOutlet UILabel *listingTitle;
 @property (weak, nonatomic) IBOutlet UILabel *listingDescription;
-
 @property (nonatomic, strong) Listing *listing;
 -(void)showListing:(Listing *)listing;
 @end

@@ -32,13 +32,16 @@
                             @"Odds are high that you'll be selected for the job!",
                             @"Odds are decent that you'll get the job.",
                             @"Odds are fair that you'll get the job.",
-                            @"Yikes! The odds are not in your favor for this job."];
+                            @"Yikes! The odds are not in your favor for this job.",
+                            @"Apply to the job to check your odds"];
     [self.listing.poster.profileImage getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (!error) {
             self.detailImageView.image = [UIImage imageWithData:data];
         }
     }];
-
+    if (self.listing.jobChance >= 90) {
+        
+    }
     self.listingSkill.text = @"Apply to the job to check your odds";
     self.listingTitle.text = self.listing.jobTitle;
     self.listingDescription.text = self.listing.jobDescription;
@@ -63,7 +66,6 @@
                                                       }];
     // add the cancel action to the alertController
     [userAlert addAction:cancelAction];
-
     // create an OK action
     PFUser *curUser = [PFUser currentUser];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Yes"
@@ -82,7 +84,6 @@
     [userAlert addAction:okAction];
     [self presentViewController:userAlert animated:YES completion:^{
     }];
-    
 }
 
 

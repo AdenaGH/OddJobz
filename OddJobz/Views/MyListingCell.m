@@ -23,11 +23,9 @@
 
 -(void)showListing:(Listing *)listing {
     self.listing = listing;
-    
     self.listingTitle.text = listing.jobTitle;
     self.listingDescription.text = listing.jobDescription;
     self.listingPrice.text = listing.price;
-    
     [self.listing.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (!error) {
             self.listingImage.image = [UIImage imageWithData:data];

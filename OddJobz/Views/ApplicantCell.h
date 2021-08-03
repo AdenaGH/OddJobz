@@ -16,7 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *applicantImage;
 @property (weak, nonatomic) IBOutlet UIButton *hireButton;
 @property (weak, nonatomic) IBOutlet UIButton *completedButton;
-
 @property (strong, nonatomic) PFUser* user;
 @property (strong, nonatomic) Listing* listing;
 @property (strong, nonatomic) UITableView *tableView;
