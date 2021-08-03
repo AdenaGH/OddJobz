@@ -73,7 +73,17 @@
                                         style:UIAlertActionStyleDefault
                                         handler:^(UIAlertAction * _Nonnull action) {
         NSMutableArray * testArray = self.listing.applicants;
+        if (testArray.count==0) {
                                                 [testArray addObject:curUser];
+        } else {
+            for (PFUser* user in testArray) {
+                if (user.appliedListings[self.listing] >= self.permChance) {
+                    [testArray insertObject:curUser atIndex:[self.listing.applicants indexOfObject:user]];
+                } else {
+                    [testArray addObject:curUser];
+                }
+            }
+        }
                                                 self.listing.applicants = testArray;
                                                 [self.listing saveInBackground];
                                                      }];
