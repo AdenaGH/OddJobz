@@ -17,6 +17,7 @@
 @interface HomeTableViewController ()  <UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, UISearchBarDelegate>
 @property (strong, nonatomic) NSMutableArray *listings;
 @property (strong, nonatomic) NSMutableArray *filteredListings;
+@property (strong, nonatomic) NSMutableArray *allListings;
 @property (strong, nonatomic) UIRefreshControl *refreshCont;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property CLLocationManager *manager;
@@ -37,6 +38,7 @@
     }
     [self.manager startUpdatingLocation];
     [self fetchListings];
+    [self makeUserUpdates];
     self.refreshCont = [[UIRefreshControl alloc] init];
     [self.refreshCont addTarget:self action:@selector(fetchListings) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshCont atIndex:0];
@@ -65,6 +67,7 @@
     [query includeKey:@"applicants"];
     [query includeKey:@"jobDone"];
     [query whereKey:@"poster" notEqualTo:[PFUser currentUser]];
+    [query whereKey:@"jobDone" equalTo:[NSNumber numberWithBool:NO]];
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *listings, NSError *error) {
         if (listings != nil) {
@@ -78,19 +81,41 @@
         }
         [self.refreshCont endRefreshing];
     }];
-    PFUser *curUser = [PFUser currentUser];
-//    for (Listing* listing in curUser.appliedListings) {
-//        [listing fetchIfNeeded];
-//        if (listing.jobDone == YES) {
-//            NSMutableArray * newArray = [NSMutableArray new];
-//            NSString * completedCategory = [[NSString alloc] initWithString:listing.category];
-//            [newArray addObject:completedCategory];
-//            curUser.completedListings = newArray;
-//        }
-//    }
-    [curUser saveInBackground];
+    
 }
+-(void)makeUserUpdates {
+    //__block NSMutableArray *tempArray = [NSMutableArray new];
+    PFQuery *query2 = [PFQuery queryWithClassName:@"Listing"];
+    [query2 includeKey:@"objectId"];
+    [query2 findObjectsInBackgroundWithBlock:^(NSArray *listings, NSError *error) {
+        if (listings != nil) {
+            // do something with the array of object returned by the call
+            self.allListings = (NSMutableArray*)listings;
+            PFUser *curUser = [PFUser currentUser];
+            [curUser fetch];
+            for (NSString* listingID in curUser.appliedListings.allKeys) {
+                for (Listing *listing in self.allListings) {
+                    [listing fetchIfNeeded];
+                    if ([listing.objectId isEqual: listingID] && listing.jobDone == YES) {
+                        NSMutableArray * newArray = [NSMutableArray new];
+                        NSString * completedCategory = [[NSString alloc] initWithString:listing.category];
+                        [newArray addObject:completedCategory];
+                        curUser.completedListings = newArray;
+                        NSMutableDictionary *tempDict = [[NSMutableDictionary alloc] initWithDictionary:curUser.appliedListings];
+                        [tempDict removeObjectForKey:listingID];
+                        curUser.appliedListings = tempDict;
+                        [curUser saveInBackground];
+                    }
+                }
+                
+            }
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+        [self.refreshCont endRefreshing];
+    }];
 
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return self.filteredListings.count;

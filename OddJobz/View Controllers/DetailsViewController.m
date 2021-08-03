@@ -89,7 +89,7 @@
                                                 [self.listing saveInBackground];
                                                      }];
     NSMutableDictionary *tempDict = curUser.appliedListings;
-    [tempDict setObject:self.permChance forKey:self.listing];
+    [tempDict setObject:self.permChance forKey:self.listing.objectId];
     curUser.appliedListings = tempDict;
     [curUser saveInBackground];
 //    NSMutableArray * testArray2 = curUser.appliedListings;

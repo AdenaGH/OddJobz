@@ -35,6 +35,9 @@
         }
     }];
     self.nameLabel.text = user.username;
+    if (self.user = self.listing.hire) {
+        [self.hireButton setSelected:YES];
+    }
 }
 
 //Two new buttons
@@ -57,6 +60,7 @@
 - (IBAction)markCompleted:(id)sender {
     //Doing this because I don't want the listing to be shown in the home screen anymore, but still be saved with the user
     self.listing.jobDone = YES;
+    [self.listing saveInBackground];
     //self getpffilefromimage
     NSMutableArray * newArray = self.user.completedListings;;
     [newArray addObject:self.listing.category];
