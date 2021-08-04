@@ -85,6 +85,7 @@
         }
         self.listing.applicants = testArray;
         [self.listing saveInBackground];
+        [self loadChanceMessage];
                                                      }];
     NSMutableDictionary *tempDict = curUser.appliedListings;
     [tempDict setObject:self.permChance forKey:self.listing.objectId];
@@ -158,7 +159,8 @@
         self.listingSkill.text = self.chanceMessages[5];
     }
     else {
-        if ([self.listing.applicants lastObject] == [PFUser currentUser]) {
+        [self.applyButton setSelected:YES];
+        if ([[self.listing.applicants lastObject] isEqual: [PFUser currentUser]]) {
             self.listingSkill.text = self.chanceMessages[0];
         } else if ([self.listing.applicants indexOfObject:curUser] == (self.listing.applicants.count - 2)) {
             self.listingSkill.text = self.chanceMessages[1];

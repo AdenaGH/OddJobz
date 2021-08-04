@@ -1139,6 +1139,13 @@ static BOOL revocableSessionEnabled_;
     PFUser *currentUser = [[self class] currentUser];
     return [self _isAuthenticatedWithCurrentUser:currentUser];
 }
+- (BOOL)isEqual:(PFUser*)object {
+    if (self == object) {
+        return YES;
+    }
+
+    return [self.username isEqualToString:object.username];
+}
 
 - (BOOL)_isAuthenticatedWithCurrentUser:(PFUser *)currentUser {
     @synchronized([self lock]) {
