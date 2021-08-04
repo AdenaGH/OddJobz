@@ -21,6 +21,8 @@
 @property (strong, nonatomic) NSArray *chanceMessages;
 @property (strong, nonatomic) NSNumber *permChance;
 
+@property (nonatomic)BOOL blinkStatus;
+
 @end
 
 @implementation DetailsViewController
@@ -51,6 +53,24 @@
     }];
     [self determineChance];
     [self loadChanceMessage];
+    
+    NSTimer *timer = [NSTimer
+                          scheduledTimerWithTimeInterval:(NSTimeInterval)(1.0)
+                                target:self
+                                 selector:@selector(blink)
+                                 userInfo:nil
+                                 repeats:TRUE];
+    self.blinkStatus = NO;
+}
+
+-(void)blink{
+   if(self.blinkStatus == NO){
+       self.listingSkill.textColor = [UIColor blueColor];
+    self. blinkStatus = YES;
+   }else {
+      self.listingSkill.textColor = [UIColor whiteColor];
+      self.blinkStatus = NO;
+   }
 }
 - (IBAction)acceptJob:(id)sender {
     UIAlertController *userAlert = [UIAlertController alertControllerWithTitle:@"Accept Job"
