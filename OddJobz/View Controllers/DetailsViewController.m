@@ -40,10 +40,6 @@
             self.detailImageView.image = [UIImage imageWithData:data];
         }
     }];
-    if (self.permChance >= 90) {
-        
-    }
-    self.listingSkill.text = @"Apply to the job to check your odds";
     self.listingTitle.text = self.listing.jobTitle;
     self.listingDescription.text = self.listing.jobDescription;
     self.listingPoster.text = self.listing.poster.username;
@@ -54,6 +50,7 @@
         }
     }];
     [self determineChance];
+    [self loadChanceMessage];
 }
 - (IBAction)acceptJob:(id)sender {
     UIAlertController *userAlert = [UIAlertController alertControllerWithTitle:@"Accept Job"
@@ -72,6 +69,7 @@
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Yes"
                                         style:UIAlertActionStyleDefault
                                         handler:^(UIAlertAction * _Nonnull action) {
+        [self.applyButton setSelected:YES];
         NSMutableArray * testArray = self.listing.applicants;
         if (testArray.count==0) {
                                                 [testArray addObject:curUser];
@@ -85,8 +83,8 @@
                 }
             }
         }
-                                                self.listing.applicants = testArray;
-                                                [self.listing saveInBackground];
+        self.listing.applicants = testArray;
+        [self.listing saveInBackground];
                                                      }];
     NSMutableDictionary *tempDict = curUser.appliedListings;
     [tempDict setObject:self.permChance forKey:self.listing.objectId];
@@ -152,6 +150,26 @@
         }
     }
     self.permChance = [[NSNumber alloc] initWithFloat:chance];
+}
+-(void)loadChanceMessage {
+    //TODO: The listing ids currently aren't the same, make a comparable thing that says if everything is the same in the listing they are equal to each other!
+    PFUser *curUser = [PFUser currentUser];
+    if ([self.listing.applicants containsObject: curUser] == NO) {
+        self.listingSkill.text = self.chanceMessages[5];
+    }
+    else {
+        if ([self.listing.applicants lastObject] == [PFUser currentUser]) {
+            self.listingSkill.text = self.chanceMessages[0];
+        } else if ([self.listing.applicants indexOfObject:curUser] == (self.listing.applicants.count - 2)) {
+            self.listingSkill.text = self.chanceMessages[1];
+        } else if ([self.listing.applicants indexOfObject:curUser] == (self.listing.applicants.count - 3)) {
+            self.listingSkill.text = self.chanceMessages[2];
+        }else if ([self.listing.applicants indexOfObject:curUser] == (self.listing.applicants.count - 4)) {
+            self.listingSkill.text = self.chanceMessages[3];
+        } else {
+            self.listingSkill.text = self.chanceMessages[4];
+        }
+    }
 }
 
 

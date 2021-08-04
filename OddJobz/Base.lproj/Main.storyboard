@@ -254,9 +254,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6z-fY-GUi">
-                                        <rect key="frame" x="140.5" y="691" width="133" height="45"/>
+                                        <rect key="frame" x="173" y="691" width="68" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                        <state key="normal" title="Accept Job"/>
+                                        <state key="normal" title="Apply"/>
+                                        <state key="selected" title="Applied">
+                                            <color key="titleColor" red="0.12539505340000001" green="0.5622914108" blue="0.14606926170000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
                                         <connections>
                                             <action selector="acceptJob:" destination="mRv-VJ-oXl" eventType="touchUpInside" id="cfh-fc-fdH"/>
                                         </connections>
@@ -335,6 +338,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="applyButton" destination="g6z-fY-GUi" id="9K9-t9-dtp"/>
                         <outlet property="detailImageView" destination="8bC-p7-ysy" id="Yid-UK-CDJ"/>
                         <outlet property="listingDescription" destination="mpT-Jg-42f" id="Q4l-6f-r8Q"/>
                         <outlet property="listingImageView" destination="ZYq-MJ-jRn" id="Ia9-Tr-KU6"/>
