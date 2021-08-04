@@ -7,6 +7,9 @@
 
 #import "LoginViewController.h"
 #import "Parse/Parse.h"
+//#import "JVFloatLabeledTextFieldViewController.h"
+#import "JVFloatLabeledTextField.h"
+#import "JVFloatLabeledTextView.h"
 
 @interface LoginViewController ()
 

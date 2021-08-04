@@ -11,6 +11,7 @@ target 'OddJobz' do
   pod 'DateTools'
   pod 'GoogleMaps', '5.1.0'
   pod 'GooglePlaces', '5.0.0'
+  pod 'JVFloatLabeledTextField'
   target 'OddJobzTests' do
   pod 'SwipeableTabBarController'
     inherit! :search_paths

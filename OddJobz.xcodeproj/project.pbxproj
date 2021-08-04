@@ -89,6 +89,8 @@
 		EC9B525C26AB65B7006D9323 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		EC9B525E26AB6E7E006D9323 /* EditProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
 		EC9B525F26AB6E7E006D9323 /* EditProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
+		ECA3DE3A26BB4FE000A9978A /* JVFloatLabeledTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JVFloatLabeledTextView.h; path = "../../../../Downloads/JVFloatLabeledTextField-main/JVFloatLabeledTextField/JVFloatLabeledTextField/JVFloatLabeledTextView.h"; sourceTree = "<group>"; };
+		ECA3DE3B26BB4FEE00A9978A /* JVFloatLabeledTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JVFloatLabeledTextField.h; path = "../../../../Downloads/JVFloatLabeledTextField-main/JVFloatLabeledTextField/JVFloatLabeledTextField/JVFloatLabeledTextField.h"; sourceTree = "<group>"; };
 		ECB8073226A87C9D00C22E36 /* ApplicantCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicantCell.h; sourceTree = "<group>"; };
 		ECB8073326A87C9D00C22E36 /* ApplicantCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicantCell.m; sourceTree = "<group>"; };
 		ECB8073826A87E4500C22E36 /* ApplicantsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicantsTableViewController.h; sourceTree = "<group>"; };
@@ -221,6 +223,8 @@
 		ECEBB4AC269DF43900103BBF /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				ECA3DE3A26BB4FE000A9978A /* JVFloatLabeledTextView.h */,
+				ECA3DE3B26BB4FEE00A9978A /* JVFloatLabeledTextField.h */,
 				ECEBB4AD269DF46C00103BBF /* HomeTableViewController.h */,
 				ECEBB4AE269DF46C00103BBF /* HomeTableViewController.m */,
 				ECEBB4B0269DF9DE00103BBF /* LoginViewController.h */,

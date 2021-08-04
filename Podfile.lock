@@ -7,6 +7,7 @@ PODS:
   - GoogleMaps/Maps (5.1.0):
     - GoogleMaps/Base
   - GooglePlaces (5.0.0)
+  - JVFloatLabeledTextField (1.2.2)
   - Parse (1.19.2):
     - Parse/Core (= 1.19.2)
   - Parse/Core (1.19.2):
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - DateTools
   - GoogleMaps (= 5.1.0)
   - GooglePlaces (= 5.0.0)
+  - JVFloatLabeledTextField
   - Parse
   - SwipeableTabBarController
 
@@ -26,6 +28,7 @@ SPEC REPOS:
     - DateTools
     - GoogleMaps
     - GooglePlaces
+    - JVFloatLabeledTextField
     - Parse
     - SwipeableTabBarController
 
@@ -34,9 +37,10 @@ SPEC CHECKSUMS:
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   GoogleMaps: 086ae1dab659eaa7339bdb30fc88e2f44e7c597c
   GooglePlaces: 5d87ca13ed98b7a937e0d8bc7026f718c7263271
+  JVFloatLabeledTextField: df48598472ee015701d509f43e59492a0d4ca208
   Parse: 081fb8755c3000fd11df817eec235def233d0af3
   SwipeableTabBarController: 9a218bdee9426d1bfe36d7962f852024bb08d61b
 
-PODFILE CHECKSUM: 1e158b05531669f24fff6818de452681cc850401
+PODFILE CHECKSUM: 0b29e1295fadee9f41d7fa92e401783507aa32cf
 
 COCOAPODS: 1.10.1
