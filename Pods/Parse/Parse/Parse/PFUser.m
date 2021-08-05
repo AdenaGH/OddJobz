@@ -1143,7 +1143,8 @@ static BOOL revocableSessionEnabled_;
     if (self == object) {
         return YES;
     }
-
+    [self fetch];
+    [object fetch];
     return [self.username isEqualToString:object.username];
 }
 

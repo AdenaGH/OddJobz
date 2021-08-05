@@ -45,19 +45,21 @@
 
 //Two new buttons
 - (IBAction)pressHire:(id)sender {
-    self.listing.hire = self.user;
-    [self.hireButton setSelected:YES];
-    NSMutableArray *toDelete = [NSMutableArray array];
-    NSMutableArray *newArray = self.listing.applicants;
-    for (PFUser * user in self.listing.applicants) {
-       if (user!= self.user)
-           [toDelete addObject:user];
+    if (![self.hireButton isSelected]) {
+        self.listing.hire = self.user;
+        [self.hireButton setSelected:YES];
+        NSMutableArray *toDelete = [NSMutableArray array];
+        NSMutableArray *newArray = self.listing.applicants;
+        for (PFUser * user in self.listing.applicants) {
+           if (user!= self.user)
+               [toDelete addObject:user];
+        }
+        // Remove them
+        [newArray removeObjectsInArray:toDelete];
+        self.listing.applicants = newArray;
+        BFTask *goodTask =[self.listing saveInBackground];
+        [goodTask waitUntilFinished];
     }
-    // Remove them
-    [newArray removeObjectsInArray:toDelete];
-    self.listing.applicants = newArray;
-    BFTask *goodTask =[self.listing saveInBackground];
-    [goodTask waitUntilFinished];
 }
 
 - (IBAction)markCompleted:(id)sender {
