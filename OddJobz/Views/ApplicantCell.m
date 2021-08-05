@@ -24,18 +24,21 @@
 }
 
 -(void) makeApplicants: (PFUser *)user withListing:(nonnull Listing *)listing {
+    if ([self.hireButton isSelected]) {
+        [self.hireButton setUserInteractionEnabled:NO];
+    }
+    [user fetchIfNeeded];
+    [user fetch];
     self.user = user;
     self.listing = listing;
     [listing fetch];
-    [user fetchIfNeeded];
-    [user fetch];
     [self.user.profileImage getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (!error) {
             self.applicantImage.image = [UIImage imageWithData:data];
         }
     }];
     self.nameLabel.text = user.username;
-    if (self.user = self.listing.hire) {
+    if (self.user == self.listing.hire) {
         [self.hireButton setSelected:YES];
     }
 }
