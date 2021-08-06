@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *listingDescription;
 @property (weak, nonatomic) IBOutlet UILabel *listingDistance;
 @property (strong, nonatomic) PFGeoPoint *userLocation;
+@property (weak, nonatomic) IBOutlet UIImageView *listingSymbol;
 @property (strong, nonatomic) NSNumber *distanceNumber;
 @property (strong, nonatomic) Listing *listing;
 -(void)makeListing:(Listing *)listing;

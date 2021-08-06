@@ -17,17 +17,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nWw-s8-JoF" customClass="JVFloatLabeledTextField">
-                                <rect key="frame" x="160" y="269.5" width="94" height="34"/>
+                                <rect key="frame" x="160" y="269.5" width="94" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YRw-GJ-nOS" customClass="JVFloatLabeledTextField">
-                                <rect key="frame" x="162" y="353.5" width="90.5" height="34"/>
+                                <rect key="frame" x="162" y="365.5" width="90.5" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTk-Fb-EkU">
-                                <rect key="frame" x="65" y="487.5" width="54" height="30"/>
+                                <rect key="frame" x="65" y="511.5" width="54" height="30"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="signUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ycj-ah-RgS"/>
@@ -40,7 +40,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LcO-RN-Bcf">
-                                <rect key="frame" x="311" y="487.5" width="38" height="30"/>
+                                <rect key="frame" x="311" y="511.5" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZfD-vL-6av"/>
@@ -180,6 +180,7 @@
                                     <outlet property="listingDistance" destination="I4n-uC-UWG" id="hlj-aB-7bR"/>
                                     <outlet property="listingImage" destination="ikf-1j-oD5" id="zjn-iX-NHX"/>
                                     <outlet property="listingPrice" destination="oCl-Mh-8d3" id="8dC-Tk-hgj"/>
+                                    <outlet property="listingSymbol" destination="vOC-c6-ZCc" id="eNy-aL-d8Q"/>
                                     <outlet property="listingTitle" destination="81A-ze-wWy" id="nm8-Cp-qgn"/>
                                     <segue destination="zRV-dH-ixk" kind="presentation" identifier="detailsSegue" modalPresentationStyle="automatic" id="lIM-h1-Wbx"/>
                                 </connections>
@@ -1095,6 +1096,29 @@ Address:</string>
             <point key="canvasLocation" x="1774" y="2252"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="5I4-66-f8o">
+            <size key="intrinsicContentSize" width="136" height="46"/>
+        </designable>
+        <designable name="E7b-nO-1W8">
+            <size key="intrinsicContentSize" width="145.5" height="46"/>
+        </designable>
+        <designable name="FTc-kR-qBQ">
+            <size key="intrinsicContentSize" width="135" height="46"/>
+        </designable>
+        <designable name="Tqf-xt-NfP">
+            <size key="intrinsicContentSize" width="188" height="46"/>
+        </designable>
+        <designable name="YRw-GJ-nOS">
+            <size key="intrinsicContentSize" width="90.5" height="46"/>
+        </designable>
+        <designable name="nWw-s8-JoF">
+            <size key="intrinsicContentSize" width="94" height="46"/>
+        </designable>
+        <designable name="sD5-Wt-rC1">
+            <size key="intrinsicContentSize" width="201" height="46"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="lIM-h1-Wbx"/>
         <segue reference="91C-AP-Bcn"/>

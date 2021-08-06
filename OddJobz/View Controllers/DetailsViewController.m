@@ -8,7 +8,7 @@
 #import "DetailsViewController.h"
 #import "Listing.h"
 
-#import "Parse/Parse.h"
+//#import "Parse/Parse.h"
 
 @interface DetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *detailImageView;
@@ -30,7 +30,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"%@", self.listing);
     self.chanceMessages = @[@"Odds are very high that you'll be selected for the job!",
                             @"Odds are high that you'll be selected for the job!",
                             @"Odds are decent that you'll get the job.",
@@ -53,7 +52,6 @@
     }];
     [self determineChance];
     [self loadChanceMessage];
-    
     NSTimer *timer = [NSTimer
                           scheduledTimerWithTimeInterval:(NSTimeInterval)(1.0)
                                 target:self
@@ -97,24 +95,20 @@
             for (PFUser* user in testArray) {
                 if ([user.appliedListings objectForKey:self.listing] >= self.permChance) {
                     [testArray insertObject:curUser atIndex:[self.listing.applicants indexOfObject:user]];
+                    self.listing.applicants = testArray;
                     break;
                 } else {
                     [testArray addObject:curUser];
+                    self.listing.applicants = testArray;
                 }
             }
         }
-        self.listing.applicants = testArray;
         [self.listing saveInBackground];
-        [self loadChanceMessage];
                                                      }];
     NSMutableDictionary *tempDict = curUser.appliedListings;
     [tempDict setObject:self.permChance forKey:self.listing.objectId];
     curUser.appliedListings = tempDict;
     [curUser saveInBackground];
-//    NSMutableArray * testArray2 = curUser.appliedListings;
-//                                            [testArray2 addObject:self.listing];
-//                                           curUser.appliedListings = testArray2;
-//                                            [curUser saveInBackground];
     // add the OK action to the alert controller
     [userAlert addAction:okAction];
     [self presentViewController:userAlert animated:YES completion:^{
@@ -173,7 +167,6 @@
     self.permChance = [[NSNumber alloc] initWithFloat:chance];
 }
 -(void)loadChanceMessage {
-    //TODO: The listing ids currently aren't the same, make a comparable thing that says if everything is the same in the listing they are equal to each other!
     PFUser *curUser = [PFUser currentUser];
     if ([self.listing.applicants containsObject: curUser] == NO) {
         self.listingSkill.text = self.chanceMessages[5];
