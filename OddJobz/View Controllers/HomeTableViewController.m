@@ -92,10 +92,10 @@
             // do something with the array of object returned by the call
             self.allListings = (NSMutableArray*)listings;
             PFUser *curUser = [PFUser currentUser];
-            [curUser fetch];
+            [curUser fetchInBackground];
             for (NSString* listingID in curUser.appliedListings.allKeys) {
                 for (Listing *listing in self.allListings) {
-                    [listing fetchIfNeeded];
+                    [listing fetchIfNeededInBackground];
                     if ([listing.objectId isEqual: listingID] && listing.jobDone == YES) {
                         NSMutableArray * newArray = [NSMutableArray new];
                         NSString * completedCategory = [[NSString alloc] initWithString:listing.category];

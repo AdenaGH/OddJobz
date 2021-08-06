@@ -27,11 +27,11 @@
     if ([self.hireButton isSelected]) {
         [self.hireButton setUserInteractionEnabled:NO];
     }
-    [user fetchIfNeeded];
-    [user fetch];
+    [user fetchIfNeededInBackground];
+    [user fetchInBackground];
     self.user = user;
     self.listing = listing;
-    [listing fetch];
+    [listing fetchInBackground];
     [self.user.profileImage getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (!error) {
             self.applicantImage.image = [UIImage imageWithData:data];

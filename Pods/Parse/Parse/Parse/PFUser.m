@@ -1142,9 +1142,10 @@ static BOOL revocableSessionEnabled_;
 - (BOOL)isEqual:(PFUser*)object {
     if (self == object) {
         return YES;
+    } else if ([object class] == [self class]) {
+        return [self.username isEqualToString:object.username];
     }
-
-    return [self.username isEqualToString:object.username];
+    return NO;
 }
 
 - (BOOL)_isAuthenticatedWithCurrentUser:(PFUser *)currentUser {

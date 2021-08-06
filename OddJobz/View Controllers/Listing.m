@@ -66,6 +66,13 @@
     return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
 }
 
+- (BOOL)isEqual:(Listing*)object {
+    if (self == object) {
+        return YES;
+    }
+    return NO;
+}
+
 -(id) copyWithZone: (NSZone *) zone
 {
     Listing *listingCopy = [[Listing allocWithZone: zone] init];
