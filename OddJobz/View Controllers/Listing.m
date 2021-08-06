@@ -36,7 +36,9 @@
 }
 
 - (void) postListing:(NSString *)title withDescription:(NSString *)descript andLocation:(NSString *)location andPrice:(NSString *)price andImage: ( UIImage * _Nullable )image andListingLocation: (CLLocation *) listingLocation andCategory:(NSString * _Nonnull)category{
-    self.poster = [PFUser currentUser];
+    PFUser *curUser = [PFUser currentUser];
+    [[PFUser currentUser] fetchInBackground];
+    self.poster = curUser;
     self.image = [self getPFFileFromImage:image];
     self.postedAt = [NSDate date];
     self.jobTitle = title;
